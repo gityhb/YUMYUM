@@ -21,6 +21,11 @@ private lateinit var binding: ActivityMainBinding
 
         val navView: BottomNavigationView = binding.navView
 
+        //binding.imageView4.clipToOutline = true
+        //binding.imageView5.clipToOutline = true
+
+        /*출처 : https://bada744.tistory.com/167*/
+
         /*val navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

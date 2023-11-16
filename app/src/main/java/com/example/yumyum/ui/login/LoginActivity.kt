@@ -1,3 +1,4 @@
+/*
 package com.example.yumyum.ui.login
 
 import android.app.Activity
@@ -114,9 +115,11 @@ class LoginActivity : AppCompatActivity() {
     }
 }
 
+*/
 /**
  * Extension function to simplify setting an afterTextChanged action to EditText components.
- */
+ *//*
+
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable?) {
@@ -127,4 +130,4 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
 
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
     })
-}
+}*/

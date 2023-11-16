@@ -1,3 +1,4 @@
+/*
 package com.example.yumyum.ui.login
 
 import androidx.lifecycle.Observer
@@ -128,4 +129,4 @@ class JoinFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-}
+}*/

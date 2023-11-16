@@ -23,21 +23,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="50sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/main_btn"
-        android:layout_width="405dp"
-        android:layout_height="100dp"
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.23000002">
+        app:layout_constraintVertical_bias="0.01999998">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,18 +53,20 @@
             <Button
                 android:id="@+id/btn_recipe"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="#ffdddd"
+                android:layout_height="75dp"
+                android:layout_margin="5dp"
                 android:background="@drawable/main_round_button"
-                android:text="Button" />
+                android:backgroundTint="#ffdddd"
+                android:text="요리하기" />
 
             <Button
                 android:id="@+id/btn_recipe_application"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="#FFE9D0"
+                android:layout_height="75dp"
+                android:layout_margin="5dp"
                 android:background="@drawable/main_round_button"
-                android:text="Button" />
+                android:backgroundTint="#FFE9D0"
+                android:text="레시피 신청" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,14 +78,20 @@
             <Button
                 android:id="@+id/btn_ingredient_search"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_height="75dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/main_round_button"
+                android:backgroundTint="#FFE9D0"
+                android:text="재료활용" />
 
             <Button
                 android:id="@+id/btn_community"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_height="75dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/main_round_button"
+                android:backgroundTint="#ffdddd"
+                android:text="커뮤니티" />
         </LinearLayout>
     </LinearLayout>
 
@@ -94,31 +107,15 @@
         app:layout_constraintVertical_bias="0.07999998">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="인기 레시피" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </HorizontalScrollView>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="TextView" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
         </HorizontalScrollView>
 
     </LinearLayout>
@@ -135,31 +132,15 @@
         app:layout_constraintVertical_bias="0.94">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="내가 찜한 레시피" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </HorizontalScrollView>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="TextView" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
         </HorizontalScrollView>
 
     </LinearLayout>

@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_recipe"
+        android:title="레시피" />
+    <group>
+    <item
+        android:id="@+id/nav_r1"
+        android:title="레시피 검색" />
+    <item
+        android:id="@+id/nav_r2"
+        android:title="자료 검색" />
+    <item
+        android:id="@+id/nav_r3"
+        android:title="레시피 신청" />
+    </group>
+    <item
+        android:id="@+id/nav_community"
+        android:title="커뮤니티" />
+    <group>
+        <item
+            android:id="@+id/nav_c1"
+            android:title="글 목록" />
+        <item
+            android:id="@+id/nav_c2"
+            android:title="글 쓰기" />
+    </group>
+
+    <item
+    android:id="@+id/nav_my"
+    android:title="내 정보" />
+    <group>
+    <item
+        android:id="@+id/nav_m1"
+        android:title="마이페이지" />
+    <item
+        android:id="@+id/nav_m2"
+        android:title="회원 정보 수정" />
+    </group>
+
+
+    <!--<group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
@@ -16,5 +56,5 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
-    </group>
+    </group>-->
 </menu>

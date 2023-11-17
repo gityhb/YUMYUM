@@ -13,10 +13,7 @@
         android:theme="@style/Theme.YUMYUM"
         tools:targetApi="31">
         <activity
-            android:name=".CommunityActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.CommunityActivity"
+            android:name=".EditMemberInfoActivity"
             android:exported="false" />
         <!--
         <activity

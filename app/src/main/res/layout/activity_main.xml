@@ -134,7 +134,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/food1"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -142,7 +142,7 @@
                         android:src="@drawable/food1" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/f1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="우니 덮밥"
@@ -159,7 +159,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/food2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -167,7 +167,7 @@
                         android:src="@drawable/food2" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/f2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="국물 닭발"
@@ -183,7 +183,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/food3"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -191,7 +191,7 @@
                         android:src="@drawable/food3" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/f3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="베이글"
@@ -207,7 +207,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/food4"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -215,7 +215,7 @@
                         android:src="@drawable/food4" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/f4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="계란튀김"
@@ -269,7 +269,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/food5"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -277,7 +277,7 @@
                         android:src="@drawable/food5" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/f5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="미트볼"
@@ -294,7 +294,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/food6"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -302,7 +302,7 @@
                         android:src="@drawable/food6" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/f6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="닭발"
@@ -318,7 +318,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/food7"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/border_img"
@@ -326,7 +326,7 @@
                         android:src="@drawable/food7" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/f7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="버터쿠키"

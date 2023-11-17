@@ -29,7 +29,6 @@
             android:id="@+id/nav_c2"
             android:title="글 쓰기" />
     </group>
-
     <item
     android:id="@+id/nav_my"
     android:title="내 정보" />

@@ -1,6 +1,7 @@
 package com.example.yumyum
 
 import android.os.Bundle
+import android.widget.ImageView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -21,8 +22,16 @@ private lateinit var binding: ActivityMainBinding
 
         val navView: BottomNavigationView = binding.navView
 
-        //binding.imageView4.clipToOutline = true
-        //binding.imageView5.clipToOutline = true
+        val partImg: ImageView = findViewById(R.id.food1)
+        partImg.clipToOutline = true
+
+        binding.food1.clipToOutline = true
+        binding.food2.clipToOutline = true
+        binding.food3.clipToOutline = true
+        binding.food4.clipToOutline = true
+        binding.food5.clipToOutline = true
+        binding.food6.clipToOutline = true
+        binding.food7.clipToOutline = true
 
         /*출처 : https://bada744.tistory.com/167*/
 

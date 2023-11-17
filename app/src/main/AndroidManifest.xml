@@ -21,8 +21,21 @@
             android:exported="true"
             android:label="@string/title_activity_main" />
         <activity
+            android:name=".CommunityActivity"
+            android:exported="true"
+            android:label="CommunityActivity" />
+        <activity
+            android:name=".EditMemberInfoActivity"
+            android:exported="true"
+            android:label="EditMemberInfoActivity" />
+
+        <activity
+            android:name=".RecipeApplicationEnrollActivity"
+            android:exported="true"
+            android:label="RecipeApplicationEnrollActivity" />
+        <activity
             android:name=".SidebarActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.YUMYUM.NoActionBar">
             <intent-filter>

@@ -12,10 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YUMYUM"
         tools:targetApi="31">
-        <!--<activity
+        <activity
+            android:name=".WriteActivity"
+            android:exported="false" />
+        <!--
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login" />-->
+            android:label="@string/title_activity_login" />
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,7 +33,6 @@
             android:name=".EditMemberInfoActivity"
             android:exported="true"
             android:label="EditMemberInfoActivity" />
-
         <activity
             android:name=".RecipeApplicationEnrollActivity"
             android:exported="true"

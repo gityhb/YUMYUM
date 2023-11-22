@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YUMYUM"
+        android:theme="@style/Theme.YUMYUM.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".CommunityenrollActivity"
@@ -29,22 +29,21 @@
             android:exported="true"
             android:label="@string/title_activity_main" />
         <activity
+            android:name=".RecipeApplicationEnrollActivity"
+            android:exported="true"
+            android:label="레시피 신청" />
+        <activity
             android:name=".CommunityActivity"
             android:exported="true"
-            android:label="CommunityActivity" />
+            android:label="커뮤니티" />
         <activity
             android:name=".EditMemberInfoActivity"
             android:exported="true"
             android:label="EditMemberInfoActivity" />
         <activity
-            android:name=".RecipeApplicationEnrollActivity"
-            android:exported="true"
-            android:label="RecipeApplicationEnrollActivity" />
-        <activity
             android:name=".SidebarActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.YUMYUM.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

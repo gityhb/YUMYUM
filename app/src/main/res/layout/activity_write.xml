@@ -24,19 +24,19 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#fff">
+                android:background="#fff"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="커뮤니티
-"
+                    android:text="커뮤니티"
                     android:textColor="#000"
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/back2001"
                     android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/back" />

@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".EditMemberInfoActivity">
 
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="27sp"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:text="회원 정보 수정" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

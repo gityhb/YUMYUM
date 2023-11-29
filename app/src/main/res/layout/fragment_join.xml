@@ -82,20 +82,18 @@
                     android:text="이름"
                     android:textSize="15sp" />
 
-
                 <EditText
                     android:id="@+id/input_name"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:paddingHorizontal="5dp"
                     android:background="@drawable/border_black"
-                    android:hint=" 이름을 입력해주세요"
+                    android:hint="이름을 입력해주세요"
                     android:inputType="text"
                     android:textSize="13sp" />
 
-
                 <TextView
-                    android:id="@+id/join_id"
+                    android:id="@+id/warning_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5sp"
@@ -125,16 +123,15 @@
                         android:id="@+id/editTextText"
                         android:layout_width="280dp"
                         android:layout_height="45dp"
-
-                        android:background="@drawable/border_black"
                         android:hint="아이디를 입력해주세요"
                         android:inputType="text"
                         android:textSize="14sp" />
 
                     <Button
                         android:id="@+id/button14"
-                        android:layout_width="match_parent"
-                        android:layout_height="49dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/main_list2"
                         android:text="중복확인" />
 
 
@@ -159,7 +156,7 @@
                         android:layout_width="280dp"
                         android:layout_height="45dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/border_black"
+
                         android:ems="10"
                         android:hint=" 2~10자 닉네임을 입력해주세요"
                         android:inputType="text"
@@ -174,40 +171,64 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/text_password1"
+                    android:id="@+id/join_pwd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="\n비밀번호" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="비밀번호"
+                    android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/input_password1"
+                    android:id="@+id/input_pwd"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_gravity="center_horizontal"
+                    android:paddingHorizontal="5dp"
                     android:background="@drawable/border_black"
-                    android:ems="10"
-                    android:hint=" 비밀번호를 입력해주세요 (영문 + 숫자 7자 이상)"
-                    android:inputType="textPassword"
-                    android:textSize="14sp" />
+                    android:hint="비밀번호를 입력해주세요 (영문+숫자 7자 이상)"
+                    android:inputType="text"
+                    android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/text_password2"
+                    android:id="@+id/warning_pwd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="\n비밀번호 확인" />
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginVertical="2sp"
+                    android:text="비밀번호를 입력해주세요."
+                    android:textSize="10sp"
+                    android:textColor="#C60000"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:id="@+id/join_pwd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="비밀번호 확인"
+                    android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/input_password2"
+                    android:id="@+id/input_pwd2"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_gravity="center_horizontal"
+                    android:paddingHorizontal="5dp"
                     android:background="@drawable/border_black"
-                    android:ems="10"
-                    android:hint=" 비밀번호를 한 번 더 입력해주세요"
-                    android:inputType="textPassword"
-                    android:textSize="14sp" />
+                    android:hint="비밀번호를 한 번 더 입력해주세요"
+                    android:inputType="text"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/warning_pwd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginVertical="2sp"
+                    android:text="비밀번호를 입력해주세요."
+                    android:textSize="10sp"
+                    android:textColor="#C60000"
+                    android:visibility="invisible"/>
 
                 <TextView
                     android:id="@+id/text_phone"

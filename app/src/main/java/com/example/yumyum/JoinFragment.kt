@@ -1,3 +1,104 @@
+package com.example.yumyum
+
+import android.net.Uri
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
+import com.example.yumyum.databinding.FragmentJoinBinding
+
+/*
+}
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    val binding = FragmentJoinBinding.inflate(layoutInflater)
+    //setContentView(binding.root) 왜 안되는걸까?
+    return binding.root
+
+    TextView warning_name = findViewById(R.id.warning_name)
+
+*/
+
+
+class JoinFragment : Fragment() {
+
+    lateinit var binding:FragmentJoinBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding=FragmentJoinBinding.inflate(inflater)
+        return binding.root
+    }   //onCreate
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //갤러리
+        val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(),
+            object: ActivityResultCallback<Uri?> {
+                override fun onActivityResult(result: Uri?) {
+                    binding.profileImg.setImageURI(result)
+                }
+            })
+
+        binding.profileImgBtn.setOnClickListener {
+            galleryLauncher.launch("image/*")
+        }
+
+        //경고 글
+        binding.joinBtn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val strName = binding.inputName.text.toString().trim()
+                val strId = binding.inputId.text.toString().trim()
+                val strNkname = binding.inputNkname.text.toString().trim()
+                val strPwd = binding.inputPwd.text.toString().trim()
+                val strPwd2 = binding.inputPwd2.text.toString().trim()
+                val strPhone = binding.inputPhone.text.toString().trim()
+                val strEmail = binding.inputEmail.text.toString().trim()
+
+                val warning_name = view.findViewById<TextView>(R.id.warning_name)
+                val warning_id = view.findViewById<TextView>(R.id.warning_id)
+                val warning_nkname = view.findViewById<TextView>(R.id.warning_nkname)
+                val warning_pwd = view.findViewById<TextView>(R.id.warning_pwd)
+                val warning_pwd2 = view.findViewById<TextView>(R.id.warning_pwd2)
+                val warning_phone = view.findViewById<TextView>(R.id.warning_phone)
+                val warning_email = view.findViewById<TextView>(R.id.warning_email)
+
+                if(strName.isEmpty()) {
+                    warning_name.setVisibility(View.VISIBLE)
+                }
+                if(strId.isEmpty()) {
+                    warning_id.setVisibility(View.VISIBLE)
+                }
+                if(strNkname.isEmpty()) {
+                    warning_nkname.setVisibility(View.VISIBLE)
+                }
+                if(strPwd.isEmpty()) {
+                    warning_pwd.setVisibility(View.VISIBLE)
+                }
+                if(strPwd2.isEmpty()) {
+                    warning_pwd2.setVisibility(View.VISIBLE)
+                }
+                if(strPhone.isEmpty()) {
+                    warning_phone.setVisibility(View.VISIBLE)
+                }
+                if(strEmail.isEmpty()) {
+                    warning_email.setVisibility(View.VISIBLE)
+                }
+                /*visibility 출처
+                https://heezit.tistory.com/116*/
+            }
+
+        })
+    }   //onViewCreated
+}
+
 /*
 package com.example.yumyum.ui.login
 

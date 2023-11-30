@@ -302,7 +302,7 @@
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/warning_pwd2_f"
+                        android:id="@+id/warning_pwd2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -313,13 +313,24 @@
                         android:visibility="invisible" />
 
                     <TextView
-                        android:id="@+id/warning_pwd2_t"
+                        android:id="@+id/warning_pwd2_chk_t"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
                         android:layout_marginLeft="5sp"
                         android:text="비밀번호가 일치합니다."
                         android:textColor="#838383"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/warning_pwd2_chk_f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="2sp"
+                        android:layout_marginLeft="5sp"
+                        android:text="비밀번호가 일치하지 않습니다."
+                        android:textColor="#C60000"
                         android:textSize="10sp"
                         android:visibility="gone" />
 
@@ -360,6 +371,17 @@
                             android:text="인증" />
                     </LinearLayout>
 
+                    <TextView
+                        android:id="@+id/warning_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="2sp"
+                        android:layout_marginLeft="5sp"
+                        android:text="휴대폰 번호를 입력해주세요."
+                        android:textColor="#C60000"
+                        android:textSize="10sp"
+                        android:visibility="invisible" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -367,7 +389,8 @@
                         android:layout_marginTop="10dp"
                         android:background="@drawable/border_black"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="5dp">
+                        android:paddingHorizontal="5dp"
+                        android:visibility="gone">
 
                         <EditText
                             android:id="@+id/input_phone_author"
@@ -389,18 +412,18 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/warning_phone_f"
+                        android:id="@+id/warning_phone_author_chk_f"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
                         android:layout_marginLeft="5sp"
-                        android:text="휴대폰 번호를 입력해주세요."
+                        android:text="인증 번호가 옳지 않습니다."
                         android:textColor="#C60000"
                         android:textSize="10sp"
-                        android:visibility="invisible" />
+                        android:visibility="gone" />
 
                     <TextView
-                        android:id="@+id/warning_phone_t"
+                        android:id="@+id/warning_phone_author_chk_t"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"

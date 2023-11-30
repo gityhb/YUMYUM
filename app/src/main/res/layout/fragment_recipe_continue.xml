@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecipeContinueFragment">
@@ -46,21 +47,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="70dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textStyle="italic"
-            android:textColor="@color/black"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="25dp"
-            android:text="No.2" />
-
+            android:layout_marginLeft="30dp"
+            android:text="No.2"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            android:textStyle="italic" />
 
 
         <LinearLayout
@@ -70,21 +70,21 @@
 
             <TextView
                 android:id="@+id/textView18"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="180dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="end"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginTop="14dp"
                 android:text="09 : 30"
-                android:textSize="40sp" />
+                android:textColor="@color/black"
+                android:textSize="30sp" />
 
             <View
                 android:id="@+id/view"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:background="#FEE043"
-                android:layout_marginLeft="172dp" />
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="130dp"
+                android:background="#FEE043" />
 
         </LinearLayout>
 
@@ -93,11 +93,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:orientation="horizontal"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="125dp"
+        android:background="@drawable/border_recipe_start1"
         android:gravity="center"
-        android:background="@drawable/border_recipe_start1">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView7"
@@ -109,17 +109,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="327dp"
-        android:orientation="vertical"
+        android:layout_height="265dp"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="345dp"
-        android:background="@drawable/border_recipe_start_button">
+        android:layout_marginTop="315dp"
+        android:background="@drawable/border_recipe_start_button"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="100dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/border_recipe_start1"
             android:orientation="horizontal">
 
@@ -127,44 +127,44 @@
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:layout_margin="15dp"
+                android:text="면을 넣고 적당히 휘저으면서 12분간 삶는다."
                 android:textColor="@color/black"
-                android:text="면을 넣고 적당히 휘저으면서 12분간 삶는다." />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:orientation="horizontal"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button10"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:background="@drawable/recipe_continue_button1"
-                android:text="시작" />
+                android:text="시작"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button11"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:background="@drawable/recipe_continue_button2"
-                android:text="중지" />
+                android:text="중지"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:gravity="bottom|end">
+            android:layout_height="50dp"
+            android:gravity="bottom|end"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button16"
@@ -172,15 +172,15 @@
                 android:layout_height="30dp"
                 android:background="#00ff0000"
                 android:text="넘어가기"
-                android:textSize="17sp" />
+                android:textSize="15sp" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType = "centerCrop"
-                android:padding = "6dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:background="#00ff0000"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/recipe_continue_button_img" />
 
 

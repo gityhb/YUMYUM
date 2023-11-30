@@ -64,30 +64,53 @@ class JoinFragment : Fragment() {
 
                 val warning_name = view.findViewById<TextView>(R.id.warning_name)
                 val warning_id = view.findViewById<TextView>(R.id.warning_id)
+                val warning_id_chk_t = view.findViewById<TextView>(R.id.warning_id_chk_t)
+                val warning_id_chk_f = view.findViewById<TextView>(R.id.warning_id_chk_f)
                 val warning_nkname = view.findViewById<TextView>(R.id.warning_nkname)
+                val warning_nkname_chk_t = view.findViewById<TextView>(R.id.warning_nkname_chk_t)
+                val warning_nkname_chk_f = view.findViewById<TextView>(R.id.warning_nkname_chk_f)
                 val warning_pwd = view.findViewById<TextView>(R.id.warning_pwd)
                 val warning_pwd2 = view.findViewById<TextView>(R.id.warning_pwd2)
+                val warning_pwd2_chk_t = view.findViewById<TextView>(R.id.warning_id_chk_t)
+                val warning_pwd2_chk_f = view.findViewById<TextView>(R.id.warning_id_chk_f)
                 val warning_phone = view.findViewById<TextView>(R.id.warning_phone)
+                val warning_phone_author_chk_t = view.findViewById<TextView>(R.id.warning_phone_author_chk_t)
+                val warning_phone_author_chk_f = view.findViewById<TextView>(R.id.warning_phone_author_chk_f)
                 val warning_email = view.findViewById<TextView>(R.id.warning_email)
 
                 if(strName.isEmpty()) {
                     warning_name.setVisibility(View.VISIBLE)
                 }
+
                 if(strId.isEmpty()) {
                     warning_id.setVisibility(View.VISIBLE)
                 }
+                //id 중복확인
                 if(strNkname.isEmpty()) {
                     warning_nkname.setVisibility(View.VISIBLE)
                 }
+                //nickname 중복확인
                 if(strPwd.isEmpty()) {
                     warning_pwd.setVisibility(View.VISIBLE)
                 }
                 if(strPwd2.isEmpty()) {
                     warning_pwd2.setVisibility(View.VISIBLE)
+                    warning_pwd2_chk_t.setVisibility(View.GONE)
+                    warning_pwd2_chk_f.setVisibility(View.GONE)
+                }
+                if(strPwd == strPwd2) {
+                    warning_pwd2_chk_t.setVisibility(View.VISIBLE)
+                    warning_pwd2_chk_f.setVisibility(View.GONE)
+                    warning_pwd2.setVisibility(View.GONE)
+                } else {
+                    warning_pwd2_chk_f.setVisibility(View.VISIBLE)
+                    warning_pwd2_chk_t.setVisibility(View.GONE)
+                    warning_pwd2.setVisibility(View.GONE)
                 }
                 if(strPhone.isEmpty()) {
                     warning_phone.setVisibility(View.VISIBLE)
                 }
+                //phone 인증
                 if(strEmail.isEmpty()) {
                     warning_email.setVisibility(View.VISIBLE)
                 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
     tools:context="RecipeStartFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -115,10 +116,10 @@
             android:id="@+id/imageButton5"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:padding="5dp"
-            android:background="#00ff0000"
-            android:scaleType="centerCrop"
             android:layout_marginLeft="205dp"
+            android:background="#00ff0000"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/redheart" />
     </LinearLayout>
 

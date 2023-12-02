@@ -3,12 +3,8 @@ package com.example.yumyum
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
 
 internal interface DBContract {
@@ -116,13 +112,13 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateView(
+    /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = ActivityRecipeApplicationEnrollBinding.inflate(inflater, container, false)
 
         val dataList = mutableListOf<MutableMap<String, String>>()  //key, value 필요, key는 NO
 
-    } //onCreateView
+    } //onCreateView*/
 
 } //Activity

@@ -17,10 +17,12 @@
             android:exported="false" />
         <activity
             android:name=".CommunityenrollActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="글쓰는 창"/>
         <activity
             android:name=".WriteActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="글 상세페이지"/>
         <!--
         <activity
             android:name=".ui.login.LoginActivity"

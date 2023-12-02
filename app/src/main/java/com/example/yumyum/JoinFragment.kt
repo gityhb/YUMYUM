@@ -32,7 +32,7 @@ class JoinFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=FragmentJoinBinding.inflate(inflater)
+        binding = FragmentJoinBinding.inflate(inflater, container, false)
         return binding.root
     }   //onCreate
 

@@ -1,6 +1,5 @@
 package com.example.yumyum
 
-import android.app.ListActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -24,7 +23,7 @@ class CommunityenrollActivity : AppCompatActivity() {
             val content = editTextContent2.text.toString()
             // 버튼이 눌리면 EditText에 있는 내용 저장
 
-            val Listintent = Intent(this , ListActivity :: class.java)
+            val Listintent = Intent(this , RecyclerActivity :: class.java)
             // 인텐트 생성
 
             Listintent.putExtra("Title", title) // .putExtra() 메소드로 데이터 전달준비
@@ -37,7 +36,7 @@ class CommunityenrollActivity : AppCompatActivity() {
         val imageView: ImageView = findViewById(R.id.back2002)
 
         imageView.setOnClickListener {
-            startActivity(Intent(this@CommunityenrollActivity, CommunityActivity::class.java))
+            startActivity(Intent(this@CommunityenrollActivity, RecyclerActivity::class.java))
         }
     }
 }

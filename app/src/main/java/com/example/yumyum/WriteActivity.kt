@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class InnerActivity : AppCompatActivity(){
+class WriteActivity : AppCompatActivity(){
 
     private lateinit var commentList: ArrayList<String>
     private lateinit var adapter: ArrayAdapter<String>

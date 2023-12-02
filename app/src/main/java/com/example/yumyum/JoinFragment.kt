@@ -11,17 +11,30 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.yumyum.databinding.FragmentJoinBinding
 
-/*
+internal interface DBcontract {
+    companion object {
+        const val TABLE_NAME = "USER_T"
+        const val USER_NO = "USER_NO"
+        const val USER_NAME = "USER_NAME"
+        const val USER_ID = "USER_ID"
+        const val USER_NKNAME = "USER_NKNAME"
+        const val USER_PWD = "USER_PWD"
+        const val USER_PHONE = "USER_PHONE"
+        const val USER_EMAIL = "USER_EMAIL"
+        //const val USER_IMG = "USER_IMG"
+        const val SQL_CREATE_TABLE = "CREATE TABLE IF NO EXISTS " +
+                TABLE_NAME + "(" +
+                USER_NO + "INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                USER_NAME + "TEXT NOT NULL, " +
+                USER_ID + "TEXT NOT NULL, " +
+                USER_NKNAME + "TEXT NOT NULL, " +
+                USER_PWD + "TEXT NOT NULL, " +
+                USER_PHONE + "INTEGER NOT NULL, " +
+                USER_EMAIL + "TEXT NOT NULL)"
+        const val SQL_LOAD = "SELECT * FROM " + TABLE_NAME
+
+    }
 }
-override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    val binding = FragmentJoinBinding.inflate(layoutInflater)
-    //setContentView(binding.root) 왜 안되는걸까?
-    return binding.root
-
-    TextView warning_name = findViewById(R.id.warning_name)
-
-*/
 
 
 class JoinFragment : Fragment() {

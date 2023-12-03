@@ -11,7 +11,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         const val DB_VERSION = 1
 
         //회원정보
-        const val USER_TABLE_NAME = "USER_T"
+        const val USER_TABLE = "USER_T"
         const val USER_NO = "USER_NO"
         const val USER_NAME = "USER_NAME"
         const val USER_ID = "USER_ID"
@@ -21,11 +21,11 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         const val USER_EMAIL = "USER_EMAIL"
         //const val USER_IMG = "USER_IMG"
 
-        //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + USER_TABLE_NAME
-        //const val SQL_USER_LOAD = "SELECT * FROM " + USER_TABLE_NAME
+        //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + USER_TABLE
+        //const val SQL_USER_LOAD = "SELECT * FROM " + USER_TABLE
 
         //요리정보
-        const val RECIPE_TABLE_NAME = "RECIPE_APPLICATION_T"
+        const val RECIPE_TABLE = "RECIPE_APPLICATION_T"
         const val RECIPE_NO = "RECIPE_NO"
         const val RECIPE_NAME = "RECIPE_NAME"
         const val RECIPE_TYPE = "RECIPE_TYPE"
@@ -60,14 +60,14 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         const val RECIPE_I11= "RECIPE_I11"
         const val RECIPE_I12 = "RECIPE_I12"
 
-        //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + RECIPE_TABLE_NAME
-        //const val SQL_USER_LOAD = "SELECT * FROM " + RECIPE_TABLE_NAME
+        //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + RECIPE_TABLE
+        //const val SQL_USER_LOAD = "SELECT * FROM " + RECIPE_TABLE
 
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
         val SQL_CREATE_USER_TABLE = "CREATE TABLE IF NO EXISTS " +
-                USER_TABLE_NAME + "(" +
+                USER_TABLE + "(" +
                 USER_NO + "INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                 USER_NAME + "TEXT NOT NULL, " +
                 USER_ID + "TEXT NOT NULL, " +
@@ -78,7 +78,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         db?.execSQL(SQL_CREATE_USER_TABLE)
 
         val SQL_CREATE_RECIPE_TABLE = "CREATE TABLE IF NOT EXISTS " +
-                RECIPE_TABLE_NAME + "(" +
+                RECIPE_TABLE + "(" +
                 RECIPE_NO + " INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                 RECIPE_NAME + " TEXT NOT NULL, " +
                 RECIPE_TYPE + " TEXT NOT NULL, " +
@@ -130,7 +130,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         values.put(USER_EMAIL, user_email)
 
         val db = writableDatabase
-        val rowId = db.insert(USER_TABLE_NAME, null, values)
+        val rowId = db.insert(USER_TABLE, null, values)
 
         db.close()
 
@@ -138,5 +138,24 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
     }
 
     // 아이디 중복 확인
+    fun isUserIdExists(user_id: String): Boolean {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT $USER_ID FROM $USER_TABLE WHERE $USER_ID = ?", arrayOf(user_id))
+        val exists = cursor.count > 0
 
+        cursor.close()
+
+        return exists
+    }
+
+    //닉네임 중복 확인
+    fun isUserNknameExists(user_nkname: String): Boolean {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT $USER_NKNAME FROM $USER_TABLE WHERE $USER_NKNAME = ?", arrayOf(user_nkname))
+        val exists = cursor.count > 0
+
+        cursor.close()
+
+        return exists
+    }
 }

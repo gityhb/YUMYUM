@@ -1,8 +1,5 @@
 package com.example.yumyum
 
-import android.content.Context
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,34 +11,6 @@ import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.yumyum.databinding.FragmentJoinBinding
-import com.example.yumyum.DBHelper
-import org.w3c.dom.Text
-
-/*internal interface DBcontract {
-    companion object {
-        const val TABLE_NAME = "USER_T"
-        const val USER_NO = "USER_NO"
-        const val USER_NAME = "USER_NAME"
-        const val USER_ID = "USER_ID"
-        const val USER_NKNAME = "USER_NKNAME"
-        const val USER_PWD = "USER_PWD"
-        const val USER_PHONE = "USER_PHONE"
-        const val USER_EMAIL = "USER_EMAIL"
-        //const val USER_IMG = "USER_IMG"
-        const val SQL_CREATE_TABLE = "CREATE TABLE IF NO EXISTS " +
-                TABLE_NAME + "(" +
-                USER_NO + "INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
-                USER_NAME + "TEXT NOT NULL, " +
-                USER_ID + "TEXT NOT NULL, " +
-                USER_NKNAME + "TEXT NOT NULL, " +
-                USER_PWD + "TEXT NOT NULL, " +
-                USER_PHONE + "INTEGER NOT NULL, " +
-                USER_EMAIL + "TEXT NOT NULL)"
-        const val SQL_DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME
-        const val SQL_LOAD = "SELECT * FROM " + TABLE_NAME
-
-    }
-}*/
 
 class JoinFragment : Fragment() {
 
@@ -53,7 +22,7 @@ class JoinFragment : Fragment() {
     ): View? {
         binding = FragmentJoinBinding.inflate(inflater, container, false)
         return binding.root
-    }   //onCreate
+    } // onCreate
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -72,7 +41,7 @@ class JoinFragment : Fragment() {
             galleryLauncher.launch("image/*")
         }
 
-        //경고 글
+        //경고글
         binding.joinBtn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 val strName = binding.inputName.text.toString().trim()
@@ -101,8 +70,11 @@ class JoinFragment : Fragment() {
                 val warning_phone_author_chk_f = view.findViewById<TextView>(R.id.warning_phone_author_chk_f)
                 val warning_email = view.findViewById<TextView>(R.id.warning_email)
 
-                if(strName.isNotEmpty() && strId.isNotEmpty() && strNkname.isNotEmpty() && strPwd.isNotEmpty() && strPwd2.isNotEmpty() &&
-                    strPhone.isNotEmpty() && strPhoneAuthor.isNotEmpty() && strEmail.isNotEmpty()) {
+                val isUserIdExists = dbHelper.isUserIdExists(strId)
+                val isUserNknameExists = dbHelper.isUserNknameExists(strNkname)
+
+                if(strName.isNotEmpty() && (strId.isNotEmpty() && isUserIdExists == false) && (strNkname.isNotEmpty() && isUserNknameExists == false) && (strPwd.isNotEmpty() && strPwd2.isNotEmpty() && strPwd == strPwd2) &&
+                    strPhone.isNotEmpty() && (strPhoneAuthor.isNotEmpty() && strPhoneAuthor == "2122") && strEmail.isNotEmpty()) {
                     val userId = dbHelper.addUser(strName, strId, strNkname, strPwd, strPhone, strEmail)
 
                     if(userId != -1L) {
@@ -120,11 +92,41 @@ class JoinFragment : Fragment() {
                 if(strId.isEmpty()) {
                     warning_id.setVisibility(View.VISIBLE)
                 }
-                //id 중복확인
+                //id 중복 확인
+                binding.checkIdBtn.setOnClickListener {
+
+                    if(strId.isNotEmpty()) {
+                        if(isUserIdExists) { //중복될 경우
+                            warning_id_chk_f.setVisibility(View.VISIBLE)
+                            warning_id_chk_t.setVisibility(View.GONE)
+                            warning_id.setVisibility(View.GONE)
+                        }
+                        else { //중복되지 않을 경우
+                            warning_id_chk_t.setVisibility(View.VISIBLE)
+                            warning_id_chk_f.setVisibility(View.GONE)
+                            warning_id.setVisibility(View.GONE)
+                        }
+                    }
+                } //checkIdBtn
                 if(strNkname.isEmpty()) {
                     warning_nkname.setVisibility(View.VISIBLE)
                 }
-                //nickname 중복확인
+                //nickname 중복 확인
+                binding.checkNknameBtn.setOnClickListener {
+
+                    if(strNkname.isNotEmpty()) {
+                        if(isUserNknameExists) { //중복될 경우
+                            warning_nkname_chk_f.setVisibility(View.VISIBLE)
+                            warning_nkname_chk_t.setVisibility(View.GONE)
+                            warning_nkname.setVisibility(View.GONE)
+                        }
+                        else { //중복되지 않을 경우
+                            warning_nkname_chk_t.setVisibility(View.VISIBLE)
+                            warning_nkname_chk_f.setVisibility(View.GONE)
+                            warning_nkname.setVisibility(View.GONE)
+                        }
+                    }
+                } // checkNknameBtn
                 if(strPwd.isEmpty()) {
                     warning_pwd.setVisibility(View.VISIBLE)
                 }
@@ -146,6 +148,32 @@ class JoinFragment : Fragment() {
                     warning_phone.setVisibility(View.VISIBLE)
                 }
                 //phone 인증
+                if(strPhone.isNotEmpty()) {
+                    binding.checkPhoneBtn.setOnClickListener {
+                        binding.checkPhoneBtn.setText("재발송")
+                        binding.phoneAuthor.visibility = View.VISIBLE
+                        Toast.makeText(requireContext(), "인증번호 : 2122", Toast.LENGTH_LONG).show()
+                        binding.checkPhoneBtn.setOnClickListener {
+                            Toast.makeText(requireContext(), "인증번호 : 2122", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                    if(strPhoneAuthor.isEmpty()) {
+                        warning_phone_author.setVisibility(View.VISIBLE)
+                    } else { //인증번호를 입력한 경우
+                        binding.checkPhoneAuthorBtn.setOnClickListener {
+                            if(strPhoneAuthor == "2122") { //인증번호가 일치할 경우
+                                warning_phone_author_chk_t.setVisibility(View.VISIBLE)
+                                warning_phone_author_chk_f.setVisibility(View.GONE)
+                                warning_phone_author.setVisibility(View.GONE)
+                            }
+                            else { //인증번호가 일치하지 않은 경우
+                                warning_phone_author_chk_t.setVisibility(View.GONE)
+                                warning_phone_author_chk_f.setVisibility(View.VISIBLE)
+                                warning_phone_author.setVisibility(View.GONE)
+                            }
+                        } // checkPhoneAuthorBtn
+                    }
+                }
                 if(strEmail.isEmpty()) {
                     warning_email.setVisibility(View.VISIBLE)
                 }
@@ -156,7 +184,7 @@ class JoinFragment : Fragment() {
             }
 
         })
-    }   //onViewCreated
+    } // onViewCreated
 }
 
 /*

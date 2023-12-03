@@ -1,17 +1,23 @@
 package com.example.yumyum
 
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.yumyum.databinding.FragmentJoinBinding
+import com.example.yumyum.DBHelper
+import org.w3c.dom.Text
 
-internal interface DBcontract {
+/*internal interface DBcontract {
     companion object {
         const val TABLE_NAME = "USER_T"
         const val USER_NO = "USER_NO"
@@ -31,16 +37,16 @@ internal interface DBcontract {
                 USER_PWD + "TEXT NOT NULL, " +
                 USER_PHONE + "INTEGER NOT NULL, " +
                 USER_EMAIL + "TEXT NOT NULL)"
+        const val SQL_DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME
         const val SQL_LOAD = "SELECT * FROM " + TABLE_NAME
 
     }
-}
-
+}*/
 
 class JoinFragment : Fragment() {
 
     lateinit var binding:FragmentJoinBinding
-
+    private lateinit var dbHelper: DBHelper
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,6 +57,8 @@ class JoinFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        dbHelper = DBHelper(requireContext())
 
         //갤러리
         val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(),
@@ -73,6 +81,7 @@ class JoinFragment : Fragment() {
                 val strPwd = binding.inputPwd.text.toString().trim()
                 val strPwd2 = binding.inputPwd2.text.toString().trim()
                 val strPhone = binding.inputPhone.text.toString().trim()
+                val strPhoneAuthor = binding.inputPhoneAuthor.text.toString().trim()
                 val strEmail = binding.inputEmail.text.toString().trim()
 
                 val warning_name = view.findViewById<TextView>(R.id.warning_name)
@@ -87,10 +96,23 @@ class JoinFragment : Fragment() {
                 val warning_pwd2_chk_t = view.findViewById<TextView>(R.id.warning_id_chk_t)
                 val warning_pwd2_chk_f = view.findViewById<TextView>(R.id.warning_id_chk_f)
                 val warning_phone = view.findViewById<TextView>(R.id.warning_phone)
+                val warning_phone_author = view.findViewById<TextView>(R.id.warning_phone_author)
                 val warning_phone_author_chk_t = view.findViewById<TextView>(R.id.warning_phone_author_chk_t)
                 val warning_phone_author_chk_f = view.findViewById<TextView>(R.id.warning_phone_author_chk_f)
                 val warning_email = view.findViewById<TextView>(R.id.warning_email)
 
+                if(strName.isNotEmpty() && strId.isNotEmpty() && strNkname.isNotEmpty() && strPwd.isNotEmpty() && strPwd2.isNotEmpty() &&
+                    strPhone.isNotEmpty() && strPhoneAuthor.isNotEmpty() && strEmail.isNotEmpty()) {
+                    val userId = dbHelper.addUser(strName, strId, strNkname, strPwd, strPhone, strEmail)
+
+                    if(userId != -1L) {
+                        Toast.makeText(requireContext(), "회원가입 성곻! $userId, $strName", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        Toast.makeText(requireContext(), "회원가입 실패!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else {
                 if(strName.isEmpty()) {
                     warning_name.setVisibility(View.VISIBLE)
                 }
@@ -129,6 +151,8 @@ class JoinFragment : Fragment() {
                 }
                 /*visibility 출처
                 https://heezit.tistory.com/116*/
+
+                }
             }
 
         })

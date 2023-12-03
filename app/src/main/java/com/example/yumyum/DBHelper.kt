@@ -1,15 +1,31 @@
 package com.example.yumyum
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
 
-/*internal interface DBContract {
+class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
     companion object {
-        const val TABLE_NAME = "RECIPE_APPLICATION"
+        const val DB_NAME = "YUMYUM_DB"
+        const val DB_VERSION = 1
+
+        //회원정보
+        const val USER_TABLE_NAME = "USER_T"
+        const val USER_NO = "USER_NO"
+        const val USER_NAME = "USER_NAME"
+        const val USER_ID = "USER_ID"
+        const val USER_NKNAME = "USER_NKNAME"
+        const val USER_PWD = "USER_PWD"
+        const val USER_PHONE = "USER_PHONE"
+        const val USER_EMAIL = "USER_EMAIL"
+        //const val USER_IMG = "USER_IMG"
+
+        //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + USER_TABLE_NAME
+        //const val SQL_USER_LOAD = "SELECT * FROM " + USER_TABLE_NAME
+
+        //요리정보
+        const val RECIPE_TABLE_NAME = "RECIPE_APPLICATION_T"
         const val RECIPE_NO = "RECIPE_NO"
         const val RECIPE_NAME = "RECIPE_NAME"
         const val RECIPE_TYPE = "RECIPE_TYPE"
@@ -44,8 +60,25 @@ import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
         const val RECIPE_I11= "RECIPE_I11"
         const val RECIPE_I12 = "RECIPE_I12"
 
-        const val SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " +
-                TABLE_NAME + "(" +
+        //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + RECIPE_TABLE_NAME
+        //const val SQL_USER_LOAD = "SELECT * FROM " + RECIPE_TABLE_NAME
+
+    }
+
+    override fun onCreate(db: SQLiteDatabase?) {
+        val SQL_CREATE_USER_TABLE = "CREATE TABLE IF NO EXISTS " +
+                USER_TABLE_NAME + "(" +
+                USER_NO + "INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                USER_NAME + "TEXT NOT NULL, " +
+                USER_ID + "TEXT NOT NULL, " +
+                USER_NKNAME + "TEXT NOT NULL, " +
+                USER_PWD + "TEXT NOT NULL, " +
+                USER_PHONE + "TEXT NOT NULL, " +
+                USER_EMAIL + "TEXT NOT NULL)"
+        db?.execSQL(SQL_CREATE_USER_TABLE)
+
+        val SQL_CREATE_RECIPE_TABLE = "CREATE TABLE IF NOT EXISTS " +
+                RECIPE_TABLE_NAME + "(" +
                 RECIPE_NO + " INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                 RECIPE_NAME + " TEXT NOT NULL, " +
                 RECIPE_TYPE + " TEXT NOT NULL, " +
@@ -79,46 +112,31 @@ import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
                 RECIPE_I10 + "INTEGER DEFAULT 0, " +
                 RECIPE_I11 + "INTEGER DEFAULT 0, " +
                 RECIPE_I12 + "INTEGER DEFAULT 0" + ")"
-        const val SQL_DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME
-        const val SQL_LOAD = "SELECT * FROM " + TABLE_NAME
-
-
-    }
-} //DBContract*/
-
-/*internal class DBHelper(context: Context?) :
-    SQLiteOpenHelper(context, DB_FILE, null, DB_VERSION) {
-    override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL(DBContract.SQL_CREATE_TABLE)
+        db?.execSQL(SQL_CREATE_RECIPE_TABLE)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL(DBContract.SQL_DROP_TABLE)
-        onCreate(db)
-    }
-
-    companion object {
-        const val DB_FILE = "yumyum"
-        const val DB_VERSION = 1
-    }
-    }*/
-class RecipeApplicationEnrollActivity : AppCompatActivity() {
-    lateinit var binding : ActivityRecipeApplicationEnrollBinding
-    /*private var dbHelper:DBHelper? = null*/
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
 
-    /*override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        binding = ActivityRecipeApplicationEnrollBinding.inflate(inflater, container, false)
+    //회원추가
+    fun addUser(user_name: String, user_id: String, user_nkname: String, user_pwd: String, user_phone: String, user_email: String):Long {
+        val values = ContentValues()
+        values.put(USER_NAME, user_name)
+        values.put(USER_ID, user_id)
+        values.put(USER_NKNAME, user_nkname)
+        values.put(USER_PWD, user_pwd)
+        values.put(USER_PHONE, user_phone)
+        values.put(USER_EMAIL, user_email)
 
-        val dataList = mutableListOf<MutableMap<String, String>>()  //key, value 필요, key는 NO
+        val db = writableDatabase
+        val rowId = db.insert(USER_TABLE_NAME, null, values)
 
-    } //onCreateView*/
+        db.close()
 
-} //Activity
+        return rowId
+    }
+
+    // 아이디 중복 확인
+
+}

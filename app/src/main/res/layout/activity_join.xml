@@ -48,7 +48,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
 
                 android:orientation="vertical"
                 app:layout_constraintBottom_toTopOf="@+id/button"
@@ -65,8 +65,8 @@
 
                     <ImageView
                         android:id="@+id/profile_img"
-                        android:layout_width="107dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/user" />
 
@@ -75,8 +75,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginBottom="15dp"
-                        android:background="null"
-                        android:text="프로필 사진 선택하기" />
+                        android:background="@null"
+                        android:text="프로필 사진 선택하기"
+                        android:textSize="15sp"
+                        android:textColor="#727272"/>
 
                     <TextView
                         android:id="@+id/join_name"
@@ -86,18 +88,18 @@
                         android:layout_marginBottom="3dp"
                         android:text="이름"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/input_name"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/border_black"
                         android:hint="이름을 입력해주세요"
                         android:inputType="text|textPersonName"
                         android:paddingHorizontal="5dp"
                         android:textColor="#000"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/warning_name"
@@ -118,7 +120,7 @@
                         android:layout_marginBottom="3dp"
                         android:text="아이디"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -130,19 +132,19 @@
                         <EditText
                             android:id="@+id/input_id"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="60dp"
                             android:layout_weight="2"
                             android:hint="아이디를 입력해주세요"
-                            android:background="null"
+                            android:background="@null"
                             android:inputType="text"
                             android:textColor="#000"
-                            android:textSize="13sp" />
+                            android:textSize="15sp" />
 
                         <Button
                             android:id="@+id/check_id_btn"
                             android:layout_width="70dp"
                             android:layout_height="48dp"
-                            android:background="@drawable/main_list2"
+                            android:background="@drawable/border_darkgray"
                             android:textSize="12sp"
                             android:text="중복확인" />
                     </LinearLayout>
@@ -187,7 +189,7 @@
                         android:layout_marginBottom="3dp"
                         android:text="닉네임"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -199,19 +201,19 @@
                         <EditText
                             android:id="@+id/input_nkname"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="60dp"
                             android:layout_weight="2"
-                            android:background="null"
+                            android:background="@null"
                             android:hint="2-10자 닉네임을 입력해주세요"
-                            android:inputType="text|textVisiblePassword"
+                            android:inputType="text"
                             android:textColor="#000"
-                            android:textSize="13sp" />
+                            android:textSize="15sp" />
 
                         <Button
                             android:id="@+id/check_nkname_btn"
                             android:layout_width="70dp"
                             android:layout_height="48dp"
-                            android:background="@drawable/main_list2"
+                            android:background="@drawable/border_darkgray"
                             android:textSize="12sp"
                             android:text="중복확인" />
                     </LinearLayout>
@@ -255,18 +257,18 @@
                         android:layout_marginBottom="3dp"
                         android:text="비밀번호"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/input_pwd"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/border_black"
                         android:hint="비밀번호를 입력해주세요 (영문+숫자 7자 이상)"
                         android:inputType="text|textVisiblePassword"
                         android:paddingHorizontal="5dp"
                         android:textColor="#000"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/warning_pwd"
@@ -287,18 +289,18 @@
                         android:layout_marginBottom="3dp"
                         android:text="비밀번호 확인"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/input_pwd2"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/border_black"
                         android:hint="비밀번호를 한 번 더 입력해주세요"
                         android:inputType="text|textPassword"
                         android:paddingHorizontal="5dp"
                         android:textColor="#000"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/warning_pwd2"
@@ -341,7 +343,7 @@
                         android:layout_marginBottom="3dp"
                         android:text="휴대폰 번호"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -353,19 +355,19 @@
                         <EditText
                             android:id="@+id/input_phone"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="60dp"
                             android:layout_weight="2"
-                            android:background="null"
+                            android:background="@null"
                             android:hint="휴대폰 번호를 입력해주세요"
                             android:inputType="phone"
                             android:textColor="#000"
-                            android:textSize="13sp" />
+                            android:textSize="15sp" />
 
                         <Button
                             android:id="@+id/check_phone_btn"
                             android:layout_width="60dp"
                             android:layout_height="48dp"
-                            android:background="@drawable/main_list2"
+                            android:background="@drawable/border_darkgray"
                             android:textSize="12sp"
                             android:text="인증" />
                     </LinearLayout>
@@ -395,18 +397,18 @@
                         <EditText
                             android:id="@+id/input_phone_author"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="60dp"
                             android:layout_weight="2"
-                            android:background="null"
+                            android:background="@null"
                             android:inputType="number"
                             android:textColor="#000"
-                            android:textSize="13sp" />
+                            android:textSize="15sp" />
 
                         <Button
                             android:id="@+id/check_phone_author_btn"
                             android:layout_width="60dp"
                             android:layout_height="48dp"
-                            android:background="@drawable/main_list2"
+                            android:background="@drawable/border_darkgray"
                             android:text="인증"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -452,18 +454,18 @@
                         android:layout_marginBottom="3dp"
                         android:text="이메일"
                         android:textColor="#000"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/input_email"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/border_black"
                         android:hint="이메일을 입력해주세요"
                         android:inputType="text|textEmailAddress"
                         android:paddingHorizontal="5dp"
                         android:textColor="#000"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/warning_email"

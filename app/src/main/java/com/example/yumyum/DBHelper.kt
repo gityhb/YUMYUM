@@ -66,20 +66,20 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val SQL_CREATE_USER_TABLE = "CREATE TABLE IF NO EXISTS " +
+        val SQL_CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS " +
                 USER_TABLE + "(" +
-                USER_NO + "INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
-                USER_NAME + "TEXT NOT NULL, " +
-                USER_ID + "TEXT NOT NULL, " +
-                USER_NKNAME + "TEXT NOT NULL, " +
-                USER_PWD + "TEXT NOT NULL, " +
-                USER_PHONE + "TEXT NOT NULL, " +
-                USER_EMAIL + "TEXT NOT NULL)"
+                USER_NO + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+                USER_NAME + " TEXT NOT NULL, " +
+                USER_ID + " TEXT NOT NULL, " +
+                USER_NKNAME + " TEXT NOT NULL, " +
+                USER_PWD + " TEXT NOT NULL, " +
+                USER_PHONE + " TEXT NOT NULL, " +
+                USER_EMAIL + " TEXT NOT NULL )"
         db?.execSQL(SQL_CREATE_USER_TABLE)
 
         val SQL_CREATE_RECIPE_TABLE = "CREATE TABLE IF NOT EXISTS " +
                 RECIPE_TABLE + "(" +
-                RECIPE_NO + " INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                RECIPE_NO + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
                 RECIPE_NAME + " TEXT NOT NULL, " +
                 RECIPE_TYPE + " TEXT NOT NULL, " +
                 RECIPE_INGREDIENT + " TEXT NOT NULL, " +
@@ -152,6 +152,17 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
     fun isUserNknameExists(user_nkname: String): Boolean {
         val db = this.readableDatabase
         val cursor = db.rawQuery("SELECT $USER_NKNAME FROM $USER_TABLE WHERE $USER_NKNAME = ?", arrayOf(user_nkname))
+        val exists = cursor.count > 0
+
+        cursor.close()
+
+        return exists
+    }
+
+    //로그인
+    fun isLogin(user_id: String, user_pwd: String): Boolean {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT $USER_ID, $USER_PWD FROM $USER_TABLE WHERE $USER_ID = ?", arrayOf(user_id))
         val exists = cursor.count > 0
 
         cursor.close()

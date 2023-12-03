@@ -1,3 +1,3 @@
 package com.example.yumyum
 
-class ListItem(val name: String, val number:String)
+class ListItem(val title: String, val content:String)

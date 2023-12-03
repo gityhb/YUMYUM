@@ -41,7 +41,7 @@ class WriteActivity : AppCompatActivity(){
 
         val imageView: ImageView = findViewById(R.id.back2001)  //백버튼
         imageView.setOnClickListener {
-            startActivity(Intent(this, CommunityActivity::class.java))
+            startActivity(Intent(this, RecyclerActivity::class.java))
         }
     }
 }

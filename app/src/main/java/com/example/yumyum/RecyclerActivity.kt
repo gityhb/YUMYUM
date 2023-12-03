@@ -10,12 +10,20 @@ import com.example.yumyum.databinding.ActivityRecyclerBinding
 class RecyclerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerBinding
     val itemList = arrayListOf<ListItem>()      // 아이템 배열
-    val listAdapter = ListAdapter(itemList)     // 어댑터
+    val listAdapter = ListAdapter(itemList) { clickedItem ->
+        // 아이템 클릭 처리, 예를 들어 다른 액티비티로 이동
+        val intent = Intent(this, WriteActivity::class.java)
+        intent.putExtra("Title", clickedItem.title)
+        intent.putExtra("Content", clickedItem.content)
+        startActivity(intent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.rvList.adapter = listAdapter
 
         // 레이아웃 매니저와 어댑터 설정
         binding.rvList.layoutManager =

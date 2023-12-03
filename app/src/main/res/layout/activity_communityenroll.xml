@@ -84,14 +84,14 @@
                 android:paddingLeft="3dp">
 
                 <ImageView
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/camera_btn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/img3" />
 
                 <ImageView
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/map_btn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="5dp"

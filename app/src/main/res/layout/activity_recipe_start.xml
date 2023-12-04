@@ -124,7 +124,7 @@
             android:src="@drawable/timer" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/recipe_time_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="25dp"
@@ -171,7 +171,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/recipe_name_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="토마토 파스타"
@@ -208,7 +208,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/recipe_ingredient_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="파스타 면, 파스타 소스, 소금"

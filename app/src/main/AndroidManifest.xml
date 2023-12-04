@@ -13,14 +13,17 @@
         android:theme="@style/Theme.YUMYUM.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".RecipeSearchActivity"
+            android:exported="true" />
+        <activity
             android:name=".MyPageActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RecipeStartActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RecipeContinueActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".JoinActivity"
             android:exported="true"

@@ -162,11 +162,24 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
     //로그인
     fun isLogin(user_id: String, user_pwd: String): Boolean {
         val db = this.readableDatabase
-        val cursor = db.rawQuery("SELECT $USER_ID, $USER_PWD FROM $USER_TABLE WHERE $USER_ID = ?", arrayOf(user_id))
-        val exists = cursor.count > 0
+        val columns = arrayOf(USER_ID, USER_PWD)
+        val cursor = db.query(USER_TABLE, columns, "$USER_ID = ?", arrayOf(user_id), null, null, null)
 
-        cursor.close()
+        if(cursor != null && cursor.moveToFirst()) {
+            val pwdIndex = cursor.getColumnIndex(USER_PWD)
+            if(pwdIndex != -1) {
+                val storedPwd = cursor.getString(pwdIndex)
 
-        return exists
+                cursor.close()
+                db.close()
+
+                return user_pwd == storedPwd
+            }
+        }
+
+        cursor?.close()
+        db.close()
+
+        return false
     }
 }

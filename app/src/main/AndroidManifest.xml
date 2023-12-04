@@ -20,7 +20,8 @@
             android:exported="false" />
         <activity
             android:name=".JoinActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".LoginActivity"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true" />

@@ -22,8 +22,6 @@ class JoinActivity : AppCompatActivity() {
 
         dbHelper = DBHelper(this)
 
-
-
         //갤러리
         val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(),
             object : ActivityResultCallback<Uri?> {
@@ -43,8 +41,8 @@ class JoinActivity : AppCompatActivity() {
 
             if(strId.isNotEmpty()) {
                 if(isUserIdExists) { //중복될 경우
-                    binding.warningIdChkT.visibility = View.VISIBLE
-                    binding.warningIdChkF.visibility = View.GONE
+                    binding.warningIdChkT.visibility = View.GONE
+                    binding.warningIdChkF.visibility = View.VISIBLE
                     binding.warningId.visibility = View.GONE
                 }
                 else { //중복되지 않을 경우

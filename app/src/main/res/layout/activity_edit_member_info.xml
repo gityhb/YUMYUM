@@ -113,7 +113,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/join_name"
+                        android:id="@+id/edit_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -123,7 +123,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/input_name"
+                        android:id="@+id/_edit_input_name"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:text="오송윤"
@@ -134,7 +134,7 @@
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/warning_name"
+                        android:id="@+id/edit_warning_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -145,7 +145,7 @@
                         android:visibility="invisible" />
 
                     <TextView
-                        android:id="@+id/join_id"
+                        android:id="@+id/edit_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -162,7 +162,7 @@
                         android:paddingHorizontal="5dp">
 
                         <EditText
-                            android:id="@+id/input_id"
+                            android:id="@+id/edit_input_id"
                             android:text="cookie0929"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
@@ -175,7 +175,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/warning_id"
+                        android:id="@+id/edit_warning_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -187,7 +187,7 @@
 
 
                     <TextView
-                        android:id="@+id/join_nkname"
+                        android:id="@+id/edit_nkname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -204,7 +204,7 @@
                         android:paddingHorizontal="5dp">
 
                         <EditText
-                            android:id="@+id/input_nkname"
+                            android:id="@+id/edit_input_nkname"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:layout_weight="2"
@@ -215,7 +215,7 @@
                             android:textSize="13sp" />
 
                         <Button
-                            android:id="@+id/check_nkname_btn"
+                            android:id="@+id/edit_check_nkname_btn"
                             android:layout_width="70dp"
                             android:layout_height="36dp"
                             android:background="@drawable/main_list2"
@@ -224,7 +224,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/warning_nkname"
+                        android:id="@+id/edit_warning_nkname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -234,7 +234,7 @@
                         android:textSize="10sp"
                         android:visibility="invisible" />
                     <TextView
-                        android:id="@+id/warning_nkname_chk_t"
+                        android:id="@+id/edit_warning_nkname_chk_t"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -244,7 +244,7 @@
                         android:textSize="10sp"
                         android:visibility="gone" />
                     <TextView
-                        android:id="@+id/warning_nkname_chk_f"
+                        android:id="@+id/edit_warning_nkname_chk_f"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -255,7 +255,7 @@
                         android:visibility="gone" />
 
                     <TextView
-                        android:id="@+id/join_pwd"
+                        android:id="@+id/edit_pwd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -265,7 +265,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/input_pwd"
+                        android:id="@+id/edit_input_pwd"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:background="@drawable/border_black"
@@ -277,7 +277,7 @@
 
 
                     <EditText
-                        android:id="@+id/input_pwd1"
+                        android:id="@+id/edit_input_pwd1"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="5dp"
@@ -289,7 +289,7 @@
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/warning_pwd"
+                        android:id="@+id/edit_warning_pwd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"
@@ -300,7 +300,7 @@
                         android:visibility="invisible" />
 
                     <TextView
-                        android:id="@+id/warning_pwd2_chk_t"
+                        android:id="@+id/edit_warning_pwd2_chk_t"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="2sp"

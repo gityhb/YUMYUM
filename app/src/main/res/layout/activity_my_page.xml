@@ -40,8 +40,9 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="508dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,8 +132,8 @@
                 android:id="@+id/frameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginTop="3dp"
                 android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/mypage_border"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -210,9 +211,9 @@
                         android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
                         android:layout_weight="1"
-                        android:text="ON" />
+                        android:text="ON"
+                        android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -247,20 +248,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="고객센터"
                         android:textColor="#000"
-                        android:textStyle="bold"
                         android:textSize="26sp"
-                        android:text="고객센터" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView36"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textStyle="bold"
+                        android:text="공지사항"
                         android:textColor="#000"
                         android:textSize="26sp"
-                        android:text="공지사항" />
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <TextView
@@ -268,11 +269,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:textSize="26sp"
+                    android:text="약관 및 정책"
 
                     android:textColor="#000"
-                    android:textStyle="bold"
-                    android:text="약관 및 정책" />
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -284,10 +285,10 @@
                     android:id="@+id/textView38"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:textSize="20sp"
                     android:layout_marginStart="15dp"
                     android:layout_weight="1"
-                    android:text="기타" />
+                    android:text="기타"
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -306,18 +307,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="#000"
                         android:background="#00ffffff"
-                        android:text="로그아웃" />
+                        android:text="로그아웃"
+                        android:textColor="#000" />
 
                     <Button
                         android:id="@+id/button11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00ffffff"
-                        android:textColor="#000"
                         android:layout_weight="1"
-                        android:text="탈퇴하기" />
+                        android:background="#00ffffff"
+                        android:text="탈퇴하기"
+                        android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
 

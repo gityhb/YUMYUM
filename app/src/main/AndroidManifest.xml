@@ -13,10 +13,13 @@
         android:theme="@style/Theme.YUMYUM.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".ui.RecipeStartActivity"
+            android:name=".MyPageActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.RecipeContinueActivity"
+            android:name=".RecipeStartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeContinueActivity"
             android:exported="false" />
         <activity
             android:name=".JoinActivity"

@@ -69,7 +69,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/timerTextView"
                 android:layout_width="90dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="145dp"
@@ -141,7 +141,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/startButton"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/recipe_continue_button1"
@@ -150,7 +150,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/stopButton"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"

@@ -35,7 +35,7 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/back_btn"
                     android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/back" />

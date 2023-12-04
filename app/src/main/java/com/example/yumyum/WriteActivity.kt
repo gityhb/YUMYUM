@@ -65,4 +65,3 @@ class WriteActivity : AppCompatActivity() {
         commentAdapter.notifyDataSetChanged()
     }
     }
-}

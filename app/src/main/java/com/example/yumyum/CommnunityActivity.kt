@@ -4,15 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.yumyum.databinding.ActivityRecyclerBinding
+import com.example.yumyum.databinding.ActivityCommunityBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class RecyclerActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityRecyclerBinding
+class CommnunityActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCommunityBinding
     val itemList = arrayListOf<ListItem>()      // 아이템 배열
     val listAdapter = ListAdapter(itemList) { clickedItem ->
         // 아이템 클릭 처리, 예를 들어 다른 액티비티로 이동
-        val intent = Intent(this, WriteActivity::class.java)
+        val intent = Intent(this, CommunityDetailActivity::class.java)
         intent.putExtra("Title", clickedItem.title)
         intent.putExtra("Content", clickedItem.content)
         startActivity(intent)
@@ -20,7 +20,7 @@ class RecyclerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRecyclerBinding.inflate(layoutInflater)
+        binding = ActivityCommunityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.rvList.adapter = listAdapter
@@ -58,7 +58,7 @@ class RecyclerActivity : AppCompatActivity() {
         val add_btn: FloatingActionButton = findViewById(R.id.add)
 
         add_btn.setOnClickListener{
-            startActivity(Intent(this, CommunityenrollActivity::class.java))  // 인텐트를 생성해줌,
+            startActivity(Intent(this, CommunityEnrollActivity::class.java))  // 인텐트를 생성해줌,
         } //+ 누르면 글쓰기창로
 
 

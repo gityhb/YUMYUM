@@ -7,16 +7,16 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.yumyum.databinding.ActivityWriteBinding
+import com.example.yumyum.databinding.ActivityCommunityDetailBinding
 
-class WriteActivity : AppCompatActivity() {
+class CommunityDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityWriteBinding
+    private lateinit var binding: ActivityCommunityDetailBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityWriteBinding.inflate(layoutInflater)
+        binding = ActivityCommunityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val title = intent.getStringExtra("Title")

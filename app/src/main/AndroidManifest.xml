@@ -32,7 +32,7 @@
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".WriteActivity"
+            android:name=".CommunityDetailActivity"
             android:exported="true"
             android:label="글 상세페이지" />
         <activity
@@ -42,10 +42,10 @@
             android:name=".ListAdapter"
             android:exported="true" />
         <activity
-            android:name=".RecyclerActivity"
+            android:name=".CommnunityActivity"
             android:exported="true" />
         <activity
-            android:name=".CommunityenrollActivity"
+            android:name=".CommunityEnrollActivity"
             android:exported="true"
             android:label="글쓰는 창" />
         <activity

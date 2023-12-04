@@ -9,13 +9,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.yumyum.databinding.ActivityCommunityenrollBinding
+import com.example.yumyum.databinding.ActivityCommunityEnrollBinding
 
-class CommunityenrollActivity : AppCompatActivity() {
+class CommunityEnrollActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_communityenroll)
-        val binding = ActivityCommunityenrollBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_community_enroll)
+        val binding = ActivityCommunityEnrollBinding.inflate(layoutInflater)
 
 
         val buttonRegister = findViewById<Button>(R.id.button_register)
@@ -28,7 +28,7 @@ class CommunityenrollActivity : AppCompatActivity() {
             val content = editTextContent2.text.toString()
             // 버튼이 눌리면 EditText에 있는 내용 저장
 
-            val Listintent = Intent(this , RecyclerActivity :: class.java)
+            val Listintent = Intent(this , CommnunityActivity :: class.java)
             // 인텐트 생성
 
             Listintent.putExtra("Title", title) // .putExtra() 메소드로 데이터 전달준비
@@ -59,7 +59,7 @@ class CommunityenrollActivity : AppCompatActivity() {
         val imageView: ImageView = findViewById(R.id.back_btn)
 
         imageView.setOnClickListener {
-            startActivity(Intent(this@CommunityenrollActivity, RecyclerActivity::class.java))
+            startActivity(Intent(this@CommunityEnrollActivity, CommnunityActivity::class.java))
         }
     }
 }

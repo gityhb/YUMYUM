@@ -2,6 +2,7 @@ package com.example.yumyum
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityCommunityBinding
@@ -62,11 +63,14 @@ class CommunityActivity : AppCompatActivity() {
         } //+ 누르면 글쓰기창로
 
 
-        /*item_list.setOnClickListener{
-            val intent = Intent(this, WriteActivity::class.java)  // 인텐트를 생성해줌,
-            intent.putExtra("Title", title)
-            intent.putExtra("Content", content)
-            startActivity(intent)
-        } //제목 누르면 InnerActivity로*/
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+
+        add_btn.setOnClickListener{
+            startActivity(Intent(this, CommunityEnrollActivity::class.java))  // 인텐트를 생성해줌,
+        } //+ 누르면 글쓰기창로
     }
 }

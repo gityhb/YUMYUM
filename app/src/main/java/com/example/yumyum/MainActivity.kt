@@ -1,6 +1,8 @@
 package com.example.yumyum
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityMainBinding
@@ -51,7 +53,25 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)*/
 
+        val community: Button = findViewById(R.id.btn_community)
+        community.setOnClickListener {
+            startActivity(Intent(this, CommunityActivity::class.java))
+        }
 
+        val application: Button = findViewById(R.id.btn_recipe_application)
+        application.setOnClickListener {
+            startActivity(Intent(this, RecipeApplicationEnrollActivity::class.java))
+        }
+
+        /* val community: Button = findViewById(R.id.btn_community)
+        community.setOnClickListener {
+            startActivity(Intent(this, CommunityActivity::class.java))
+        } 요리하기 페이지로 이동
+
+        val community: Button = findViewById(R.id.btn_community)
+        community.setOnClickListener {
+            startActivity(Intent(this, CommunityActivity::class.java))
+        }  재료활용 페이지로 이동 */
 
     }
 }

@@ -56,10 +56,9 @@ class CommunityEnrollActivity : AppCompatActivity() {
         } /*일단 카메라 클릭시 카메라 앱 실행*/
 
 
-        val imageView: ImageView = findViewById(R.id.back_btn)
-
-        imageView.setOnClickListener {
-            startActivity(Intent(this@CommunityEnrollActivity, CommunityActivity::class.java))
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, CommunityActivity::class.java))
         }
     }
 }

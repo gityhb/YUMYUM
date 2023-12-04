@@ -1,8 +1,10 @@
 package com.example.yumyum
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -44,6 +46,17 @@ class RecipeContinueActivity : AppCompatActivity() {
                 startTimer(12 * 60 * 1000) // 5분을 설정하려면 여기 값을 조정
             }
         }
+
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, RecipeStartActivity::class.java))
+        }
+
+        val nextButton: Button = findViewById(R.id.next_btn)
+        nextButton.setOnClickListener {
+            startActivity(Intent(this, RecipeFinishActivity::class.java))
+        }
+
     }
 
 
@@ -83,4 +96,6 @@ class RecipeContinueActivity : AppCompatActivity() {
         val timeText = String.format("%02d:%02d", minutes, seconds)
         timerTextView.text = timeText
     }
+
+
 }

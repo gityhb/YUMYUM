@@ -3,6 +3,7 @@ package com.example.yumyum
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityLoginBinding
@@ -40,5 +41,10 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intentJ)
             }
         })
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
     } // onCreate
 }

@@ -1,9 +1,11 @@
 package com.example.yumyum
 
 import CommentAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,10 +49,10 @@ class CommunityDetailActivity : AppCompatActivity() {
             commentAdapter.notifyDataSetChanged()
         }
 
-        /*val backButton: ImageView = findViewById(R.id.back_btn)
+        val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
-            startActivity(Intent(this, RecyclerActivity::class.java))
-        }*/
+            startActivity(Intent(this, CommunityActivity::class.java))
+        }
 
         binding.coList.adapter = commentAdapter
 

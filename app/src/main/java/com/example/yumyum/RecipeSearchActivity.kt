@@ -2,6 +2,7 @@ package com.example.yumyum
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecipeSearchBinding
@@ -36,6 +37,11 @@ class RecipeSearchActivity : AppCompatActivity() {
         recipeList.add(RecipeItem("고기구이", "고기, 후추, 기름장", "10분"))
         recipeList.add(RecipeItem("라면", "라면, 파", "3분"))
         // 리스트가 변경됨을 어댑터에 알림
+
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
     }
 }

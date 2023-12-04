@@ -1,9 +1,8 @@
 package com.example.yumyum
 
-import android.content.Context
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
 
@@ -110,7 +109,14 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
     }
+
+
 
     /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

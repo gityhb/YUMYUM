@@ -56,7 +56,7 @@ class CommunityenrollActivity : AppCompatActivity() {
         } /*일단 카메라 클릭시 카메라 앱 실행*/
 
 
-        val imageView: ImageView = findViewById(R.id.back2002)
+        val imageView: ImageView = findViewById(R.id.back_btn)
 
         imageView.setOnClickListener {
             startActivity(Intent(this@CommunityenrollActivity, RecyclerActivity::class.java))

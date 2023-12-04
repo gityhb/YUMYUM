@@ -2,10 +2,10 @@ package com.example.yumyum
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecyclerBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RecyclerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerBinding
@@ -55,7 +55,7 @@ class RecyclerActivity : AppCompatActivity() {
             listAdapter.notifyDataSetChanged()
         }
 
-        val add_btn: ImageView = findViewById(R.id.add)
+        val add_btn: FloatingActionButton = findViewById(R.id.add)
 
         add_btn.setOnClickListener{
             startActivity(Intent(this, CommunityenrollActivity::class.java))  // 인텐트를 생성해줌,

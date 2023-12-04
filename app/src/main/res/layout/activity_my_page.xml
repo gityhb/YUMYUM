@@ -227,13 +227,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
+                    android:textSize="16sp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
                     android:text="문의 및 알림" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="15dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -250,7 +253,7 @@
                         android:layout_weight="1"
                         android:text="고객센터"
                         android:textColor="#000"
-                        android:textSize="26sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -260,7 +263,7 @@
                         android:layout_weight="1"
                         android:text="공지사항"
                         android:textColor="#000"
-                        android:textSize="26sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -270,15 +273,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
                     android:text="약관 및 정책"
-
                     android:textColor="#000"
-                    android:textSize="26sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_margin="15dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -295,6 +298,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:gravity="center_vertical"
+                android:layout_marginHorizontal="15dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -308,6 +312,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="#00ffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         android:text="로그아웃"
                         android:textColor="#000" />
 
@@ -317,6 +323,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="#00ffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         android:text="탈퇴하기"
                         android:textColor="#000" />
                 </LinearLayout>

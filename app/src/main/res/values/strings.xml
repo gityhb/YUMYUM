@@ -4,7 +4,6 @@
     <string name="title_other">OTHER</string>
     <string name="title_my">MY</string>
 
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -28,5 +27,9 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nav_recipe"><font size="20">레시피</font></string>
+    <string name="nav_community"><font size="20">커뮤니티</font></string>
+    <string name="nav_my"><font size="20">내 정보</font></string>
 
 </resources>

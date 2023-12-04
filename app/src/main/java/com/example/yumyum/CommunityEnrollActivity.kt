@@ -28,7 +28,7 @@ class CommunityEnrollActivity : AppCompatActivity() {
             val content = editTextContent2.text.toString()
             // 버튼이 눌리면 EditText에 있는 내용 저장
 
-            val Listintent = Intent(this , CommnunityActivity :: class.java)
+            val Listintent = Intent(this , CommunityActivity :: class.java)
             // 인텐트 생성
 
             Listintent.putExtra("Title", title) // .putExtra() 메소드로 데이터 전달준비
@@ -59,7 +59,7 @@ class CommunityEnrollActivity : AppCompatActivity() {
         val imageView: ImageView = findViewById(R.id.back_btn)
 
         imageView.setOnClickListener {
-            startActivity(Intent(this@CommunityEnrollActivity, CommnunityActivity::class.java))
+            startActivity(Intent(this@CommunityEnrollActivity, CommunityActivity::class.java))
         }
     }
 }

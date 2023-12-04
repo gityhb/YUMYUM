@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityCommunityBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class CommnunityActivity : AppCompatActivity() {
+class CommunityActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommunityBinding
     val itemList = arrayListOf<ListItem>()      // 아이템 배열
     val listAdapter = ListAdapter(itemList) { clickedItem ->

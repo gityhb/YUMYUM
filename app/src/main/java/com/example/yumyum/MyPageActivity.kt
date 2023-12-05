@@ -19,6 +19,7 @@ class MyPageActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 // FragmentManager를 통해 프래그먼트를 교체합니다.
 
+
                 // 선택된 탭에 따라 프래그먼트를 설정합니다.
                 when (tab?.text) {
                     "찜한 레시피" -> {
@@ -49,6 +50,9 @@ class MyPageActivity : AppCompatActivity() {
             }
         })
 
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, LoveFragment())
+            .commit()
 
 
         val backButton: ImageView = findViewById(R.id.back_btn)

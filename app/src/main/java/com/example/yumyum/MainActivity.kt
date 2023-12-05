@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         R.id.like_no7
     )
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -83,18 +82,6 @@ class MainActivity : AppCompatActivity() {
             likeYes.setOnClickListener{ toggleVisibility(likeYes, likeNo) }
             likeNo.setOnClickListener{ toggleVisibility(likeYes, likeNo) }
         }
-        binding.likeYes1.setOnClickListener {
-            binding.likeYes1.visibility = View.GONE
-            binding.likeNo1.visibility = View.VISIBLE
-        }
-        binding.likeNo1.setOnClickListener{
-            binding.likeNo1.visibility = View.GONE
-            binding.likeYes1.visibility = View.VISIBLE
-        }
-
-
-
-
 
         /*val navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each
@@ -129,11 +116,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun toggleVisibility(likeYes: ImageView, likeNo: ImageView) {
         if(likeYes.visibility == View.VISIBLE) {
-            likeYes.visibility = View.VISIBLE
-            likeNo.visibility = View.GONE
-        } else {
             likeYes.visibility = View.GONE
             likeNo.visibility = View.VISIBLE
+        } else {
+            likeYes.visibility = View.VISIBLE
+            likeNo.visibility = View.GONE
         }
     }
+
+    /*출처: chatGPT*/
 }

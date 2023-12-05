@@ -25,6 +25,12 @@ class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onI
         holder.time.text = recipeItem.time
     }
 
+    fun updateList(newList: List<RecipeItem>) {
+        recipeList.clear()
+        recipeList.addAll(newList)
+        notifyDataSetChanged()
+    }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val recipe: TextView = itemView.findViewById(R.id.recipe_name)
         val ingredient: TextView = itemView.findViewById(R.id.recipe_ingredient)

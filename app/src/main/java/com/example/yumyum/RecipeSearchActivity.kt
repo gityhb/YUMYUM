@@ -2,6 +2,9 @@ package com.example.yumyum
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,11 +35,29 @@ class RecipeSearchActivity : AppCompatActivity() {
         binding.rcList.adapter = recipeAdapter
 
         // 아이템 추가
-        recipeList.add(RecipeItem("계란후라이", "계란, 소금", "10분"))
+        recipeList.add(RecipeItem("egg", "계란, 소금", "10분"))
         recipeList.add(RecipeItem("멘보샤", "새우, 식빵", "30분"))
         recipeList.add(RecipeItem("고기구이", "고기, 후추, 기름장", "10분"))
         recipeList.add(RecipeItem("라면", "라면, 파", "3분"))
         // 리스트가 변경됨을 어댑터에 알림
+
+        /* 레시피 검색부분, 출처는 gpt > 출처 수정예정 */
+        val searchEditText: EditText = findViewById(R.id.recipe_search)
+
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                // 검색어가 변경될 때마다 아이템을 필터링하여 어댑터에 적용
+                val filteredList = recipeList.filter { recipeItem ->
+                    recipeItem.recipe.contains(s.toString(), ignoreCase = true)
+                }
+
+                recipeAdapter.updateList(filteredList)
+            }
+        })
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {

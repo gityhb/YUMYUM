@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#FFFFFF"/>
+            <corners android:radius="5dp"/>
+            <stroke android:color="#636363" android:width="2dp" />
+        </shape>
+    </item>
+</selector>
+
+    <!--출처: https://gwi02379.tistory.com/15 [단비의 개발블로그:티스토리]-->

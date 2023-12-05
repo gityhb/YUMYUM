@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             dbHelper.addRecipe(recipe)
         }*/
 
-        val navView: BottomNavigationView = binding.navView
+        /*val navView: BottomNavigationView = binding.navView
 
         val partImg: ImageView = findViewById(R.id.food1)
         partImg.clipToOutline = true

@@ -2,8 +2,11 @@ package com.example.yumyum
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
 
 /*internal interface DBContract {
@@ -110,6 +113,23 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
         binding = ActivityRecipeApplicationEnrollBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val applicationList = arrayListOf<ApplicationItem>()
+        val applicationAdapter = ApplicationAdapter(applicationList)
+
+        val addRecipeBtn: Button = findViewById(R.id.application_add_btn)
+
+        addRecipeBtn.setOnClickListener {
+            val recipecontent = findViewById<EditText>(R.id.recipe_i1)
+            val newApplication = ApplicationItem(recipecontent.text.toString())
+            applicationList.add(newApplication)
+            applicationAdapter.notifyDataSetChanged()
+        }
+
+        binding.raList.adapter = applicationAdapter
+        binding.raList.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        applicationList.add(ApplicationItem(""))
+        applicationAdapter.notifyDataSetChanged()
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {

@@ -135,13 +135,35 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food1" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food1" />
+
+                        <ImageView
+                            android:id="@+id/like_no1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
 
                     <TextView
                         android:id="@+id/f1"
@@ -159,13 +181,36 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food2" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food2" />
+
+                        <ImageView
+                            android:id="@+id/like_no2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
+
 
                     <TextView
                         android:id="@+id/f2"
@@ -183,13 +228,35 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food3"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food3" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food3"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food3" />
+
+                        <ImageView
+                            android:id="@+id/like_no3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
 
                     <TextView
                         android:id="@+id/f3"
@@ -207,13 +274,35 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food4"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food4" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food4"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food4" />
+
+                        <ImageView
+                            android:id="@+id/like_no4"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes4"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
 
                     <TextView
                         android:id="@+id/f4"
@@ -271,13 +360,35 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food5"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food5" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food5"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food5" />
+
+                        <ImageView
+                            android:id="@+id/like_no5"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes5"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
 
                     <TextView
                         android:id="@+id/f5"
@@ -296,13 +407,35 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food6"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food6" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food6"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food6" />
+
+                        <ImageView
+                            android:id="@+id/like_no6"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes6"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
 
                     <TextView
                         android:id="@+id/f6"
@@ -320,13 +453,35 @@
                     android:layout_marginHorizontal="5dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/food7"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/border_img"
-                        android:padding="5dp"
-                        android:src="@drawable/food7" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/food7"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border_img"
+                            android:padding="5dp"
+                            android:src="@drawable/food7" />
+
+                        <ImageView
+                            android:id="@+id/like_no7"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes7"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/redheart" />
+                    </FrameLayout>
 
                     <TextView
                         android:id="@+id/f7"

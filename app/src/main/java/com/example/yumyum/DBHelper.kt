@@ -24,7 +24,55 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         //const val SQL_DROP_USER_TABLE = "DROP TABLE IF EXISTS " + USER_TABLE
         //const val SQL_USER_LOAD = "SELECT * FROM " + USER_TABLE
 
-        //요리정보
+        // 요리정보
+        const val COOK_TABLE = "COOK_T"
+        const val COOK_NO = "COOK_NO"
+        const val COOK_NAME = "COOK_NAME"
+        const val COOK_TYPE = "COOK_TYPE"
+        const val COOK_INGREDIENT = "COOK_INGREDIENT"
+        const val COOK_TOOL = "COOK_TOOL"
+        const val COOK_IMG = "COOK_IMG"
+        const val COOK_USER = "COOK_USER"
+        const val COOK_LEVEL = "COOK_LEVEL"
+        const val COOK_LIKE = "COOK_LIKE"
+        const val COOK_C1 = "COOK_C1"
+        const val COOK_C2 = "COOK_C2"
+        const val COOK_C3 = "COOK_C3"
+        const val COOK_C4 = "COOK_C4"
+        const val COOK_C5 = "COOK_C5"
+        const val COOK_C6 = "COOK_C6"
+        const val COOK_C7 = "COOK_C7"
+        const val COOK_C8 = "COOK_C8"
+        const val COOK_C9 = "COOK_C9"
+        const val COOK_C10 = "COOK_C10"
+        const val COOK_C11= "COOK_C11"
+        const val COOK_C12 = "COOK_C12"
+        const val COOK_T1 = "COOK_T1"
+        const val COOK_T2 = "COOK_T2"
+        const val COOK_T3 = "COOK_T3"
+        const val COOK_T4 = "COOK_T4"
+        const val COOK_T5 = "COOK_T5"
+        const val COOK_T6 = "COOK_T6"
+        const val COOK_T7 = "COOK_T7"
+        const val COOK_T8 = "COOK_T8"
+        const val COOK_T9 = "COOK_T9"
+        const val COOK_T10 = "COOK_T10"
+        const val COOK_T11= "COOK_T11"
+        const val COOK_T12 = "COOK_T12"
+        const val COOK_I1 = "COOK_I1"
+        const val COOK_I2 = "COOK_I2"
+        const val COOK_I3 = "COOK_I3"
+        const val COOK_I4 = "COOK_I4"
+        const val COOK_I5 = "COOK_I5"
+        const val COOK_I6 = "COOK_I6"
+        const val COOK_I7 = "COOK_I7"
+        const val COOK_I8 = "COOK_I8"
+        const val COOK_I9 = "COOK_I9"
+        const val COOK_I10 = "COOK_I10"
+        const val COOK_I11= "COOK_I11"
+        const val COOK_I12 = "COOK_I12"
+
+        //요리신청
         const val RECIPE_TABLE = "RECIPE_APPLICATION_T"
         const val RECIPE_NO = "RECIPE_NO"
         const val RECIPE_NAME = "RECIPE_NAME"
@@ -113,6 +161,55 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
                 RECIPE_I11 + "INTEGER DEFAULT 0, " +
                 RECIPE_I12 + "INTEGER DEFAULT 0" + ")"
         db?.execSQL(SQL_CREATE_RECIPE_TABLE)
+
+        val SQL_CREATE_COOK_TABLE = "CREATE TABLE IF NOT EXISTS " +
+                COOK_TABLE + "(" +
+                COOK_NO + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+                COOK_NAME + " TEXT NOT NULL, " +
+                COOK_TYPE + " TEXT NOT NULL, " +
+                COOK_INGREDIENT + " TEXT NOT NULL, " +
+                COOK_TOOL + " TEXT NOT NULL, " +
+                COOK_IMG + " TEXT NOT NULL, " +
+                COOK_USER + " TEXT NOT NULL, " +  //FOREIGN KEY
+                COOK_LEVEL + " INTEGER NULL, " +
+                COOK_LIKE + " INTEGER NULL, " +
+                COOK_C1 + " TEXT NOT NULL, " +
+                COOK_C2 + " TEXT NULL, " +
+                COOK_C3 + " TEXT NULL, " +
+                COOK_C4 + " TEXT NULL, " +
+                COOK_C5 + " TEXT NULL, " +
+                COOK_C6 + " TEXT NULL, " +
+                COOK_C7 + " TEXT NULL, " +
+                COOK_C8 + " TEXT NULL, " +
+                COOK_C9 + " TEXT NULL, " +
+                COOK_C10 + " TEXT NULL, " +
+                COOK_C11 + " TEXT NULL, " +
+                COOK_C12 + " TEXT NULL " +
+                COOK_T1 + " INTEGER NOT NULL, " +
+                COOK_T2 + " INTEGER NULL, " +
+                COOK_T3 + " INTEGER NULL, " +
+                COOK_T4 + " INTEGER NULL, " +
+                COOK_T5 + " INTEGER NULL, " +
+                COOK_T6 + " INTEGER NULL, " +
+                COOK_T7 + " INTEGER NULL, " +
+                COOK_T8 + " INTEGER NULL, " +
+                COOK_T9 + " INTEGER NULL, " +
+                COOK_T10 + " INTEGER NULL, " +
+                COOK_T11 + " INTEGER NULL, " +
+                COOK_T12 + " INTEGER NULL " +
+                COOK_I1 + " TEXT NOT NULL, " +
+                COOK_I2 + " TEXT NULL, " +
+                COOK_I3 + " TEXT NULL, " +
+                COOK_I4 + " TEXT NULL, " +
+                COOK_I5 + " TEXT NULL, " +
+                COOK_I6 + " TEXT NULL, " +
+                COOK_I7 + " TEXT NULL, " +
+                COOK_I8 + " TEXT NULL, " +
+                COOK_I9 + " TEXT NULL, " +
+                COOK_I10 + " TEXT NULL, " +
+                COOK_I11 + " TEXT NULL, " +
+                COOK_I12 + " TEXT NULL "+ ")"
+        db?.execSQL(SQL_CREATE_COOK_TABLE)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -182,4 +279,117 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
 
         return false
     }
+
+    //레시피추가
+    fun addRecipe(recipe: Recipe) {
+        val values = ContentValues()
+        values.put(COOK_NAME, recipe.cook_name)
+        values.put(COOK_TYPE, recipe.cook_type)
+        values.put(COOK_INGREDIENT, recipe.cook_ingredient)
+        values.put(COOK_TOOL, recipe.cook_tool)
+        values.put(COOK_IMG, recipe.cook_img)
+        values.put(COOK_USER, recipe.cook_user)
+        values.put(COOK_LEVEL, recipe.cook_level)
+        values.put(COOK_LIKE, recipe.cook_like)
+        values.put(COOK_C1, recipe.cook_c1)
+        values.put(COOK_C2, recipe.cook_c2)
+        values.put(COOK_C3, recipe.cook_c3)
+        values.put(COOK_C4, recipe.cook_c4)
+        values.put(COOK_C5, recipe.cook_c5)
+        values.put(COOK_C6, recipe.cook_c6)
+        values.put(COOK_C7, recipe.cook_c7)
+        values.put(COOK_C8, recipe.cook_c8)
+        values.put(COOK_C9, recipe.cook_c9)
+        values.put(COOK_C10, recipe.cook_c10)
+        values.put(COOK_C11, recipe.cook_c11)
+        values.put(COOK_C12, recipe.cook_c12)
+        values.put(COOK_T1, recipe.cook_t1)
+        values.put(COOK_T2, recipe.cook_t2)
+        values.put(COOK_T3, recipe.cook_t3)
+        values.put(COOK_T4, recipe.cook_t4)
+        values.put(COOK_T5, recipe.cook_t5)
+        values.put(COOK_T6, recipe.cook_t6)
+        values.put(COOK_T7, recipe.cook_t7)
+        values.put(COOK_T8, recipe.cook_t8)
+        values.put(COOK_T9, recipe.cook_t9)
+        values.put(COOK_T10, recipe.cook_t10)
+        values.put(COOK_T11, recipe.cook_t11)
+        values.put(COOK_T12, recipe.cook_t12)
+        values.put(COOK_I1, recipe.cook_i1)
+        values.put(COOK_I2, recipe.cook_i2)
+        values.put(COOK_I3, recipe.cook_i3)
+        values.put(COOK_I4, recipe.cook_i4)
+        values.put(COOK_I5, recipe.cook_i5)
+        values.put(COOK_I6, recipe.cook_i6)
+        values.put(COOK_I7, recipe.cook_i7)
+        values.put(COOK_I8, recipe.cook_i8)
+        values.put(COOK_I9, recipe.cook_i9)
+        values.put(COOK_I10, recipe.cook_i10)
+        values.put(COOK_I11, recipe.cook_i11)
+        values.put(COOK_I12, recipe.cook_i12)
+
+        writableDatabase.insert(COOK_TABLE, null, values)
+    }
+
+    fun generateRecipeList(): List<Recipe> {
+        return listOf(
+            Recipe("동물모양쿠키", "제과", "무염버터 100g, 설탕 60g, 소금 1g, 계란 30g, 바닐라익스트랙, 베이킹파우더 2g, 박력분 200g(초코: 박력분 180g, 코코아가루 20g)",
+                "제과제빵용 주걱, 종이호일, 체, 쟁반, 밀대, 믹싱볼(그릇), 쿠키틀(쿠키커터)", "", "", 1, 55,
+                "버터가 말랑해지도록 실온에 둔 후 볼에 넣고 풀어준다.", "설탕과 소금을 넣고 버터색이 약간 밝아질 때까지 주걱으로 잘 섞는다.", "계랸을 2번에 나누어 넣으면서 섞어준다.", "박력분과 베이킹파우더를 체 쳐서 넣는다.", "반죽이 뭉쳐질 때까지 주걱을 수직으로 세워 자르듯 섞는다.", "뭉쳐진 반죽을 살살 눌러서 매끈한 상태로 만든다.(너무 많이 치대지 않는다.)",
+                "반죽을 종이호일에 넣어 약 0.5cm 두꼐로 균일하게 핀다.(비닐봉지도 가능하다.)", "핀 반죽을 쟁반에 담아 40분간 냉장한다.", "반죽에 모양틀을 찍어낸다.", "오븐 170도 15분 예열 후 170도에서 13-15분간 굽는다.", "오븐에서 꺼낸 후 5분간 식힌다.", "",
+                0,0,0,0,0,0,0,2400,0,900,300,0, "", "", "", "", "", "", "", "", "", "", "", ""),
+            Recipe("스콘", "제과", "무염버터 100g, 설탕 40g, 소금 2g, 베이킹파우터 2g, 계랸 50g, 우유 50g, 중력분 220g(초코: 중력분 200g, 코코아 가루: 20g)",
+                "제과제빵용 주걱, 제과제빵용 붓, 종이호일, 체, 랩, 믹싱볼(그릇)", "", "", 2, 102,
+                "설탕, 소금, 베이킹파우더, 중력분을 섞어 30분간 냉장한다.", "버터를 1cm x 1cm씩 깍둑썰어서 30분간 냉장한다.", "계란과 우유를 섞어서 30분간 냉장한다.", "냉장시킨 가루를 체 쳐서 볼에 넣는다.", "차가운 버터를 넣고 쌀알만큼 작아질 때까지 다진다.(버터가 녹지 않도록 신속하게 하는 것이 중요하다.)", "가운데 홈을 파서 수분재료(계란+우유)를 넣어 흡수시킨 후 다시 다진다.",
+                "날가루가 보이지 않으면 사각형으로 대충 뭉친다.(손을 사용하지 않는다.)", "사각형을 반으로 잘라 포개 겹치는 것을 3-4회 반복한다.", "반죽을 랩에 싸서 1시간 냉장한다.", "75-85g 정도로 잘라 반죽을 접어 까준다는 느낌으로 모양을 만든다.", "달걀물을 반죽 표면 위에 얇게 바른다.", "오븐 190도 10분 예열 후 180도에서 20분간 굽는다.",
+                1800,1800,1800,0,0,0,0,0,3600,0,0,1200, "", "", "", "", "", "", "", "", "", "", "", "")
+        )
+    }
 }
+
+data class Recipe(
+    val cook_name: String,
+    val cook_type: String,
+    val cook_ingredient: String,
+    val cook_tool: String,
+    val cook_img: String,
+    val cook_user: String,
+    val cook_level: Int,
+    val cook_like: Int,
+    val cook_c1: String,
+    val cook_c2: String,
+    val cook_c3: String,
+    val cook_c4: String,
+    val cook_c5: String,
+    val cook_c6: String,
+    val cook_c7: String,
+    val cook_c8: String,
+    val cook_c9: String,
+    val cook_c10: String,
+    val cook_c11: String,
+    val cook_c12: String,
+    val cook_t1: Int,
+    val cook_t2: Int,
+    val cook_t3: Int,
+    val cook_t4: Int,
+    val cook_t5: Int,
+    val cook_t6: Int,
+    val cook_t7: Int,
+    val cook_t8: Int,
+    val cook_t9: Int,
+    val cook_t10: Int,
+    val cook_t11: Int,
+    val cook_t12: Int,
+    val cook_i1: String,
+    val cook_i2: String,
+    val cook_i3: String,
+    val cook_i4: String,
+    val cook_i5: String,
+    val cook_i6: String,
+    val cook_i7: String,
+    val cook_i8: String,
+    val cook_i9: String,
+    val cook_i10: String,
+    val cook_i11: String,
+    val cook_i12: String
+)

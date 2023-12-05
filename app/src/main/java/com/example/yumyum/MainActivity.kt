@@ -7,8 +7,8 @@ import com.example.yumyum.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-
-private lateinit var binding: ActivityMainBinding
+    lateinit var dbHelper: DBHelper
+    private lateinit var binding: ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +16,15 @@ private lateinit var binding: ActivityMainBinding
 
      binding = ActivityMainBinding.inflate(layoutInflater)
      setContentView(binding.root)
+
+        dbHelper = DBHelper(this)
+
+        val recipeList = dbHelper.generateRecipeList()
+
+        // 레시피 리스트 순회하면서, 데이터베이스에 추가
+        for(recipe in recipeList) {
+            dbHelper.addRecipe(recipe)
+        }
 
         val navView: BottomNavigationView = binding.navView
 

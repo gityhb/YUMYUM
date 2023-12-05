@@ -10,6 +10,37 @@ class MainActivity : AppCompatActivity() {
     lateinit var dbHelper: DBHelper
     private lateinit var binding: ActivityMainBinding
 
+    private val imageViews = arrayOf(
+        R.id.food1,
+        R.id.food2,
+        R.id.food3,
+        R.id.food4,
+        R.id.food5,
+        R.id.food6,
+        R.id.food7
+    )
+
+    //좋아요 이미지
+    private val likeYesViews = arrayOf (
+        R.id.like_yes1,
+        R.id.like_yes2,
+        R.id.like_yes3,
+        R.id.like_yes4,
+        R.id.like_yes5,
+        R.id.like_yes6,
+        R.id.like_yes7
+    )
+
+    private val likeNoViews = arrayOf(
+        R.id.like_no1,
+        R.id.like_no2,
+        R.id.like_no3,
+        R.id.like_no4,
+        R.id.like_no5,
+        R.id.like_no6,
+        R.id.like_no7
+    )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +60,7 @@ class MainActivity : AppCompatActivity() {
         /*val navView: BottomNavigationView = binding.navView
 
         val partImg: ImageView = findViewById(R.id.food1)
-        partImg.clipToOutline = true
-
-
+        partImg.clipToOutline = true*/
 
         binding.food1.clipToOutline = true
         binding.food2.clipToOutline = true
@@ -39,9 +68,31 @@ class MainActivity : AppCompatActivity() {
         binding.food4.clipToOutline = true
         binding.food5.clipToOutline = true
         binding.food6.clipToOutline = true
-        binding.food7.clipToOutline = true*/
+        binding.food7.clipToOutline = true
 
         /*출처 : https://bada744.tistory.com/167*/
+
+
+
+        for(i in imageViews.indices) {
+            val likeYes = findViewById<ImageView>(likeYesViews[i])
+            val likeNo = findViewById<ImageView>(likeNoViews[i])
+
+            likeYes.setOnClickListener{ toggleVisibility(likeYes, likeNo) }
+            likeNo.setOnClickListener{ toggleVisibility(likeYes, likeNo) }
+        }
+        binding.likeYes1.setOnClickListener {
+            binding.likeYes1.visibility = View.GONE
+            binding.likeNo1.visibility = View.VISIBLE
+        }
+        binding.likeNo1.setOnClickListener{
+            binding.likeNo1.visibility = View.GONE
+            binding.likeYes1.visibility = View.VISIBLE
+        }
+
+
+
+
 
         /*val navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each
@@ -72,5 +123,15 @@ class MainActivity : AppCompatActivity() {
         }  재료활용 페이지로 이동 */
 
 
+    } //onCreate
+
+    private fun toggleVisibility(likeYes: ImageView, likeNo: ImageView) {
+        if(likeYes.visibility == View.VISIBLE) {
+            likeYes.visibility = View.VISIBLE
+            likeNo.visibility = View.GONE
+        } else {
+            likeYes.visibility = View.GONE
+            likeNo.visibility = View.VISIBLE
+        }
     }
 }

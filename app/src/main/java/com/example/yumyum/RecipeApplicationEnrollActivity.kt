@@ -107,6 +107,8 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityRecipeApplicationEnrollBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         val backButton: ImageView = findViewById(R.id.back_btn)
@@ -115,6 +117,8 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
         }
 
     }
+
+
 
 
 

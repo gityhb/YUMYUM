@@ -3,10 +3,8 @@ package com.example.yumyum
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var dbHelper: DBHelper
@@ -41,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.food4.clipToOutline = true
         binding.food5.clipToOutline = true
         binding.food6.clipToOutline = true
-        binding.food7.clipToOutline = true
+        binding.food7.clipToOutline = true*/
 
         /*출처 : https://bada744.tistory.com/167*/
 

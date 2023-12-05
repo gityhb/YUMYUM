@@ -1,5 +1,6 @@
 package com.example.yumyum
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -14,17 +15,17 @@ class RecipeStartActivity : AppCompatActivity() {
         binding = ActivityRecipeStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*val recipe = intent.getStringExtra("Recipe")
+        val recipe = intent.getStringExtra("Recipe")
         val ingredient = intent.getStringExtra("Ingredient")
         val time = intent.getStringExtra("Time")
 
-        val start_name: TextView = findViewById(R.id.recipe_name_start)
-        val start_ingredient: TextView = findViewById(R.id.recipe_ingredient_start)
-        val start_time: TextView = findViewById(R.id.recipe_time_start)
+        val start_name: TextView = findViewById(R.id.cook_title)
+        val start_ingredient: TextView = findViewById(R.id.cook_ingredient_detail)
+        val start_time: TextView = findViewById(R.id.time)
 
         start_name.text = recipe
         start_ingredient.text = ingredient
-        start_time.text = time*/
+        start_time.text = time
 
         var cook_imgV : ImageView = findViewById(R.id.cook_img)
         var cook_titleV : TextView = findViewById(R.id.cook_title)
@@ -41,6 +42,11 @@ class RecipeStartActivity : AppCompatActivity() {
         binding.likeNo.setOnClickListener{
             binding.likeNo.visibility = View.GONE
             binding.likeYes.visibility = View.VISIBLE
+        }
+
+        val backButton: ImageView = findViewById(R.id.back_btn)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, RecipeSearchActivity::class.java))
         }
     }
 }

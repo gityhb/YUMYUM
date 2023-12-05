@@ -88,7 +88,7 @@
                         android:id="@+id/level"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/img" />
+                        app:srcCompat="@drawable/level_hard" />
                 </LinearLayout>
             </LinearLayout>
 

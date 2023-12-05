@@ -98,6 +98,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="cookie0929@gmail.com" />
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -140,21 +141,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical" />
-                </HorizontalScrollView>
             </FrameLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout11"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginTop="25dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -174,11 +167,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="110dp"
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/mypage_border"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
@@ -192,29 +186,13 @@
                     android:textColor="#000"
                     android:textSize="18sp" />
 
-                <LinearLayout
+                <Switch
+                    android:id="@+id/switch1"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_margin="3dp"
-                    android:orientation="horizontal">
+                    android:layout_height="48dp"
+                    android:text=" 알림 설정"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="알림 설정"
-                        android:textColor="#000"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/textView16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="ON"
-                        android:textSize="18sp" />
-                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout

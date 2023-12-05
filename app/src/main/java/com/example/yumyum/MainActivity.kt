@@ -16,17 +16,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-     binding = ActivityMainBinding.inflate(layoutInflater)
-     setContentView(binding.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        dbHelper = DBHelper(this)
+        /*dbHelper = DBHelper(this)
 
         val recipeList = dbHelper.generateRecipeList()
 
         // 레시피 리스트 순회하면서, 데이터베이스에 추가
         for(recipe in recipeList) {
             dbHelper.addRecipe(recipe)
-        }
+        }*/
 
         val navView: BottomNavigationView = binding.navView
 
@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         community.setOnClickListener {
             startActivity(Intent(this, CommunityActivity::class.java))
         }  재료활용 페이지로 이동 */
+
 
     }
 }

@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.R
-import com.example.yumyum.RecipeFinishActivity
 import com.example.yumyum.RecipeStartActivity
 import com.example.yumyum.databinding.ActivityRecipeContinueBinding
 
@@ -83,7 +82,7 @@ class R1ContinueActivity : AppCompatActivity() {
                 binding.nextToPageText.text = "종료하기"
             }
             if(binding.nextToPageText.text == "종료하기") {
-                startActivity(Intent(this, RecipeFinishActivity::class.java))
+                startActivity(Intent(this, R1FinishActivity::class.java))
             }
 
             when(clickCount) {

@@ -48,8 +48,11 @@ class RecipeSearchActivity : AppCompatActivity() {
         // 아이템 추가
         recipeList.add(RecipeItem("동물모양쿠키", "우염버터 100g, 설탕 60g", "2시간"))
         recipeList.add(RecipeItem("멘보샤", "새우, 식빵", "30분"))
-        recipeList.add(RecipeItem("고기구이", "고기, 후추, 기름장", "10분"))
-        recipeList.add(RecipeItem("라면", "라면, 파", "3분"))
+        recipeList.add(RecipeItem("삼겹살볶음", "고기, 후추, 기름장", "10분"))
+        recipeList.add(RecipeItem("라멘", "라면, 파", "35분"))
+        recipeList.add(RecipeItem("스콘", "우염버터 150g, 설탕 60g", "2시간"))
+        recipeList.add(RecipeItem("핫도그", "밀가루, 소세지", "57분"))
+        recipeList.add(RecipeItem("참치김밥", "참치, 김, 오이", "45분"))
         // 리스트가 변경됨을 어댑터에 알림
 
         /* 레시피 검색부분, 출처는 gpt > 출처 수정예정 */

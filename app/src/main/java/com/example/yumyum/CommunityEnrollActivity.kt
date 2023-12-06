@@ -64,8 +64,8 @@ class CommunityEnrollActivity : AppCompatActivity() {
         val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(),
             object: ActivityResultCallback<Uri?> {
                 override fun onActivityResult(result: Uri?) {
-                    binding.imgInput2.setImageURI(result)
-                    binding.imgInput2.visibility = View.VISIBLE
+                    binding.imgInput1.setImageURI(result)
+                    binding.imgInput1.visibility = View.VISIBLE
                 }
             })
 

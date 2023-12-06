@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var dbHelper: DBHelper
@@ -111,6 +112,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CommunityActivity::class.java))
         }  재료활용 페이지로 이동 */
 
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_other -> {
+                    //사이드바 액티비티 넣기
+                }
+                R.id.navigation_my -> { //마이페이지로 이동
+                    startActivity(Intent(this, MyPageActivity::class.java))
+                }
+            }
+            true
+        }
+
 
     } //onCreate
 
@@ -123,6 +137,5 @@ class MainActivity : AppCompatActivity() {
             likeNo.visibility = View.GONE
         }
     }
-
     /*출처: chatGPT*/
 }

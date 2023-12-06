@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.yumyum.databinding.ActivityRecipeFinishBinding
+import com.example.yumyum.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
-    lateinit var binding : ActivityRecipeFinishBinding
+    lateinit var binding : ActivityStartBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRecipeFinishBinding.inflate(layoutInflater)
+        binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({

@@ -130,6 +130,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_other -> {
                     replaceFragment(sidebarFragment)
                 }
+                R.id.navigation_home -> { //마이페이지로 이동
+                    startActivity(Intent(this, MainActivity::class.java))
+                }
                 R.id.navigation_my -> { //마이페이지로 이동
                     startActivity(Intent(this, MyPageActivity::class.java))
                 }

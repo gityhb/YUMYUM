@@ -1,4 +1,4 @@
-package com.example.yumyum.recipe1
+package com.example.yumyum.recipe
 
 import android.content.Intent
 import android.os.Bundle

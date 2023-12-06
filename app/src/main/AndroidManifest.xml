@@ -47,13 +47,13 @@
             android:name=".RecipeStartActivity"
             android:exported="true" />
         <activity
-            android:name=".recipe1.R1StartActivity"
+            android:name=".recipe.R1StartActivity"
             android:exported="true" />
         <activity
-            android:name=".recipe1.R1ContinueActivity"
+            android:name=".recipe.R1ContinueActivity"
             android:exported="true" />
         <activity
-            android:name=".recipe1.R1FinishActivity"
+            android:name=".recipe.R1FinishActivity"
             android:exported="true" />
         <activity
             android:name=".RecipeContinueActivity"

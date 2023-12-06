@@ -9,7 +9,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecipeSearchBinding
-import com.example.yumyum.recipe1.R1StartActivity
+import com.example.yumyum.recipe.R1StartActivity
 
 class RecipeSearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecipeSearchBinding

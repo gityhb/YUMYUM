@@ -77,17 +77,20 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/like_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        app:srcCompat="@android:drawable/btn_star_big_on" />
+                    <ImageView
+                        android:id="@+id/like_no2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|bottom"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/grayheart" />
 
                     <ImageView
                         android:id="@+id/level"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="15dp"
                         app:srcCompat="@drawable/level_hard" />
                 </LinearLayout>
             </LinearLayout>

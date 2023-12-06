@@ -59,10 +59,27 @@ class RecipeSearchActivity : AppCompatActivity() {
             }
         })
 
+        var name = intent.getStringExtra("name")
+        var ingredient = intent.getStringExtra("ingredient")
+        var time = intent.getStringExtra("time")
+
+
+        if (name != null && ingredient != null && time != null) {
+            // 이름과 번호를 사용하여 새로운 ListItem 생성
+            val newItem = RecipeItem(name, ingredient, time)
+
+            // itemList에 새로운 아이템 추가
+            recipeList.add(newItem)
+
+            // 어댑터에 데이터 추가 및 갱신
+            recipeAdapter.notifyDataSetChanged()
+        }
+
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
+
 
     }
 }

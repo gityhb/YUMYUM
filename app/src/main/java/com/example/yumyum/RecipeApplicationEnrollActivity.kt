@@ -136,6 +136,29 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
+        val cookname = findViewById<EditText>(R.id.recipe_name2)
+        val cookingredinet = findViewById<EditText>(R.id.recipe_ingredient2)
+        val cooktime = findViewById<EditText>(R.id.recipe_time2)
+
+        val applicationfinish: Button = findViewById(R.id.application_finish_btn)
+
+        applicationfinish.setOnClickListener{
+            val cookname = cookname.text.toString()
+            val cookingredient = cookingredinet.text.toString()
+            val cooktime = cooktime.text.toString()
+            // 버튼이 눌리면 EditText에 있는 내용 저장
+
+            val Applicationintent = Intent(this , RecipeSearchActivity :: class.java)
+            // 인텐트 생성
+
+            Applicationintent.putExtra("name", cookname) // .putExtra() 메소드로 데이터 전달준비
+            Applicationintent.putExtra("ingredient", cookingredient)
+            Applicationintent.putExtra("time", cooktime)
+
+
+            startActivity(Applicationintent) // 인텐트 실행
+        }
+
     }
 
 

@@ -3,6 +3,7 @@ package com.example.yumyum.recipe1
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,12 @@ class R1StartActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             startActivity(Intent(this, RecipeSearchActivity::class.java))
         }
+
+        val startButton: Button = findViewById(R.id.cook_start_btn)
+        startButton.setOnClickListener {
+            startActivity(Intent(this, R1ContinueActivity::class.java))
+        }
+
 
         val drawable = resources.getDrawable(R.drawable.food7, null)
         /*출처: https://mainia.tistory.com/2016*/

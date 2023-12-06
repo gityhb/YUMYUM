@@ -6,9 +6,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecipeSearchBinding
+import com.example.yumyum.recipe1.R1StartActivity
 
 class RecipeSearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecipeSearchBinding
@@ -37,7 +39,7 @@ class RecipeSearchActivity : AppCompatActivity() {
         val levelimg : ImageView= findViewById(R.id.level)
 
         // 아이템 추가
-        recipeList.add(RecipeItem("egg", "계란, 소금", "10분"))
+        recipeList.add(RecipeItem("동물모양쿠키", "우염버터 100g, 설탕 60g", "2시간"))
         recipeList.add(RecipeItem("멘보샤", "새우, 식빵", "30분"))
         recipeList.add(RecipeItem("고기구이", "고기, 후추, 기름장", "10분"))
         recipeList.add(RecipeItem("라면", "라면, 파", "3분"))
@@ -82,6 +84,10 @@ class RecipeSearchActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
+        val Recipe1: LinearLayout = findViewById(R.id.recipe_hard)
+        Recipe1.setOnClickListener {
+            startActivity(Intent(this, R1StartActivity::class.java))
+        }
 
-    }
+    } // onCreate
 }

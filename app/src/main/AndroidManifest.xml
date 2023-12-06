@@ -50,6 +50,12 @@
             android:name=".recipe1.R1StartActivity"
             android:exported="true" />
         <activity
+            android:name=".recipe1.R1ContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recipe1.R1FinishActivity"
+            android:exported="true" />
+        <activity
             android:name=".RecipeContinueActivity"
             android:exported="true" />
         <activity

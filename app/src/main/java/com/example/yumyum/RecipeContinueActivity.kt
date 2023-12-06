@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class RecipeContinueActivity : AppCompatActivity() {
-    private lateinit var timerTextView: TextView
-    private lateinit var startButton: Button
-    private lateinit var stopButton: Button
+    private lateinit var cookTimer: TextView
+    private lateinit var startBtn: Button
+    private lateinit var stopBtn: Button
     private var timer: CountDownTimer? = null
     private var isTimerRunning = false
     private var remainingTimeInMillis: Long = 0
@@ -20,30 +20,30 @@ class RecipeContinueActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_continue)
 
-        timerTextView = findViewById(R.id.timerTextView)
-        startButton = findViewById(R.id.startButton)
-        stopButton = findViewById(R.id.stopButton)
+        cookTimer = findViewById(R.id.cook_timer)
+        startBtn = findViewById(R.id.start_btn)
+        stopBtn = findViewById(R.id.stop_btn)
 
-        stopButton.setOnClickListener{
+        stopBtn.setOnClickListener{
             if(isTimerRunning){
                 stopTimer()
-                stopButton.text = "계속"
+                stopBtn.text = "계속"
             }else{
 
                 if(remainingTimeInMillis > 0){
                     startTimer(remainingTimeInMillis)
-                    stopButton.text = "중지"
+                    stopBtn.text = "중지"
                 }
             }
         }
 
-        startButton.setOnClickListener {
+        startBtn.setOnClickListener {
             if (remainingTimeInMillis > 0) {
                 // 초기화 버튼으로 변경
                 resetTimer()
             } else {
                 // 새로운 타이머 시작
-                startTimer(12 * 60 * 1000) // 5분을 설정하려면 여기 값을 조정
+                startTimer(600 * 1000) // 5분을 설정하려면 여기 값을 조정
             }
         }
 
@@ -52,10 +52,10 @@ class RecipeContinueActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeStartActivity::class.java))
         }
 
-        val nextButton: Button = findViewById(R.id.next_btn)
+        /*val nextButton: Button = findViewById(R.id.next_btn)
         nextButton.setOnClickListener {
             startActivity(Intent(this, RecipeFinishActivity::class.java))
-        }
+        }*/
 
     }
 
@@ -69,12 +69,12 @@ class RecipeContinueActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 isTimerRunning = false
-                startButton.text = "시작"
+                startBtn.text = "시작"
             }
         }.start()
 
         isTimerRunning = true
-        startButton.text = "초기화"
+        startBtn.text = "초기화"
     }
 
     private fun stopTimer() {
@@ -87,14 +87,14 @@ class RecipeContinueActivity : AppCompatActivity() {
         remainingTimeInMillis = 0
         updateTimerText()
         isTimerRunning = false
-        startButton.text = "시작"
+        startBtn.text = "시작"
     }
 
     private fun updateTimerText() {
         val minutes = (remainingTimeInMillis / 1000 / 60).toInt()
         val seconds = (remainingTimeInMillis / 1000 % 60).toInt()
         val timeText = String.format("%02d:%02d", minutes, seconds)
-        timerTextView.text = timeText
+        cookTimer.text = timeText
     }
 
 

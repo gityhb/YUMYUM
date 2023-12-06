@@ -181,7 +181,7 @@
                 android:background="#00ff0000"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/recipe_continue_button_img" />
+                android:src="@drawable/recipe_next" />
 
 
         </LinearLayout>

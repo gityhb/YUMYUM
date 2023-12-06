@@ -3,6 +3,7 @@ package com.example.yumyum.recipe1
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -36,8 +37,8 @@ class R1ContinueActivity : AppCompatActivity() {
             if(isTimerRunning){
                 stopTimer()
                 stopBtn.text = "계속"
-            }else{
 
+            }else{
                 if(remainingTimeInMillis > 0){
                     startTimer(remainingTimeInMillis)
                     stopBtn.text = "중지"
@@ -74,62 +75,154 @@ class R1ContinueActivity : AppCompatActivity() {
             if(binding.nextToPageText.text == "종료하기") {
                 startActivity(Intent(this, RecipeFinishActivity::class.java))
             }
-        }
 
-        when(clickCount) {
-            2 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 설탕과 소금을 넣고 버터색이 약간 밝아질 때까지 주걱으로 잘 섞는다."
-            }
-            3 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
+            when(clickCount) {
+                1-> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 2400
+                    binding.cookTimer.text = "40:00"
+                    binding.cookStepText.text = "$clickCount. 버터가 말랑해지도록 실온에 둔 후 볼에 넣고 풀어준다."
+                    binding.beforeToPageBtn.visibility = View.INVISIBLE
+                }
+                2 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 설탕과 소금을 넣고 버터색이 약간 밝아질 때까지 주걱으로 잘 섞는다."
+                    binding.beforeToPageBtn.visibility = View.VISIBLE
+                }
+                3 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
                     binding.cookStepText.text = "$clickCount. 계랸을 2번에 나누어 넣으면서 섞어준다."
+                }
+                4 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 박력분과 베이킹파우더를 체 쳐서 넣는다."
+                }
+                5 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 반죽이 뭉쳐질 때까지 주걱을 수직으로 세워 자르듯 섞는다."
+                }
+                6 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 뭉쳐진 반죽을 살살 눌러서 매끈한 상태로 만든다.(너무 많이 치대지 않는다.)"
+                }
+                7 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 반죽을 종이호일에 넣어 약 0.5cm 두꼐로 균일하게 핀다.(비닐봉지도 가능하다.)"
+                }
+                8 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 2400
+                    binding.cookTimer.text = "40:00"
+                    binding.cookStepText.text = "$clickCount. 핀 반죽을 쟁반에 담아 40분간 냉장한다."
+                }
+                9 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 반죽에 모양틀을 찍어낸다."
+                }
+                10 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 900
+                    binding.cookTimer.text = "15:00"
+                    binding.cookStepText.text = "$clickCount. 오븐 170도 15분 예열 후 170도에서 13-15분간 굽는다."
+                }
+                11 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 오븐에서 꺼낸 후 5분간 식힌다."
+                }
             }
-            4 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 박력분과 베이킹파우더를 체 쳐서 넣는다."
-            }
-            5 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 반죽이 뭉쳐질 때까지 주걱을 수직으로 세워 자르듯 섞는다."
-            }
-            6 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 뭉쳐진 반죽을 살살 눌러서 매끈한 상태로 만든다.(너무 많이 치대지 않는다.)"
-            }
-            7 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 반죽을 종이호일에 넣어 약 0.5cm 두꼐로 균일하게 핀다.(비닐봉지도 가능하다.)"
-            }
-            8 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 2400
-                binding.cookStepText.text = "$clickCount. 핀 반죽을 쟁반에 담아 40분간 냉장한다."
-            }
-            9 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 반죽에 모양틀을 찍어낸다."
-            }
-            10 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 900
-                binding.cookStepText.text = "$clickCount. 오븐 170도 15분 예열 후 170도에서 13-15분간 굽는다."
-            }
-            11 -> {
-                binding.cookStep.text = "No.$clickCount"
-                setTimeS = 0
-                binding.cookStepText.text = "$clickCount. 오븐에서 꺼낸 후 5분간 식힌다."
-            }
-
         }
 
+        binding.beforeToPageBtn.setOnClickListener {
+            clickCount--
+
+            when(clickCount) {
+                1-> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 2400
+                    binding.cookTimer.text = "40:00"
+                    binding.cookStepText.text = "$clickCount. 버터가 말랑해지도록 실온에 둔 후 볼에 넣고 풀어준다."
+                    binding.beforeToPageBtn.visibility = View.INVISIBLE
+                }
+                2 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 설탕과 소금을 넣고 버터색이 약간 밝아질 때까지 주걱으로 잘 섞는다."
+                    binding.beforeToPageBtn.visibility = View.VISIBLE
+                }
+                3 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 계랸을 2번에 나누어 넣으면서 섞어준다."
+                }
+                4 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 박력분과 베이킹파우더를 체 쳐서 넣는다."
+                }
+                5 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 반죽이 뭉쳐질 때까지 주걱을 수직으로 세워 자르듯 섞는다."
+                }
+                6 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 뭉쳐진 반죽을 살살 눌러서 매끈한 상태로 만든다.(너무 많이 치대지 않는다.)"
+                }
+                7 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 반죽을 종이호일에 넣어 약 0.5cm 두꼐로 균일하게 핀다.(비닐봉지도 가능하다.)"
+                }
+                8 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 2400
+                    binding.cookTimer.text = "40:00"
+                    binding.cookStepText.text = "$clickCount. 핀 반죽을 쟁반에 담아 40분간 냉장한다."
+                }
+                9 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 반죽에 모양틀을 찍어낸다."
+                }
+                10 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 900
+                    binding.cookTimer.text = "15:00"
+                    binding.cookStepText.text = "$clickCount. 오븐 170도 15분 예열 후 170도에서 13-15분간 굽는다."
+                }
+                11 -> {
+                    binding.cookStep.text = "No.$clickCount"
+                    setTimeS = 0
+                    binding.cookTimer.text = "00:00"
+                    binding.cookStepText.text = "$clickCount. 오븐에서 꺼낸 후 5분간 식힌다."
+                }
+
+            }
+        }
     } // onCreate
 
 
@@ -143,11 +236,13 @@ class R1ContinueActivity : AppCompatActivity() {
             override fun onFinish() {
                 isTimerRunning = false
                 startBtn.text = "시작"
+                stopBtn.text = "계속"
             }
         }.start()
 
         isTimerRunning = true
         startBtn.text = "초기화"
+        stopBtn.text = "중지"
     }
 
     private fun stopTimer() {
@@ -161,6 +256,66 @@ class R1ContinueActivity : AppCompatActivity() {
         updateTimerText()
         isTimerRunning = false
         startBtn.text = "시작"
+        stopBtn.text = "계속"
+        when(clickCount) {
+            1-> {
+                binding.cookTimer.text = "40:00"
+            }
+            2 -> {
+                binding.cookTimer.text = "00:00"
+            }
+            3 -> {
+                binding.cookTimer.text = "00:00"
+            }
+            4 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 0
+                binding.cookTimer.text = "00:00"
+                binding.cookStepText.text = "$clickCount. 박력분과 베이킹파우더를 체 쳐서 넣는다."
+            }
+            5 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 0
+                binding.cookTimer.text = "00:00"
+                binding.cookStepText.text = "$clickCount. 반죽이 뭉쳐질 때까지 주걱을 수직으로 세워 자르듯 섞는다."
+            }
+            6 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 0
+                binding.cookTimer.text = "00:00"
+                binding.cookStepText.text = "$clickCount. 뭉쳐진 반죽을 살살 눌러서 매끈한 상태로 만든다.(너무 많이 치대지 않는다.)"
+            }
+            7 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 0
+                binding.cookTimer.text = "00:00"
+                binding.cookStepText.text = "$clickCount. 반죽을 종이호일에 넣어 약 0.5cm 두꼐로 균일하게 핀다.(비닐봉지도 가능하다.)"
+            }
+            8 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 2400
+                binding.cookTimer.text = "40:00"
+                binding.cookStepText.text = "$clickCount. 핀 반죽을 쟁반에 담아 40분간 냉장한다."
+            }
+            9 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 0
+                binding.cookTimer.text = "00:00"
+                binding.cookStepText.text = "$clickCount. 반죽에 모양틀을 찍어낸다."
+            }
+            10 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 900
+                binding.cookTimer.text = "15:00"
+                binding.cookStepText.text = "$clickCount. 오븐 170도 15분 예열 후 170도에서 13-15분간 굽는다."
+            }
+            11 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 0
+                binding.cookTimer.text = "00:00"
+                binding.cookStepText.text = "$clickCount. 오븐에서 꺼낸 후 5분간 식힌다."
+            }
+        }
     }
 
     private fun updateTimerText() {

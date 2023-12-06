@@ -7,7 +7,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.R
 import com.example.yumyum.RecipeSearchActivity
-import com.example.yumyum.RecipeStartActivity
 import com.example.yumyum.databinding.ActivityRecipeFinishBinding
 
 class R1FinishActivity : AppCompatActivity() {
@@ -19,7 +18,7 @@ class R1FinishActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
-            startActivity(Intent(this, RecipeStartActivity::class.java))
+            startActivity(Intent(this, R1StartActivity::class.java))
         }
 
         val anotherButton: Button = findViewById(R.id.another_recipe_btn)

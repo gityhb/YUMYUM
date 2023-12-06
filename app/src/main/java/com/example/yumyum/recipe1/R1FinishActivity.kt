@@ -29,7 +29,7 @@ class R1FinishActivity : AppCompatActivity() {
 
         val replayButton: Button = findViewById(R.id.replay_recipe_btn)
         replayButton.setOnClickListener {
-            startActivity(Intent(this, RecipeStartActivity::class.java))
+            startActivity(Intent(this, R1StartActivity::class.java))
         }
 
         val drawable = resources.getDrawable(R.drawable.food7, null)
@@ -37,5 +37,6 @@ class R1FinishActivity : AppCompatActivity() {
 
         binding.fcookImg.setImageDrawable(drawable)
         binding.fcookTitle.text = "동물모양쿠키"
+
     } // onCreate
 }

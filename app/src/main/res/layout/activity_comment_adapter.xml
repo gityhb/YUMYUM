@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:background="@drawable/bottom_border"
             android:orientation="vertical"
             android:paddingLeft="8dp"
@@ -29,8 +29,8 @@
 
                 <ImageView
                     android:id="@+id/imageView7"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/icon_my" />
 
@@ -38,6 +38,9 @@
                     android:id="@+id/comment_writer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="#000"
                     android:layout_marginLeft="4dp"
                     android:text="안녕하십쎄요" />
 
@@ -54,9 +57,11 @@
                 android:id="@+id/comment_content"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:padding="10dp"
                 android:paddingLeft="11dp"
+                android:textColor="#000"
                 android:text="신전이 근본이죠 ㅎ"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 

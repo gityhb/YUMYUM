@@ -281,7 +281,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
     }
 
     //레시피추가 (이후 구현 예정)
-    fun addRecipe(recipe: Recipe) {
+    /*fun addRecipe(recipe: Recipe) {
         val values = ContentValues()
         values.put(COOK_NAME, recipe.cook_name)
         values.put(COOK_TYPE, recipe.cook_type)
@@ -329,9 +329,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
         values.put(COOK_I12, recipe.cook_i12)
 
         writableDatabase.insert(COOK_TABLE, null, values)
-    }
+    }*/
 
-    fun generateRecipeList(): List<Recipe> {
+   /* fun generateRecipeList(): List<Recipe> {
         return listOf(
             Recipe("동물모양쿠키", "제과", "무염버터 100g, 설탕 60g, 소금 1g, 계란 30g, 바닐라익스트랙, 베이킹파우더 2g, 박력분 200g(초코: 박력분 180g, 코코아가루 20g)",
                 "제과제빵용 주걱, 종이호일, 체, 쟁반, 밀대, 믹싱볼(그릇), 쿠키틀(쿠키커터)", "", "", 1, 55,
@@ -353,14 +353,14 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
                 "삶은 계란은 반으로 잘라 놓는다.", "팬에 오일을 살짝만 두르고 돼지고기 간 것과 생강을 주걱으로 볶는다.","두반장, 미소, 설탕을 넣고, 물 1/4컵을 붓고 조린다.",
                 "다른 냄비에 참기를 1t을 두르고 마늘, 생강 1/2t씩 넣고 볶는다.", "이후 물 400ml, 미소 1T도 잘 풀어넣어준다.", "끓는 물에 면을 2분간 삶는다.", "면은 물기를 털고 그릇에 넣어준 뒤 면을 넣어준다.","고기와 숙주, 계란으로 토핑한다.","",0,0,0,0,300, 420,1200,0, 120,0, 0, 0, "","","","","","",
                 "","","","","",""),
-            Recipe("연어초밥","일식", "연어회 200g, 밥 1공기, 간장 1T, 와사비 1/2T, 소금 1t, 설탕 2t, 식초 3t","볼, 도마 위생장갑, 조리용 나이프, 접시, 숟가락", "","",1,68,"소금, 설탕, 식초를(1:2:3)에 맞춰 만든다.", "단촛물을 전자레인지에 넣고 10초간 돌려주고 잘 저어준다", "그릇에 밥 한공기를 넣고 단촛물 4t을 넣어 잘 섞어 준다.",
+            Recipe("연어초밥","일식", "연어회 200g, 밥 1공기, 간장 1T, 와사비 1/2T, 소금 1t, 설탕 2t, 식초 3t","볼, 도마 위생장갑, 조리용 나이프, 접시, 숟가락", "","",1,68,"소금, 설탕, 식초를(1:2:3)에 맞춰 만든다.", "단촛물을 전자레인지에 넣고 10초간 돌려주고 잘 저어준다.", "그릇에 밥 한 공기를 넣고 단촛물 4t을 넣어 잘 섞어 준다.",
                 "연어회가 덩어리라면 먹기 좋은 크기로 썰어준다.", "위생장갑을 끼고 밥을 뭉쳐준 뒤 와사비를 묻힌다.","위에 연어회 슬라이스 올려준다.","","","","","","",0, 10,0,0,0,0,0,0,0,0,0,0,"","","","","","",
                 "","","","","","")
         )
-    }
+    }*/
 }
 
-data class Recipe(
+/*data class Recipe(
     val cook_name: String,
     val cook_type: String,
     val cook_ingredient: String,
@@ -381,7 +381,7 @@ data class Recipe(
     val cook_c10: String,
     val cook_c11: String,
     val cook_c12: String,
-    /*val cook_steps: List<String>,*/
+    *//*val cook_steps: List<String>,*//*
     val cook_t1: Int,
     val cook_t2: Int,
     val cook_t3: Int,
@@ -406,4 +406,4 @@ data class Recipe(
     val cook_i10: String,
     val cook_i11: String,
     val cook_i12: String
-)
+)*/

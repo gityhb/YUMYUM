@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.R
+import com.example.yumyum.RecipeFinishActivity
 import com.example.yumyum.RecipeStartActivity
 import com.example.yumyum.databinding.ActivityRecipeContinueBinding
 
@@ -77,12 +78,17 @@ class R1ContinueActivity : AppCompatActivity() {
 
         binding.nextToPageBtn.setOnClickListener {
             clickCount++
+            startBtn.text = "시작"
+            stopBtn.text = "계속"
+            resetTimer()
 
-            if(clickCount == 12) {
-                binding.nextToPageText.text = "종료하기"
+            if(clickCount == 11) {
+                binding.nextToPageText.text = "종료하기 "
             }
-            if(binding.nextToPageText.text == "종료하기") {
-                startActivity(Intent(this, R1FinishActivity::class.java))
+            if(binding.nextToPageText.text.trim() == "종료하기") {
+                binding.nextToPageBtn.setOnClickListener {
+                    startActivity(Intent(this, RecipeFinishActivity::class.java))
+                }
             }
 
             when(clickCount) {
@@ -159,6 +165,7 @@ class R1ContinueActivity : AppCompatActivity() {
 
         binding.beforeToPageBtn.setOnClickListener {
             clickCount--
+            binding.nextToPageText.text = "넘어가기 "
 
             when(clickCount) {
                 1-> {

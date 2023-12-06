@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.R
+import com.example.yumyum.RecipeFinishActivity
 import com.example.yumyum.RecipeStartActivity
 import com.example.yumyum.databinding.ActivityRecipeContinueBinding
 
@@ -60,11 +61,6 @@ class R3ContinueActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeStartActivity::class.java))
         }
 
-        /*val nextButton: LinearLayout = findViewById(R.id.next_to_page_btn)
-        nextButton.setOnClickListener {
-            startActivity(Intent(this, RecipeFinishActivity::class.java))
-        }*/
-
         when(clickCount) {
             1-> {
                 binding.cookStep.text = "No.$clickCount"
@@ -77,12 +73,15 @@ class R3ContinueActivity : AppCompatActivity() {
 
         binding.nextToPageBtn.setOnClickListener {
             clickCount++
+            startBtn.text = "시작"
+            stopBtn.text = "계속"
+            resetTimer()
 
-            if(clickCount == 12) {
+            if(clickCount == 7) {
                 binding.nextToPageText.text = "종료하기"
             }
             if(binding.nextToPageText.text == "종료하기") {
-                startActivity(Intent(this, R1FinishActivity::class.java))
+                startActivity(Intent(this, RecipeFinishActivity::class.java))
             }
 
             when(clickCount) {

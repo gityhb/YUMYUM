@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.yumyum.MainActivity
 import com.example.yumyum.R
 import com.example.yumyum.RecipeSearchActivity
 import com.example.yumyum.databinding.ActivityRecipeFinishBinding
@@ -26,9 +27,9 @@ class R1FinishActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeSearchActivity::class.java))
         }
 
-        val replayButton: Button = findViewById(R.id.replay_recipe_btn)
-        replayButton.setOnClickListener {
-            startActivity(Intent(this, R1StartActivity::class.java))
+        val homeButton: Button = findViewById(R.id.replay_recipe_btn)
+        homeButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         val drawable = resources.getDrawable(R.drawable.food7, null)

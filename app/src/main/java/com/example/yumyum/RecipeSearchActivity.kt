@@ -72,7 +72,7 @@ class RecipeSearchActivity : AppCompatActivity() {
                 recipeAdapter.updateList(filteredList)
             }
 
-            // 한글 자소 분리 함수
+            // 한글 검색 가능하게 하기> gpt
             fun decomposeHangul(s: Char): String {
                 if (s >= '가' && s <= '힣') {
                     val uniVal = s - '가'
@@ -84,14 +84,12 @@ class RecipeSearchActivity : AppCompatActivity() {
                 return s.toString()
             }
 
-            // 한글 자소 포함 여부 체크 함수
             fun containsKorean(original: String, search: String): Boolean {
                 val decomposedOriginal = original.map { decomposeHangul(it) }.joinToString("")
                 val decomposedSearch = search.map { decomposeHangul(it) }.joinToString("")
                 return decomposedOriginal.contains(decomposedSearch, ignoreCase = true)
             }
 
-            // 아래는 예시로 사용할 한글 자소 배열입니다. 실제로 사용하는 데이터에 맞게 수정하세요.
             val chosung = arrayOf("ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ")
             val jungsung = arrayOf("ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ")
             val jongsung = arrayOf("", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ")

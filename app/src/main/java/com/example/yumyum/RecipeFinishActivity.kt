@@ -23,7 +23,7 @@ class RecipeFinishActivity : AppCompatActivity() {
 
         val replayButton: Button = findViewById(R.id.replay_recipe_btn)
         replayButton.setOnClickListener {
-            startActivity(Intent(this, RecipeStartActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

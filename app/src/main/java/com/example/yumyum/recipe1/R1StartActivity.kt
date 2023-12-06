@@ -45,9 +45,9 @@ class R1StartActivity : AppCompatActivity() {
         /*출처: https://mainia.tistory.com/2016*/
 
         binding.cookImg.setImageDrawable(drawable)
-        binding.time.text = "2시간"
+        /*binding.time.text = "2시간"
         binding.cookTitle.text = "동물모양쿠키"
-        binding.cookIngredientDetail.text = "무염버터 100g, 설탕 60g, 소금 1g, 계란 30g, 바닐라익스트랙, 베이킹파우더 2g, 박력분 200g(초코: 박력분 180g, 코코아가루 20g)"
+        binding.cookIngredientDetail.text = "무염버터 100g, 설탕 60g, 소금 1g, 계란 30g, 바닐라익스트랙, 베이킹파우더 2g, 박력분 200g(초코: 박력분 180g, 코코아가루 20g)"*/
         binding.cookToolDetail.text = "제과제빵용 주걱, 종이호일, 체, 쟁반, 밀대, 믹싱볼(그릇), 쿠키틀(쿠키커터)"
         binding.cookSteps.text = "1. 버터가 말랑해지도록 실온에 둔 후 볼에 넣고 풀어준다.\n\n" +
                 "2. 설탕과 소금을 넣고 버터색이 약간 밝아질 때까지 주걱으로 잘 섞는다.\n\n" +

@@ -2,12 +2,17 @@ package com.example.yumyum
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.yumyum.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -17,6 +22,10 @@ class MainActivity : AppCompatActivity() {
     private val fragmentManager: FragmentManager = supportFragmentManager
     private val sidebarFragment: SidebarFragment = SidebarFragment()
 
+    private lateinit var viewPager : ViewPager2
+    private lateinit var adapter: MainPagerAdapter
+    private val handler = Handler()
+    private lateinit var runnable: Runnable
     private fun replaceFragment(fragment: Fragment) {
         val transaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.sidebar_frame, fragment)  // R.id.fragment_container는 교체될 프래그먼트를 보여줄 레이아웃 ID로 변경
@@ -140,9 +149,67 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        viewPager = binding.foodViewPager
+        adapter = MainPagerAdapter()
+        viewPager.adapter = adapter
 
+        /*viewPager.postDelayed({
+            val currentItem = viewPager.currentItem
+            val nextItem = if (currentItem == adapter.itemCount - 1) 0 else currentItem + 1
+            viewPager.setCurrentItem(nextItem, true)
+        }, 3000)*/
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+            }
+        })
 
+        // 3초마다 Runnable을 실행하여 다음 페이지로 전환
+        runnable = object : Runnable {
+            override fun run() {
+                val currentItem = viewPager.currentItem
+                val nextItem = (currentItem + 1) % adapter.itemCount
+                viewPager.setCurrentItem(nextItem, true)
+                handler.postDelayed(this, 3000)
+            }
+        }
+        // 처음 3초 뒤에 시작하고 반복
+        handler.postDelayed(runnable, 3000)
     } //onCreate
+
+    override fun onDestroy() {
+        // 액티비티가 소멸될 때 핸들러의 Runnable을 제거하여 메모리 누수 방지
+        handler.removeCallbacks(runnable)
+        super.onDestroy()
+    }
+        private class MainPagerAdapter:RecyclerView.Adapter<MainPagerViewHolder>() {
+            private val imageResIds = intArrayOf(
+                R.drawable.viewp1,
+                R.drawable.viewp2,
+                R.drawable.viewp3,
+                R.drawable.viewp4
+            )
+
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainPagerViewHolder {
+                val inflater = LayoutInflater.from(parent.context)
+                val view = inflater.inflate(R.layout.viewpager_item, parent, false)
+                return MainPagerViewHolder(view)
+            }
+
+            override fun onBindViewHolder(holder: MainPagerViewHolder, position: Int) {
+                holder.bind(imageResIds[position])
+            }
+
+            override fun getItemCount(): Int = imageResIds.size
+        }
+        private class MainPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            private val imageView: ImageView = itemView.findViewById(R.id.slide_img)
+
+            fun bind(imageResIds: Int) {
+                imageView.setImageResource(imageResIds)
+            }
+        }
+    /*출처: chatGPT*/
 
     private fun toggleVisibility(likeYes: ImageView, likeNo: ImageView) {
         if(likeYes.visibility == View.VISIBLE) {
@@ -155,3 +222,9 @@ class MainActivity : AppCompatActivity() {
     }
     /*출처: chatGPT*/
 }
+
+
+
+
+
+

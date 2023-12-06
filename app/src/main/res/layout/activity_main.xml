@@ -18,504 +18,496 @@
         tools:layout_editor_absoluteX="309dp"
         tools:layout_editor_absoluteY="570dp" />-->
 
-    <TextView
-        android:id="@+id/title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:padding="5dp"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="43sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title">
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginHorizontal="10dp"
+            android:padding="5dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="43sp"
+            android:textStyle="italic" />
 
-            <!--<androidx.viewpager2.widget.ViewPager2
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/food_viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_margin="10dp"/>-->
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="220dp"
-                android:layout_marginHorizontal="10dp"
-                android:src="@drawable/viewp1" />
-
-            <LinearLayout
-                android:id="@+id/main_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="3dp"
-                android:orientation="horizontal">
+                android:layout_height="210dp"
+                android:layout_marginHorizontal="10dp"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_recipe"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/main_button_pink"
-                        android:text="요리하기"
-                        android:textSize="18sp" />
-
-                    <Button
-                        android:id="@+id/btn_recipe_application"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/main_button_orange"
-                        android:text="레시피 신청"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_ingredient_search"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/main_button_orange"
-                        android:text="재료활용"
-                        android:textSize="18sp" />
-
-                    <Button
-                        android:id="@+id/btn_community"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/main_button_pink"
-                        android:text="커뮤니티"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_list1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/main_list1_title"
+                    android:id="@+id/main_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="인기 레시피"
-                    android:textColor="#000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/main_list1"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="10dp">
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_recipe"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/main_button_pink"
+                            android:text="요리하기"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/btn_recipe_application"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/main_button_orange"
+                            android:text="레시피 신청"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_ingredient_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/main_button_orange"
+                            android:text="재료활용"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/btn_community"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/main_button_pink"
+                            android:text="커뮤니티"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_list1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/main_list1_title"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="인기 레시피"
+                        android:textColor="#000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/main_list1"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:id="@+id/food1"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/food1" />
-
-                                <ImageView
-                                    android:id="@+id/like_no1"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/grayheart" />
-
-                                <ImageView
-                                    android:id="@+id/like_yes1"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:id="@+id/f1"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="우니 덮밥"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-                                android:textSize="15sp" />
-                        </LinearLayout>
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
 
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:id="@+id/food1"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/food1" />
 
-                                <ImageView
-                                    android:id="@+id/food2"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/food2" />
+                                    <ImageView
+                                        android:id="@+id/like_no1"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/grayheart" />
 
-                                <ImageView
-                                    android:id="@+id/like_no2"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/grayheart" />
+                                    <ImageView
+                                        android:id="@+id/like_yes1"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
 
-                                <ImageView
-                                    android:id="@+id/like_yes2"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
+                                <TextView
+                                    android:id="@+id/f1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="우니 덮밥"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
 
-
-                            <TextView
-                                android:id="@+id/f2"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="국물 닭발"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-                                android:textSize="15sp" />
-                        </LinearLayout>
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
 
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:id="@+id/food2"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/food2" />
 
-                                <ImageView
-                                    android:id="@+id/food3"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:src="@drawable/food3" />
+                                    <ImageView
+                                        android:id="@+id/like_no2"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/grayheart" />
 
-                                <ImageView
-                                    android:id="@+id/like_no3"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/grayheart" />
+                                    <ImageView
+                                        android:id="@+id/like_yes2"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
 
-                                <ImageView
-                                    android:id="@+id/like_yes3"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/f3"
+                                <TextView
+                                    android:id="@+id/f2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="국물 닭발"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="베이글"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-                                android:textSize="15sp" />
-                        </LinearLayout>
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
 
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:id="@+id/food3"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:src="@drawable/food3" />
 
-                                <ImageView
-                                    android:id="@+id/food4"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:src="@drawable/food4" />
+                                    <ImageView
+                                        android:id="@+id/like_no3"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/grayheart" />
 
-                                <ImageView
-                                    android:id="@+id/like_no4"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/grayheart" />
+                                    <ImageView
+                                        android:id="@+id/like_yes3"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
 
-                                <ImageView
-                                    android:id="@+id/like_yes4"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
+                                <TextView
+                                    android:id="@+id/f3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="베이글"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
 
-                            <TextView
-                                android:id="@+id/f4"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="계란튀김"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-                                android:textSize="15sp" />
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/food4"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:src="@drawable/food4" />
+
+                                    <ImageView
+                                        android:id="@+id/like_no4"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/grayheart" />
+
+                                    <ImageView
+                                        android:id="@+id/like_yes4"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/f4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="계란튀김"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
                         </LinearLayout>
+                    </HorizontalScrollView>
 
-                    </LinearLayout>
-                </HorizontalScrollView>
+                </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_list2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/main_list2_title"
+                <LinearLayout
+                    android:id="@+id/main_list2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="내가 찜한 레시피"
-                    android:textColor="#000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/main_list2"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="10dp">
+                    <TextView
+                        android:id="@+id/main_list2_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="내가 찜한 레시피"
+                        android:textColor="#000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
-
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:id="@+id/food5"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:src="@drawable/food5" />
-
-                                <ImageView
-                                    android:id="@+id/like_no5"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/grayheart" />
-
-                                <ImageView
-                                    android:id="@+id/like_yes5"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:id="@+id/f5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="미트볼"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-
-                                android:textSize="15sp" />
-                        </LinearLayout>
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/main_list2"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:orientation="horizontal">
 
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:id="@+id/food6"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:src="@drawable/food6" />
-
-                                <ImageView
-                                    android:id="@+id/like_no6"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/grayheart" />
-
-                                <ImageView
-                                    android:id="@+id/like_yes6"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:id="@+id/f6"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="닭발"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-                                android:textSize="15sp" />
-                        </LinearLayout>
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="5dp"
-                            android:orientation="vertical">
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
 
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:id="@+id/food5"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:src="@drawable/food5" />
 
-                                <ImageView
-                                    android:id="@+id/food7"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:background="@drawable/border_img"
-                                    android:padding="5dp"
-                                    android:src="@drawable/food7" />
+                                    <ImageView
+                                        android:id="@+id/like_no5"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/grayheart" />
 
-                                <ImageView
-                                    android:id="@+id/like_no7"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/grayheart" />
+                                    <ImageView
+                                        android:id="@+id/like_yes5"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
 
-                                <ImageView
-                                    android:id="@+id/like_yes7"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right|bottom"
-                                    android:layout_margin="5dp"
-                                    app:srcCompat="@drawable/redheart" />
-                            </FrameLayout>
+                                <TextView
+                                    android:id="@+id/f5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="미트볼"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
 
-                            <TextView
-                                android:id="@+id/f7"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="버터쿠키"
-                                android:textAlignment="center"
-                                android:textColor="#000"
-                                android:textSize="15sp" />
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/food6"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:src="@drawable/food6" />
+
+                                    <ImageView
+                                        android:id="@+id/like_no6"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/grayheart" />
+
+                                    <ImageView
+                                        android:id="@+id/like_yes6"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/f6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="닭발"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/food7"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:background="@drawable/border_img"
+                                        android:padding="5dp"
+                                        android:src="@drawable/food7" />
+
+                                    <ImageView
+                                        android:id="@+id/like_no7"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/grayheart" />
+
+                                    <ImageView
+                                        android:id="@+id/like_yes7"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_margin="5dp"
+                                        app:srcCompat="@drawable/redheart" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/f7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="버터쿠키"
+                                    android:textAlignment="center"
+                                    android:textColor="#000"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
-                </HorizontalScrollView>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

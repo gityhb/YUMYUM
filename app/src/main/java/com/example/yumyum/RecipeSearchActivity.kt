@@ -6,7 +6,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecipeSearchBinding
@@ -15,9 +14,19 @@ import com.example.yumyum.recipe1.R1StartActivity
 class RecipeSearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecipeSearchBinding
     val recipeList = arrayListOf<RecipeItem>()      // 아이템 배열
-    val recipeAdapter = RecipesearchAdapter(recipeList){ clickedItem ->
+
+    /*val recipeAdapter = RecipesearchAdapter(recipeList){ clickedItem ->
         // 아이템 클릭 처리, 예를 들어 다른 액티비티로 이동
         val intent = Intent(this,RecipeStartActivity::class.java)
+        intent.putExtra("Recipe", clickedItem.recipe)
+        intent.putExtra("Ingredient", clickedItem.ingredient)
+        intent.putExtra("Time", clickedItem.time)
+        startActivity(intent)
+    }*/
+
+    val recipeAdapter = RecipesearchAdapter(recipeList){ clickedItem ->
+        // 아이템 클릭 처리, 예를 들어 다른 액티비티로 이동
+        val intent = Intent(this,R1StartActivity::class.java)
         intent.putExtra("Recipe", clickedItem.recipe)
         intent.putExtra("Ingredient", clickedItem.ingredient)
         intent.putExtra("Time", clickedItem.time)
@@ -35,8 +44,6 @@ class RecipeSearchActivity : AppCompatActivity() {
         binding.rcList.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rcList.adapter = recipeAdapter
-
-        val levelimg : ImageView= findViewById(R.id.level)
 
         // 아이템 추가
         recipeList.add(RecipeItem("동물모양쿠키", "우염버터 100g, 설탕 60g", "2시간"))
@@ -82,11 +89,6 @@ class RecipeSearchActivity : AppCompatActivity() {
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
-        }
-
-        val Recipe1: LinearLayout = findViewById(R.id.recipe_hard)
-        Recipe1.setOnClickListener {
-            startActivity(Intent(this, R1StartActivity::class.java))
         }
 
     } // onCreate

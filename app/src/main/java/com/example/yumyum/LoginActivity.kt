@@ -24,10 +24,11 @@ class LoginActivity : AppCompatActivity() {
             val isLogin = dbHelper.isLogin(LstrId, LstrPwd)
 
             if(isLogin) {
+                dbHelper.updateIsLogin(LstrId, 1)
                 Toast.makeText(applicationContext, "$LstrId 로그인 성공!", Toast.LENGTH_SHORT).show()
                 binding.LwarningLogin.visibility = View.INVISIBLE
 
-                val intentM = Intent(this@LoginActivity, MainActivity::class.java)
+                val intentM = Intent(this@LoginActivity, MyPageActivity::class.java)
                 startActivity(intentM)
             } else {
                 binding.LwarningLogin.visibility = View.VISIBLE

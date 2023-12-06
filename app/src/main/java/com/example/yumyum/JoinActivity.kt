@@ -99,6 +99,7 @@ class JoinActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "인증번호 : 2122", Toast.LENGTH_LONG).show()
             }
         } // checkPhoneAuthorBtn
+
         binding.checkPhoneAuthorBtn.setOnClickListener {
 
             val strPhoneAuthor = binding.inputPhoneAuthor.text.toString().trim()
@@ -147,7 +148,7 @@ class JoinActivity : AppCompatActivity() {
                     val userId = dbHelper.addUser(strName, strId, strNkname, strPwd, strPhone, strEmail)
 
                     if(userId != -1L) {
-                        Toast.makeText(applicationContext, "회원가입 성곻! $userId, $strName", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "회원가입 성공! $userId 번 $strName", Toast.LENGTH_SHORT).show()
                     }
                     else {
                         Toast.makeText(applicationContext, "회원가입 실패!", Toast.LENGTH_SHORT).show()

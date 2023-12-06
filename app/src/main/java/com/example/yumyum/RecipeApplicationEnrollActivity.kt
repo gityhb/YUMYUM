@@ -1,10 +1,13 @@
 package com.example.yumyum
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
@@ -140,7 +143,7 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
         val cookingredinet = findViewById<EditText>(R.id.recipe_ingredient2)
         val cooktime = findViewById<EditText>(R.id.recipe_time2)
 
-        val applicationfinish: Button = findViewById(R.id.application_finish_btn)
+        val applicationfinish: Button = findViewById(R.id.application_enroll_btn)
 
         applicationfinish.setOnClickListener{
             val cookname = cookname.text.toString()
@@ -159,7 +162,28 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
             startActivity(Applicationintent) // 인텐트 실행
         }
 
-    }
+        //카메라
+        val cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) {
+            if(it != null)
+                binding.imageInput.setImageBitmap(it)
+        }
+
+        binding.imageInput.setOnClickListener {
+            cameraLauncher.launch(null)
+        }
+
+        // 갤러리
+        val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(),
+            object: ActivityResultCallback<Uri?> {
+                override fun onActivityResult(result: Uri?) {
+                    binding.imageInput.setImageURI(result)
+                }
+            })
+
+        binding.imageInput2.setOnClickListener {
+            galleryLauncher.launch("image/*")
+        }
+    } // onCreate
 
 
 

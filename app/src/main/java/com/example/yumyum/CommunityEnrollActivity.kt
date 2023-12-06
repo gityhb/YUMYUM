@@ -7,16 +7,17 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityCommunityEnrollBinding
 
 class CommunityEnrollActivity : AppCompatActivity() {
+    lateinit var binding: ActivityCommunityEnrollBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_community_enroll)
         val binding = ActivityCommunityEnrollBinding.inflate(layoutInflater)
-
+        setContentView(binding.root)
 
         val buttonRegister = findViewById<Button>(R.id.button_register)
         val editTextContent2 = findViewById<EditText>(R.id.write_content)
@@ -47,14 +48,30 @@ class CommunityEnrollActivity : AppCompatActivity() {
             }
         })  /*일단 맵 클릭하면 우리학교 위치로 이동*/
 
-        val camera: ImageView = findViewById(R.id.camera_btn)
-        val cameraLauncher=registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+        //카메라
+        val cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) {
+            if(it != null) {
+                binding.imgInput1.setImageBitmap(it)
+                binding.imgInput1.visibility = View.VISIBLE
+            }
         }
 
-        camera.setOnClickListener{
+        binding.cameraBtn.setOnClickListener {
             cameraLauncher.launch(null)
-        } /*일단 카메라 클릭시 카메라 앱 실행*/
+        }
 
+        // 갤러리
+        val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(),
+            object: ActivityResultCallback<Uri?> {
+                override fun onActivityResult(result: Uri?) {
+                    binding.imgInput2.setImageURI(result)
+                    binding.imgInput2.visibility = View.VISIBLE
+                }
+            })
+
+        binding.galleryBtn.setOnClickListener {
+            galleryLauncher.launch("image/*")
+        }
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {

@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,6 @@ import com.example.yumyum.databinding.ActivityEditMemberInfoBinding
 
 class EditMemberInfoActivity : AppCompatActivity() {
     lateinit var dbHelper: DBHelper
-    private var idOk = false
     private var nkOk = false
     private var phoneOk = false
     lateinit var binding:ActivityEditMemberInfoBinding
@@ -20,6 +20,8 @@ class EditMemberInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         var binding = ActivityEditMemberInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        dbHelper = DBHelper(this)
 
         //갤러리
         val galleryLauncher = registerForActivityResult(
@@ -39,7 +41,6 @@ class EditMemberInfoActivity : AppCompatActivity() {
 
             val strNkname = binding.inputNkname.text.toString().trim()
             val isUserNknameExists = dbHelper.isUserNknameExists(strNkname)
-
 
             if(strNkname.isNotEmpty()) {
                 if(isUserNknameExists) { //중복될 경우
@@ -85,6 +86,22 @@ class EditMemberInfoActivity : AppCompatActivity() {
                 }
             }
         } // checkPwdBtn
+
+        //phone 인증
+        binding.checkPhoneBtn.setOnClickListener {
+
+            val strPhone = binding.inputPhone.text.toString().trim()
+
+            if (strPhone.isNotEmpty()) {
+                binding.checkPhoneBtn.setText("재발송")
+                binding.phoneAuthor.visibility = View.VISIBLE
+                binding.warningPhone.visibility = View.GONE
+                Toast.makeText(applicationContext, "인증번호 : 2122", Toast.LENGTH_LONG).show()
+            } else {
+                binding.warningPhone.visibility = View.VISIBLE
+                binding.phoneAuthor.visibility = View.GONE
+            }
+        } // checkPhoneAuthorBtn
 
         binding.checkPhoneAuthorBtn.setOnClickListener {
 

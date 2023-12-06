@@ -16,6 +16,7 @@ class JoinActivity : AppCompatActivity() {
     private var idOk = false
     private var nkOk = false
     private var phoneOk = false
+    val Applicationintent = Intent(this , LoginActivity :: class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -131,6 +132,7 @@ class JoinActivity : AppCompatActivity() {
         binding.joinBtn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
 
+
                 val strName = binding.inputName.text.toString().trim()
                 val strId = binding.inputId.text.toString().trim()
                 val strNkname = binding.inputNkname.text.toString().trim()
@@ -147,8 +149,11 @@ class JoinActivity : AppCompatActivity() {
                     strPhone.isNotEmpty() && (strPhoneAuthor.isNotEmpty() && strPhoneAuthor == "2122") && strEmail.isNotEmpty()) {
                     val userId = dbHelper.addUser(strName, strId, strNkname, strPwd, strPhone, strEmail)
 
+
                     if(userId != -1L) {
+                        startActivity(Applicationintent)
                         Toast.makeText(applicationContext, "회원가입 성공! $userId 번 $strName", Toast.LENGTH_SHORT).show()
+
                     }
                     else {
                         Toast.makeText(applicationContext, "회원가입 실패!", Toast.LENGTH_SHORT).show()

@@ -63,12 +63,37 @@ class RecipeSearchActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 // 검색어가 변경될 때마다 아이템을 필터링하여 어댑터에 적용
                 val filteredList = recipeList.filter { recipeItem ->
-                    recipeItem.recipe.contains(s.toString(), ignoreCase = true)
+                    containsKorean(recipeItem.recipe, s.toString())
                 }
 
                 recipeAdapter.updateList(filteredList)
             }
+
+            // 한글 자소 분리 함수
+            fun decomposeHangul(s: Char): String {
+                if (s >= '가' && s <= '힣') {
+                    val uniVal = s - '가'
+                    val cho = uniVal / 588
+                    val jung = (uniVal % 588) / 28
+                    val jong = uniVal % 28
+                    return "${chosung[cho]}${jungsung[jung]}${jongsung[jong]}"
+                }
+                return s.toString()
+            }
+
+            // 한글 자소 포함 여부 체크 함수
+            fun containsKorean(original: String, search: String): Boolean {
+                val decomposedOriginal = original.map { decomposeHangul(it) }.joinToString("")
+                val decomposedSearch = search.map { decomposeHangul(it) }.joinToString("")
+                return decomposedOriginal.contains(decomposedSearch, ignoreCase = true)
+            }
+
+            // 아래는 예시로 사용할 한글 자소 배열입니다. 실제로 사용하는 데이터에 맞게 수정하세요.
+            val chosung = arrayOf("ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ")
+            val jungsung = arrayOf("ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ")
+            val jongsung = arrayOf("", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ")
         })
+
 
         var name = intent.getStringExtra("name")
         var ingredient = intent.getStringExtra("ingredient")

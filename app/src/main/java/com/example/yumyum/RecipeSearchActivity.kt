@@ -34,6 +34,8 @@ class RecipeSearchActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rcList.adapter = recipeAdapter
 
+        val levelimg : ImageView= findViewById(R.id.level)
+
         // 아이템 추가
         recipeList.add(RecipeItem("egg", "계란, 소금", "10분"))
         recipeList.add(RecipeItem("멘보샤", "새우, 식빵", "30분"))

@@ -2,27 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@id/homeFragment">
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.yumyum.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+    android:id="@+id/mobile_navigation">
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.yumyum.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_mainActivity2"
+            app:destination="@id/mainActivity" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.yumyum.MainActivity"
         android:label="MainActivity" />
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.yumyum.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
 </navigation>

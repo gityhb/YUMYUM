@@ -46,14 +46,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="똥강아지" />
+                    android:text="익명" />
 
                 <TextView
                     android:id="@+id/write_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="20"
-                    android:text="12분 전" />
+                    android:text="방금" />
             </LinearLayout>
         </LinearLayout>
 

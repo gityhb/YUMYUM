@@ -32,13 +32,13 @@ class CommunityActivity : AppCompatActivity() {
         binding.rvList.adapter = listAdapter
 
         // 아이템 추가
-        itemList.add(ListItem("미역국 잘 끓이는 법", "알려주세용"))
+        itemList.add(ListItem("교촌엽떡", "먹고싶당"))
         itemList.add(ListItem("멘보샤 먹고싶당", "이연복 레시피 아는 분?"))
         itemList.add(ListItem("다이어트 1일차", "같이하실 분 구해요 ㅎㅎ"))
         itemList.add(ListItem("신전 떡볶이", "신전 떡볶이 레시피 내놔"))
-        itemList.add(ListItem("신전 떡볶이", "신전 떡볶이 레시피 내놔"))
-        itemList.add(ListItem("신전 떡볶이", "신전 떡볶이 레시피 내놔"))
-        itemList.add(ListItem("신전 떡볶이", "신전 떡볶이 레시피 내놔"))
+        itemList.add(ListItem("살이 많이 쪘어요...", "얌얌 레시피보고 음식 만들다가 살 쪘어영"))
+        itemList.add(ListItem("뿌링클 가루", "뿌링클 가루에는 뭐가 들어갈까용?"))
+        itemList.add(ListItem("배고파..", "간계밥 만들어 먹을까"))
         // 리스트가 변경됨을 어댑터에 알림
 
         var title = intent.getStringExtra("Title")

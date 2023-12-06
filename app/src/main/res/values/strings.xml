@@ -31,5 +31,6 @@
     <string name="nav_recipe"><font size="20">레시피</font></string>
     <string name="nav_community"><font size="20">커뮤니티</font></string>
     <string name="nav_my"><font size="20">내 정보</font></string>
+    <string name="title_activity_side">SideActivity</string>
 
 </resources>

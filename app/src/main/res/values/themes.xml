@@ -18,6 +18,7 @@
     <style name="Theme.YUMYUM.NoActionBar">
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="Theme.YUMYUM.ActionBar">
         <item name="windowActionBar">true</item>
     </style>
@@ -25,4 +26,13 @@
     <style name="Theme.YUMYUM.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.YUMYUM.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.YUMYUM.NoActionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.YUMYUM.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.YUMYUM.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

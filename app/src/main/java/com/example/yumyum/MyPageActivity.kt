@@ -17,10 +17,6 @@ class MyPageActivity : AppCompatActivity() {
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                // FragmentManager를 통해 프래그먼트를 교체합니다.
-
-
-                // 선택된 탭에 따라 프래그먼트를 설정합니다.
                 when (tab?.text) {
                     "찜한 레시피" -> {
                         supportFragmentManager.beginTransaction()
@@ -37,16 +33,13 @@ class MyPageActivity : AppCompatActivity() {
                             .replace(R.id.frameLayout, ReviewFragment())
                             .commit()
                     }
-                    // 다른 탭에 대한 처리 추가 (등록한 레시피, 레시피 후기 등)
                 }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                // 탭이 다시 선택되었을 때의 동작을 추가할 수 있습니다.
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                // 이전에 선택되었던 탭이 선택 해제되었을 때의 동작을 추가할 수 있습니다.
             }
         })
 

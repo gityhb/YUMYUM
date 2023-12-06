@@ -6,12 +6,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.yumyum.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var dbHelper: DBHelper
     private lateinit var binding: ActivityMainBinding
+    private val fragmentManager: FragmentManager = supportFragmentManager
+    private val sidebarFragment: SidebarFragment = SidebarFragment()
+
+    private fun replaceFragment(fragment: Fragment) {
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.sidebar_frame, fragment)  // R.id.fragment_container는 교체될 프래그먼트를 보여줄 레이아웃 ID로 변경
+        transaction.commit()
+    }
 
     private val imageViews = arrayOf(
         R.id.food1,
@@ -112,11 +122,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CommunityActivity::class.java))
         }  재료활용 페이지로 이동 */
 
+
+
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_other -> {
-                    //사이드바 액티비티 넣기
+                    replaceFragment(sidebarFragment)
                 }
                 R.id.navigation_my -> { //마이페이지로 이동
                     startActivity(Intent(this, MyPageActivity::class.java))
@@ -124,6 +136,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
 
 
     } //onCreate

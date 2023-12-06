@@ -77,7 +77,5 @@ class R1StartActivity : AppCompatActivity() {
             binding.likeNo.visibility = View.GONE
             binding.likeYes.visibility = View.VISIBLE
         }
-
-
     }
 }

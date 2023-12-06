@@ -66,6 +66,16 @@ class R1ContinueActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeFinishActivity::class.java))
         }*/
 
+        when(clickCount) {
+            1 -> {
+                binding.cookStep.text = "No.$clickCount"
+                setTimeS = 2400
+                binding.cookTimer.text = "40:00"
+                binding.cookStepText.text = "$clickCount. 버터가 말랑해지도록 실온에 둔 후 볼에 넣고 풀어준다."
+                binding.beforeToPageBtn.visibility = View.INVISIBLE
+            }
+        }
+
         binding.nextToPageBtn.setOnClickListener {
             clickCount++
 

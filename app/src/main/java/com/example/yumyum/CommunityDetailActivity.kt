@@ -44,6 +44,8 @@ class CommunityDetailActivity : AppCompatActivity() {
 
                 if(userInfo != null) { // 사용자 정보가 있는 경우
                     writer = "${userInfo?.nickname}"
+                } else {
+                    writer = "익명"
                 }
                 db.close()
             }

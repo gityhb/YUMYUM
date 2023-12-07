@@ -19,6 +19,10 @@
             android:name=".IngredientSearchActivity"
             android:exported="false" />
         <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="메인화면" />
+        <activity
             android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
@@ -81,10 +85,6 @@
             android:exported="true"
             android:label="글쓰는 창" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/title_activity_main" />
-        <activity
             android:name=".RecipeApplicationEnrollActivity"
             android:exported="true"
             android:label="레시피 신청" />
@@ -102,8 +102,6 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -143,23 +144,17 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
         val cookingredinet = findViewById<EditText>(R.id.recipe_ingredient2)
         val cooktime = findViewById<EditText>(R.id.recipe_time2)
 
+        val applicationcancel: Button = findViewById(R.id.application_back_btn)
         val applicationfinish: Button = findViewById(R.id.application_enroll_btn)
 
         applicationfinish.setOnClickListener{
-            val cookname = cookname.text.toString()
-            val cookingredient = cookingredinet.text.toString()
-            val cooktime = cooktime.text.toString()
-            // 버튼이 눌리면 EditText에 있는 내용 저장
+            Toast.makeText(application, "신청이 완료되었습니다.", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
-            val Applicationintent = Intent(this , RecipeSearchActivity :: class.java)
-            // 인텐트 생성
-
-            Applicationintent.putExtra("name", cookname) // .putExtra() 메소드로 데이터 전달준비
-            Applicationintent.putExtra("ingredient", cookingredient)
-            Applicationintent.putExtra("time", cooktime)
-
-
-            startActivity(Applicationintent) // 인텐트 실행
+        applicationcancel.setOnClickListener{
+            Toast.makeText(application, "취소되었습니다.", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         //카메라

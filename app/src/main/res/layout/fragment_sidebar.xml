@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:background="#FFDDDD"
             android:orientation="vertical">
             <LinearLayout
@@ -45,17 +45,16 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/userNk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:textAlignment="textEnd"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#000"
-                android:text="쿠키님" />
+                android:text="로그인해주세요" />
 
 
 
@@ -63,165 +62,172 @@
 
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tite_recipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
                 android:layout_margin="7dp"
                 android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:text="레시피" />
         <View
-            android:id="@+id/view6"
+            android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="2px"
-            android:layout_marginTop="3dp"
+            android:layout_marginVertical="3dp"
             android:layout_marginHorizontal="7dp"
             android:background="#000"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
             android:layout_marginHorizontal="15dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/recipe1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="레시피 검색" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/recipe2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="재료 검색" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/recipe3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="레시피 신청" />
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="7dp"
+            android:background="#000"/>
+
 
 
         <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/title_community"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="7dp"
+                android:layout_margin="7dp"
                 android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:text="커뮤니티" />
         <View
-            android:id="@+id/view8"
+            android:id="@+id/view3"
             android:layout_width="match_parent"
             android:layout_height="2px"
+            android:layout_marginVertical="3dp"
             android:layout_marginHorizontal="7dp"
-            android:layout_marginTop="3dp"
             android:background="#000"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
             android:layout_marginHorizontal="15dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/community1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="글 목록" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/community2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="글 쓰기" />
 
         </LinearLayout>
 
         <View
-            android:id="@+id/view11"
+            android:id="@+id/view4"
             android:layout_width="match_parent"
             android:layout_height="2px"
+            android:layout_marginVertical="3dp"
             android:layout_marginHorizontal="7dp"
-            android:layout_marginTop="30dp"
             android:background="#000"/>
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/title_my"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_margin="7dp"
                 android:layout_marginTop="15dp"
                 android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:text="내 정보" />
         <View
-            android:id="@+id/view9"
+            android:id="@+id/view5"
             android:layout_width="match_parent"
             android:layout_height="2px"
+            android:layout_marginVertical="3dp"
             android:layout_marginHorizontal="7dp"
-            android:layout_marginTop="3dp"
             android:background="#000"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
             android:layout_marginHorizontal="15dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView39"
+                android:id="@+id/my1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="마이 페이지" />
 
             <TextView
-                android:id="@+id/textView40"
+                android:id="@+id/my2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:text="회원 정보 수정" />
 
         </LinearLayout>
 
         <View
-            android:id="@+id/view10"
+            android:id="@+id/view6"
             android:layout_width="match_parent"
             android:layout_height="2px"
+            android:layout_marginVertical="3dp"
             android:layout_marginHorizontal="7dp"
-            android:layout_marginTop="30dp"
             android:background="#000"/>
 
 

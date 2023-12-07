@@ -2,19 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation">
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.yumyum.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" >
-        <action
-            android:id="@+id/action_nav_slideshow_to_mainActivity2"
-            app:destination="@id/mainActivity" />
-    </fragment>
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.yumyum.MainActivity"
-        android:label="MainActivity" />
+        android:id="@+id/navigation_home"
+        android:label="@string/title_home" />
+
+    <fragment
+        android:id="@+id/navigation_other"
+        android:label="@string/title_other" />
+
+    <fragment
+        android:id="@+id/navigation_my"
+        android:label="@string/title_my" />
 </navigation>

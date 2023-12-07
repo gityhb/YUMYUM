@@ -126,10 +126,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeSearchActivity::class.java))
         }
 
-        /* val community: Button = findViewById(R.id.btn_community)
-        community.setOnClickListener {
-            startActivity(Intent(this, CommunityActivity::class.java))
-        }  재료활용 페이지로 이동 */
+        val ingredientsearch: Button = findViewById(R.id.btn_ingredient_search)
+        ingredientsearch.setOnClickListener {
+            startActivity(Intent(this, IngredientSearchActivity::class.java))
+        }
 
 
 

@@ -10,11 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yumyum.recipe.R1StartActivity
 
-class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onItemClick: (RecipeItem) -> Unit) : RecyclerView.Adapter<RecipesearchAdapter.ViewHolder>() {
+class IngredientSearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onItemClick: (RecipeItem) -> Unit) : RecyclerView.Adapter<IngredientSearchAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_recipesearch_adapter, parent, false)
+            .inflate(R.layout.activity_ingredient_search_adapter, parent, false)
         return ViewHolder(view)
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.MainActivity
 import com.example.yumyum.R
@@ -16,6 +17,8 @@ class R1FinishActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecipeFinishBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
@@ -35,8 +38,14 @@ class R1FinishActivity : AppCompatActivity() {
         val drawable = resources.getDrawable(R.drawable.food7, null)
         /*출처: https://mainia.tistory.com/2016*/
 
-        binding.fcookImg.setImageDrawable(drawable)
-        binding.fcookTitle.text = "동물모양쿠키"
+        val name = intent.getStringExtra("Name")
+        val img = intent.getIntExtra("Img", R.drawable.food3)
+
+        val finish_img: ImageView = findViewById(R.id.fcook_img)
+        val finish_title: TextView = findViewById(R.id.fcook_title)
+
+        finish_title.text = name
+        finish_img.setImageResource(img)
 
     } // onCreate
 }

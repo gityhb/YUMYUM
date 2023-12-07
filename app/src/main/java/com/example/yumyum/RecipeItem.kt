@@ -1,3 +1,3 @@
 package com.example.yumyum
 
-class RecipeItem(val recipe: String, val ingredient:String, val time:String)
+class RecipeItem(val recipe: String, val ingredient:String, val time:String, val utensil: String, val step: String, val recipeimg: Int,  val levelimg: Int)

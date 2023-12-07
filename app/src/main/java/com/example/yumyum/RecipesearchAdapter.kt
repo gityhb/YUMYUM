@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,8 @@ class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onI
         holder.recipe.text = recipeItem.recipe
         holder.ingredient.text = recipeItem.ingredient
         holder.time.text = recipeItem.time
+        holder.recipeimg.setImageResource(recipeItem.recipeimg)
+        holder.levelimg.setImageResource(recipeItem.levelimg)
     }
 
     fun updateList(newList: List<RecipeItem>) {
@@ -38,8 +41,10 @@ class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onI
         val recipe: TextView = itemView.findViewById(R.id.recipe_name)
         val ingredient: TextView = itemView.findViewById(R.id.recipe_ingredient)
         val time: TextView = itemView.findViewById(R.id.recipe_time)
+        val recipeimg: ImageView = itemView.findViewById(R.id.recipe_img)
+        val levelimg: ImageView = itemView.findViewById(R.id.level_img)
 
-            val itemLinearLayout: LinearLayout = itemView.findViewById(R.id.click_part)
+        val itemLinearLayout: LinearLayout = itemView.findViewById(R.id.click_part)
 
         init {
             itemLinearLayout.setOnClickListener {
@@ -53,6 +58,9 @@ class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onI
                     intent.putExtra("Recipe", clickedItem.recipe)
                     intent.putExtra("Ingredient", clickedItem.ingredient)
                     intent.putExtra("Time", clickedItem.time)
+                    intent.putExtra("Utensil", clickedItem.utensil)
+                    intent.putExtra("RecipeImg", clickedItem.recipeimg)
+                    intent.putExtra("Step", clickedItem.step)
 
                     itemView.context.startActivity(intent)
                 }

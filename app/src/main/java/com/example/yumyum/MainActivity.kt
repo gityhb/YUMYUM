@@ -134,12 +134,15 @@ class MainActivity : AppCompatActivity() {
 
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
+
+        bottomNavigationView.menu.findItem(R.id.navigation_home)?.isChecked = true
+
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.navigation_other -> {
+                R.id.navigation_other -> {  //사이드바로 이동
                     replaceFragment(sidebarFragment)
                 }
-                R.id.navigation_home -> { //마이페이지로 이동
+                R.id.navigation_home -> { //홈으로 이동
                     startActivity(Intent(this, MainActivity::class.java))
                 }
                 R.id.navigation_my -> { //마이페이지로 이동
@@ -148,6 +151,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
 
         viewPager = binding.foodViewPager
         adapter = MainPagerAdapter()
@@ -175,6 +179,7 @@ class MainActivity : AppCompatActivity() {
         }
         // 처음 3초 뒤에 시작하고 반복
         handler.postDelayed(runnable, 3000)
+
     } //onCreate
 
     override fun onDestroy() {
@@ -220,6 +225,7 @@ class MainActivity : AppCompatActivity() {
             likeNo.visibility = View.GONE
         }
     }
+
     /*출처: chatGPT*/
 }
 

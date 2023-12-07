@@ -7,19 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.yumyum.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/title_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.yumyum.ui.dashboard.DashboardFragment"
-        android:label="@string/title_other"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_other"
+        android:label="@string/title_other" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.yumyum.ui.notifications.NotificationsFragment"
-        android:label="@string/title_my"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_my"
+        android:label="@string/title_my" />
 </navigation>

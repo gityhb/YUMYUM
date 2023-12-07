@@ -1,6 +1,5 @@
 package com.example.yumyum
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,8 +26,8 @@ class SidebarFragment : Fragment() {
         }
 
         binding.cancelImg.setOnClickListener {
-            val mainActivityIntent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(mainActivityIntent)
+            val parentLayout = requireView().parent as? ViewGroup
+            parentLayout?.visibility = View.GONE
         }
 
 

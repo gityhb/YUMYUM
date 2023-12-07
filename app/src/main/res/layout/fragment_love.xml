@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,19 +37,34 @@
                             android:id="@+id/food1"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:scaleType="centerCrop"
                             android:background="@drawable/border_img"
                             android:padding="5dp"
-                            android:src="@drawable/food1" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/food5" />
 
+                        <ImageView
+                            android:id="@+id/like_no1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/grayheart" />
 
+                        <ImageView
+                            android:id="@+id/like_yes1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/redheart" />
                     </FrameLayout>
 
                     <TextView
-                        android:id="@+id/f1"
+                        android:id="@+id/f8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="우니 덮밥"
+                        android:text="미트볼"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="15sp" />
@@ -71,7 +87,24 @@
                             android:scaleType="centerCrop"
                             android:background="@drawable/border_img"
                             android:padding="5dp"
-                            android:src="@drawable/food2" />
+                            android:src="@drawable/food6" />
+
+                        <ImageView
+                            android:id="@+id/like_no2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/redheart" />
 
 
                     </FrameLayout>
@@ -81,7 +114,7 @@
                         android:id="@+id/f2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="국물 닭발"
+                        android:text="닭발"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="15sp" />
@@ -103,7 +136,24 @@
                             android:layout_height="100dp"
                             android:background="@drawable/border_img"
                             android:padding="5dp"
-                            android:src="@drawable/food5" />
+                            android:src="@drawable/food7" />
+
+                        <ImageView
+                            android:id="@+id/like_no3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/grayheart" />
+
+                        <ImageView
+                            android:id="@+id/like_yes3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/redheart" />
 
                     </FrameLayout>
 
@@ -111,7 +161,7 @@
                         android:id="@+id/f5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="미트볼"
+                        android:text="동물모양쿠키"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="15sp" />

@@ -192,7 +192,10 @@ class MainActivity : AppCompatActivity() {
                 R.drawable.viewp1,
                 R.drawable.viewp2,
                 R.drawable.viewp3,
-                R.drawable.viewp4
+                R.drawable.viewp4,
+                R.drawable.viewp5,
+                R.drawable.viewp6,
+                R.drawable.viewp7
             )
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainPagerViewHolder {

@@ -61,11 +61,9 @@
 
             <ImageView
                 android:id="@+id/recipe_search_img"
-                android:layout_width="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:src="@drawable/search" />
 

@@ -14,12 +14,15 @@ import com.example.yumyum.databinding.ActivityCommunityDetailBinding
 class CommunityDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCommunityDetailBinding
-
+    lateinit var writer: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCommunityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val dbHelper = DBHelper(this)
+        val db = dbHelper.readableDatabase
 
         val title = intent.getStringExtra("Title")
         val content = intent.getStringExtra("Content")
@@ -36,7 +39,14 @@ class CommunityDetailActivity : AppCompatActivity() {
         val addCommentBtn: Button = findViewById(R.id.add_comment_btn)
         addCommentBtn.setOnClickListener {
             // 댓글 추가 버튼 눌렸을 때의 동작 구현
-            val writer = "익명" // 적절한 방식으로 작성자 정보를 가져와야 합니다.
+            if(dbHelper.isUserLoggedIn()) {
+                val userInfo = dbHelper.getUserInfo(db)
+
+                if(userInfo != null) { // 사용자 정보가 있는 경우
+                    writer = "${userInfo?.nickname}"
+                }
+                db.close()
+            }
             val commentContent = findViewById<EditText>(R.id.add_comment)
 
             // CommentItem 생성

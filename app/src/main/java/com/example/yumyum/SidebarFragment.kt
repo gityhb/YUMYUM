@@ -1,5 +1,6 @@
 package com.example.yumyum
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,32 @@ class SidebarFragment : Fragment() {
             parentLayout?.visibility = View.GONE
         }
 
+        //레시피
+        binding.recipe1.setOnClickListener {
+            startActivity(Intent(context, RecipeSearchActivity::class.java))
+        }
+        binding.recipe2.setOnClickListener {
+            startActivity(Intent(context, IngredientSearchActivity::class.java))
+        }
+        binding.recipe3.setOnClickListener {
+            startActivity(Intent(context, RecipeApplicationEnrollActivity::class.java))
+        }
+
+        //커뮤니티
+        binding.community1.setOnClickListener {
+            startActivity(Intent(context, CommunityActivity::class.java))
+        }
+        binding.community2.setOnClickListener {
+            startActivity(Intent(context, CommunityEnrollActivity::class.java))
+        }
+
+        //내정보
+        binding.my1.setOnClickListener {
+            startActivity(Intent(context, MyPageActivity::class.java))
+        }
+        binding.my2.setOnClickListener {
+            startActivity(Intent(context, EditMemberInfoActivity::class.java))
+        }
 
         return view
 

@@ -118,4 +118,5 @@ class RecipeSearchActivity : AppCompatActivity() {
 
 
     } // onCreate
+
 }

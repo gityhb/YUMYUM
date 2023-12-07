@@ -38,7 +38,11 @@ class CommunityActivity : AppCompatActivity() {
         itemList.add(ListItem("신전 떡볶이", "신전 떡볶이 레시피 내놔"))
         itemList.add(ListItem("살이 많이 쪘어요...", "얌얌 레시피보고 음식 만들다가 살 쪘어영"))
         itemList.add(ListItem("뿌링클 가루", "뿌링클 가루에는 뭐가 들어갈까용?"))
+        itemList.add(ListItem("비밀 레시피 공유", "나만 아는 레시피 여기에 공유할까 말까"))
         itemList.add(ListItem("배고파..", "간계밥 만들어 먹을까"))
+        itemList.add(ListItem("음식 실패작 공유", "제 실패한 음식 리스트입니다.."))
+        itemList.add(ListItem("저녁추천받음", "오늘 저녁에 뭐 해먹지..? 다들 뭐 먹나요"))
+        itemList.add(ListItem("치킨 VS 피자", "오늘 먹으려고 하는데 어떤게 좋을까요?"))
         // 리스트가 변경됨을 어댑터에 알림
 
         var title = intent.getStringExtra("Title")

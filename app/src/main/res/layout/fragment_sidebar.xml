@@ -52,9 +52,6 @@
                 android:textStyle="bold"
                 android:textColor="#000"
                 android:text="로그인해주세요" />
-
-
-
         </LinearLayout>
 
 

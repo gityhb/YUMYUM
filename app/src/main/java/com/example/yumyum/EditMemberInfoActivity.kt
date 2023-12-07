@@ -21,7 +21,19 @@ class EditMemberInfoActivity : AppCompatActivity() {
         var binding = ActivityEditMemberInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        dbHelper = DBHelper(this)
+        val dbHelper = DBHelper(this)
+        val db = dbHelper.readableDatabase
+
+        if(dbHelper.isUserLoggedIn()) {
+            val userInfo = dbHelper.getUserInfo(db)
+
+            if(userInfo != null) { // 사용자 정보가 있는 경우
+                binding.inputName.text = "${userInfo?.name}"
+                binding.inputId.text = "${userInfo?.email}"
+
+            }
+            db.close()
+        }
 
         //갤러리
         val galleryLauncher = registerForActivityResult(

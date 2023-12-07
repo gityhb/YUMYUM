@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-data class UserInfo(val nickname: String, val email: String)
+data class UserInfo(val name: String,  val nickname: String, val email: String)
 class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
     companion object {
         const val DB_NAME = "YUMYUM_DB"
@@ -334,20 +334,22 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
     //사용자 정보
     fun getUserInfo(db: SQLiteDatabase): UserInfo? {
         val db = this.readableDatabase
-        val columns = arrayOf(USER_NKNAME, USER_EMAIL)
+        val columns = arrayOf(USER_NAME, USER_NKNAME, USER_EMAIL)
         val cursor = db.query(USER_TABLE, columns, "$IS_LOGIN = ?", arrayOf("1"), null, null, null)
 
         if (cursor != null && cursor.moveToFirst()) {
+            val nameIndex = cursor.getColumnIndex(USER_NAME)
             val nknameIndex = cursor.getColumnIndex(USER_NKNAME)
             val emailIndex = cursor.getColumnIndex(USER_EMAIL)
 
 
-            if (nknameIndex != -1 && emailIndex != -1) {
+            if (nknameIndex != -1 && emailIndex != -1 && nameIndex != -1) {
+                val name = cursor.getString(nameIndex)
                 val nkname = cursor.getString(nknameIndex)
                 val email = cursor.getString(emailIndex)
 
                 cursor.close()
-                return UserInfo(nkname, email)
+                return UserInfo(name, nkname, email)
             }
         }
         cursor?.close()

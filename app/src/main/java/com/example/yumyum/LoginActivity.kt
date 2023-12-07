@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityLoginBinding
 
@@ -25,14 +24,12 @@ class LoginActivity : AppCompatActivity() {
 
             if(isLogin) {
                 dbHelper.updateIsLogin(LstrId, 1)
-                Toast.makeText(applicationContext, "$LstrId 로그인 성공!", Toast.LENGTH_SHORT).show()
                 binding.LwarningLogin.visibility = View.INVISIBLE
 
                 val intentM = Intent(this@LoginActivity, MyPageActivity::class.java)
                 startActivity(intentM)
             } else {
                 binding.LwarningLogin.visibility = View.VISIBLE
-                Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
             }
         } // loginBtn
 

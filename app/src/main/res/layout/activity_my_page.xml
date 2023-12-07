@@ -96,7 +96,7 @@
                                 android:id="@+id/user_email"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="invisible"
+                                android:visibility="gone"
                                 android:text="cookie0929@gmail.com" />
 
                         </LinearLayout>

@@ -19,11 +19,6 @@
             android:name=".IngredientSearchActivity"
             android:exported="false" />
         <activity
-            android:name=".SideActivity"
-            android:exported="false"
-            android:label="@string/title_activity_side"
-            android:theme="@style/Theme.YUMYUM.NoActionBar.NoActionBar" />
-        <activity
             android:name=".StartActivity"
             android:exported="true">
             <intent-filter>

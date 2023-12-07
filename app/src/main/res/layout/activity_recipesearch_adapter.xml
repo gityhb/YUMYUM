@@ -39,6 +39,7 @@
                 android:src="@drawable/title" />
 
             <LinearLayout
+                android:id="@+id/click_part"
                 android:layout_width="160dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"

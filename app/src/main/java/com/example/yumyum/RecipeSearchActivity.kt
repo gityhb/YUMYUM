@@ -15,15 +15,6 @@ class RecipeSearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecipeSearchBinding
     val recipeList = arrayListOf<RecipeItem>()      // 아이템 배열
 
-    /*val recipeAdapter = RecipesearchAdapter(recipeList){ clickedItem ->
-        // 아이템 클릭 처리, 예를 들어 다른 액티비티로 이동
-        val intent = Intent(this,RecipeStartActivity::class.java)
-        intent.putExtra("Recipe", clickedItem.recipe)
-        intent.putExtra("Ingredient", clickedItem.ingredient)
-        intent.putExtra("Time", clickedItem.time)
-        startActivity(intent)
-    }*/
-
     val recipeAdapter = RecipesearchAdapter(recipeList){ clickedItem ->
         // 아이템 클릭 처리, 예를 들어 다른 액티비티로 이동
         val intent = Intent(this,R1StartActivity::class.java)
@@ -116,6 +107,8 @@ class RecipeSearchActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
+
+
 
     } // onCreate
 }

@@ -59,6 +59,7 @@ class R1StartActivity : AppCompatActivity() {
         //val drawable = resources.getDrawable(R.drawable.food7, null)
         /*출처: https://mainia.tistory.com/2016*/
 
+        //이후 구현 계획 코드
         //binding.cookImg.setImageDrawable(drawable)
         /*binding.time.text = "2시간"
         binding.cookTitle.text = "동물모양쿠키"
@@ -76,7 +77,6 @@ class R1StartActivity : AppCompatActivity() {
                 "10. 오븐 170도 15분 예열 후 170도에서 13-15분간 굽는다.\n\n" +
                 "11. 오븐에서 꺼낸 후 5분간 식힌다."*/
 
-        //이후 구현 계획 코드
         /*var cook_imgV : ImageView = findViewById(R.id.cook_img)
         var cook_titleV : TextView = findViewById(R.id.cook_title)
         var cook_userV : TextView = findViewById(R.id.enroll_user)

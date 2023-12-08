@@ -81,6 +81,7 @@ class MyPageActivity : AppCompatActivity() {
         val loginButton: TextView = findViewById(R.id.log_in)
         loginButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+
         }
 
         val logoutButton: TextView = findViewById(R.id.log_out)
@@ -89,6 +90,7 @@ class MyPageActivity : AppCompatActivity() {
             dbHelper.isUserLogout(usernk)
 
             finish()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.editMemberInfo.setOnClickListener {

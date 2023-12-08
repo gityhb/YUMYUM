@@ -18,8 +18,6 @@ class R1FinishActivity : AppCompatActivity() {
         binding = ActivityRecipeFinishBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
             startActivity(Intent(this, R1StartActivity::class.java))

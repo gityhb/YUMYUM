@@ -29,7 +29,7 @@ class EditMemberInfoActivity : AppCompatActivity() {
 
             if(userInfo != null) { // 사용자 정보가 있는 경우
                 binding.inputName.text = "${userInfo?.name}"
-                binding.inputId.text = "${userInfo?.email}"
+                binding.inputId.text = "${userInfo?.id}"
 
             }
             db.close()

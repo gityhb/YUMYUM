@@ -26,7 +26,7 @@ class MyPageActivity : AppCompatActivity() {
 
             if(userInfo != null) { // 사용자 정보가 있는 경우
                 binding.userNkname.text = "${userInfo?.nickname}"
-                binding.userId.text = "${userInfo?.email}"
+                binding.userId.text = "${userInfo?.id}"
                 binding.userId.visibility = View.VISIBLE
                 binding.logIn.visibility = View.GONE
                 binding.logOut.visibility = View.VISIBLE

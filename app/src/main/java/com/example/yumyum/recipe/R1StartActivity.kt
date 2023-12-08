@@ -51,6 +51,7 @@ class R1StartActivity : AppCompatActivity() {
             val intent = Intent(this, R1ContinueActivity::class.java)
             intent.putExtra("Name", recipe)
             intent.putExtra("Img", recipeimg)
+            //위 인텐트 2개는 마지막 피니쉬액티비티로 레시피명과 이미지 넘기는 것임
             startActivity(intent)
         }
 

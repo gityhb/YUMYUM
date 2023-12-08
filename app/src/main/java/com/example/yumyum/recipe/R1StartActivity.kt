@@ -45,6 +45,7 @@ class R1StartActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeSearchActivity::class.java))
         }
 
+        //머핀 컨티뉴4, 동물쿠키 컨티뉴2, 닭발 컨티뉴3, 라멘 컨티뉴5, 연어초밥 컨티뉴6
         val startButton: Button = findViewById(R.id.cook_start_btn)
         startButton.setOnClickListener {
             val intent = Intent(this, R1ContinueActivity::class.java)

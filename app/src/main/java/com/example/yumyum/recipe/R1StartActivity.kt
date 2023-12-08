@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.R
 import com.example.yumyum.RecipeSearchActivity
@@ -18,6 +19,7 @@ class R1StartActivity : AppCompatActivity() {
         binding = ActivityRecipeStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val number = intent.getIntExtra("number", 0)
         val recipe = intent.getStringExtra("Recipe")
         val ingredient = intent.getStringExtra("Ingredient")
         val time = intent.getStringExtra("Time")
@@ -45,14 +47,44 @@ class R1StartActivity : AppCompatActivity() {
             startActivity(Intent(this, RecipeSearchActivity::class.java))
         }
 
-        //머핀 컨티뉴4, 동물쿠키 컨티뉴2, 닭발 컨티뉴3, 라멘 컨티뉴5, 연어초밥 컨티뉴6
+        //머핀 컨티뉴4, 스콘 컨티뉴2, 동물쿠키 컨티뉴1,닭발 컨티뉴3, 라멘 컨티뉴5, 연어초밥 컨티뉴6
         val startButton: Button = findViewById(R.id.cook_start_btn)
         startButton.setOnClickListener {
-            val intent = Intent(this, R1ContinueActivity::class.java)
+            //val intent = Intent(this, R1ContinueActivity::class.java)
             intent.putExtra("Name", recipe)
             intent.putExtra("Img", recipeimg)
             //위 인텐트 2개는 마지막 피니쉬액티비티로 레시피명과 이미지 넘기는 것임
-            startActivity(intent)
+
+            if(number == 1)
+                startActivity(Intent(this, R4ContinueActivity::class.java))
+            else if(number == 2)
+                startActivity(Intent(this, R3ContinueActivity::class.java))
+            else if(number == 3)
+                startActivity(Intent(this, R2ContinueActivity::class.java))
+            else if(number == 4)
+                startActivity(Intent(this, R1ContinueActivity::class.java))
+            else if(number == 5)
+                startActivity(Intent(this, R5ContinueActivity::class.java))
+            else if(number == 6)
+                startActivity(Intent(this, R6ContinueActivity::class.java))
+            else
+                Toast.makeText(this, "없음", Toast.LENGTH_SHORT).show()
+
+            /*if(number == 1)
+                Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
+            else if(number == 2)
+                Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
+            else if(number == 3)
+                Toast.makeText(this, "3", Toast.LENGTH_SHORT).show()
+            else if(number == 4)
+                Toast.makeText(this, "4", Toast.LENGTH_SHORT).show()
+            else if(number == 5)
+                Toast.makeText(this, "5", Toast.LENGTH_SHORT).show()
+            else if(number == 6)
+                Toast.makeText(this, "6", Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(this, "없음", Toast.LENGTH_SHORT).show()*/
+            //startActivity(intent)
         }
 
 

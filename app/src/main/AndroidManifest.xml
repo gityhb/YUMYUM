@@ -58,6 +58,21 @@
             android:name=".recipe.R1ContinueActivity"
             android:exported="true" />
         <activity
+            android:name=".recipe.R2ContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recipe.R3ContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recipe.R4ContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recipe.R5ContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recipe.R6ContinueActivity"
+            android:exported="true" />
+        <activity
             android:name=".recipe.R1FinishActivity"
             android:exported="true" />
         <activity

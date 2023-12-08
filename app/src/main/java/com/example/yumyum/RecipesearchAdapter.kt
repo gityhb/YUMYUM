@@ -24,6 +24,7 @@ class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onI
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val recipeItem = recipeList[position]
+
         holder.recipe.text = recipeItem.recipe
         holder.ingredient.text = recipeItem.ingredient
         holder.time.text = recipeItem.time
@@ -54,7 +55,7 @@ class RecipesearchAdapter(val recipeList: ArrayList<RecipeItem>, private val onI
                 if (currentPosition != RecyclerView.NO_POSITION) {
                     val clickedItem = recipeList[currentPosition]
                     val intent = Intent(itemView.context, R1StartActivity::class.java)
-
+                    intent.putExtra("number", clickedItem.number)
                     intent.putExtra("Recipe", clickedItem.recipe)
                     intent.putExtra("Ingredient", clickedItem.ingredient)
                     intent.putExtra("Time", clickedItem.time)

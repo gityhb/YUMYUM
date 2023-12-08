@@ -25,9 +25,9 @@ class MyPageActivity : AppCompatActivity() {
             val userInfo = dbHelper.getUserInfo(db)
 
             if(userInfo != null) { // 사용자 정보가 있는 경우
-                binding.userNk.text = "${userInfo?.nickname}"
-                binding.userEmail.text = "${userInfo?.email}"
-                binding.userEmail.visibility = View.VISIBLE
+                binding.userNkname.text = "${userInfo?.nickname}"
+                binding.userId.text = "${userInfo?.email}"
+                binding.userId.visibility = View.VISIBLE
                 binding.logIn.visibility = View.GONE
                 binding.logOut.visibility = View.VISIBLE
                 binding.logRemove.visibility = View.VISIBLE
@@ -86,7 +86,7 @@ class MyPageActivity : AppCompatActivity() {
 
         val logoutButton: TextView = findViewById(R.id.log_out)
         logoutButton.setOnClickListener {
-            val usernk = binding.userNk.text.toString()
+            val usernk = binding.userNkname.text.toString()
             dbHelper.isUserLogout(usernk)
 
             finish()

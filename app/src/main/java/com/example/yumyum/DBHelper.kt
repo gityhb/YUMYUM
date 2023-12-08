@@ -346,10 +346,10 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
             if (nknameIndex != -1 && emailIndex != -1 && nameIndex != -1) {
                 val name = cursor.getString(nameIndex)
                 val nkname = cursor.getString(nknameIndex)
-                val email = cursor.getString(emailIndex)
+                val id = cursor.getString(emailIndex)
 
                 cursor.close()
-                return UserInfo(name, nkname, email)
+                return UserInfo(name, nkname, id)
             }
         }
         cursor?.close()

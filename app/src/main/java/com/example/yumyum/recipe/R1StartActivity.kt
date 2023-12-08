@@ -69,22 +69,6 @@ class R1StartActivity : AppCompatActivity() {
                 startActivity(Intent(this, R6ContinueActivity::class.java))
             else
                 Toast.makeText(this, "없음", Toast.LENGTH_SHORT).show()
-
-            /*if(number == 1)
-                Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
-            else if(number == 2)
-                Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
-            else if(number == 3)
-                Toast.makeText(this, "3", Toast.LENGTH_SHORT).show()
-            else if(number == 4)
-                Toast.makeText(this, "4", Toast.LENGTH_SHORT).show()
-            else if(number == 5)
-                Toast.makeText(this, "5", Toast.LENGTH_SHORT).show()
-            else if(number == 6)
-                Toast.makeText(this, "6", Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(this, "없음", Toast.LENGTH_SHORT).show()*/
-            //startActivity(intent)
         }
 
 

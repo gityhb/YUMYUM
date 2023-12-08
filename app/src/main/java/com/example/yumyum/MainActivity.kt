@@ -39,7 +39,11 @@ class MainActivity : AppCompatActivity() {
         R.id.food4,
         R.id.food5,
         R.id.food6,
-        R.id.food7
+        R.id.food7,
+        R.id.food8,
+        R.id.food9,
+        R.id.food10,
+        R.id.food11
     )
 
     //좋아요 이미지
@@ -50,7 +54,11 @@ class MainActivity : AppCompatActivity() {
         R.id.like_yes4,
         R.id.like_yes5,
         R.id.like_yes6,
-        R.id.like_yes7
+        R.id.like_yes7,
+        R.id.like_yes8,
+        R.id.like_yes9,
+        R.id.like_yes10,
+        R.id.like_yes11
     )
 
     private val likeNoViews = arrayOf(
@@ -60,7 +68,11 @@ class MainActivity : AppCompatActivity() {
         R.id.like_no4,
         R.id.like_no5,
         R.id.like_no6,
-        R.id.like_no7
+        R.id.like_no7,
+        R.id.like_no8,
+        R.id.like_no9,
+        R.id.like_no10,
+        R.id.like_no11
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,13 +95,13 @@ class MainActivity : AppCompatActivity() {
         val partImg: ImageView = findViewById(R.id.food1)
         partImg.clipToOutline = true*/
 
-        binding.food1.clipToOutline = true
+        /*binding.food1.clipToOutline = true
         binding.food2.clipToOutline = true
         binding.food3.clipToOutline = true
         binding.food4.clipToOutline = true
         binding.food5.clipToOutline = true
         binding.food6.clipToOutline = true
-        binding.food7.clipToOutline = true
+        binding.food7.clipToOutline = true*/
 
         /*출처 : https://bada744.tistory.com/167*/
 
@@ -180,6 +192,20 @@ class MainActivity : AppCompatActivity() {
         // 처음 3초 뒤에 시작하고 반복
         handler.postDelayed(runnable, 3000)
 
+        //좋아요 기능
+        if(binding.likeYes8.visibility == View.GONE) {
+            binding.fl4.visibility = View.GONE
+
+        }
+        if(binding.likeYes9.visibility == View.GONE) {
+            binding.fl5.visibility = View.GONE
+        }
+        if(binding.likeYes10.visibility == View.GONE) {
+            binding.fl6.visibility = View.GONE
+        }
+        if(binding.likeYes11.visibility == View.GONE) {
+            binding.fl7.visibility = View.GONE
+        }
     } //onCreate
 
     override fun onDestroy() {
@@ -223,9 +249,74 @@ class MainActivity : AppCompatActivity() {
         if(likeYes.visibility == View.VISIBLE) {
             likeYes.visibility = View.GONE
             likeNo.visibility = View.VISIBLE
+
+            //좋아요 찜한 레시피
+            if(binding.likeYes1.visibility == View.GONE) {
+                binding.fl4.visibility = View.GONE
+                binding.likeNo8.visibility = View.VISIBLE
+                binding.likeYes8.visibility = View.GONE
+                binding.likeYes1.visibility = View.VISIBLE
+            }
+            if(binding.likeYes2.visibility == View.GONE) {
+                binding.fl5.visibility = View.GONE
+                binding.likeNo9.visibility = View.VISIBLE
+                binding.likeYes9.visibility = View.GONE
+                binding.likeYes2.visibility = View.VISIBLE
+            }
+
+            if(binding.likeYes3.visibility == View.GONE) {
+                binding.fl6.visibility = View.GONE
+                binding.likeNo10.visibility = View.VISIBLE
+                binding.likeYes10.visibility = View.GONE
+                binding.likeYes3.visibility = View.VISIBLE
+            }
+
+            if(binding.likeYes4.visibility == View.GONE) {
+                binding.fl7.visibility = View.GONE
+                binding.likeNo11.visibility = View.VISIBLE
+                binding.likeYes11.visibility = View.GONE
+                binding.likeYes4.visibility = View.VISIBLE
+            }
+
+            if(binding.likeYes5.visibility == View.GONE)
+                binding.fl1.visibility = View.GONE
+
+            if(binding.likeYes6.visibility == View.GONE)
+                binding.fl2.visibility = View.GONE
+
+            if(binding.likeYes7.visibility == View.GONE)
+                binding.fl3.visibility = View.GONE
+
+            if(binding.likeYes8.visibility == View.GONE) {
+                binding.fl4.visibility = View.GONE
+            }
+            if(binding.likeYes9.visibility == View.GONE) {
+                binding.fl5.visibility = View.GONE
+            }
+            if(binding.likeYes10.visibility == View.GONE) {
+                binding.fl6.visibility = View.GONE
+            }
+            if(binding.likeYes11.visibility == View.GONE) {
+                binding.fl7.visibility = View.GONE
+            }
+
         } else {
             likeYes.visibility = View.VISIBLE
             likeNo.visibility = View.GONE
+
+            //좋아요 찜한 레시피
+            if(binding.likeNo8.visibility == View.GONE) {
+                binding.fl4.visibility = View.VISIBLE
+            }
+            if(binding.likeNo9.visibility == View.GONE) {
+                binding.fl5.visibility = View.VISIBLE
+            }
+            if(binding.likeNo10.visibility == View.GONE) {
+                binding.fl6.visibility = View.VISIBLE
+            }
+            if(binding.likeNo11.visibility == View.GONE) {
+                binding.fl7.visibility = View.VISIBLE
+            }
         }
     }
 

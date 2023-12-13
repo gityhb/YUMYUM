@@ -52,7 +52,7 @@ class R3ContinueActivity : AppCompatActivity() {
                 // 새로운 타이머 시작
                 startTimer(setTimeS * 1000) // 시간을 설정하려면 여기 값을 조정, 5분 -> setTimeS -> 60*5=300
             }
-        }
+        }//출처:chatgpt
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
@@ -218,7 +218,7 @@ class R3ContinueActivity : AppCompatActivity() {
         updateTimerText()
         isTimerRunning = false
         startBtn.text = "시작"
-        stopBtn.text = "계속"
+        stopBtn.text = "계속" //출처:chatgpt
         when(clickCount) {
             1 -> binding.cookTimer.text = "00:00"
             2 -> binding.cookTimer.text = "10:00"
@@ -235,7 +235,7 @@ class R3ContinueActivity : AppCompatActivity() {
         val seconds = (remainingTimeInMillis / 1000 % 60).toInt()
         val timeText = String.format("%02d:%02d", minutes, seconds)
         cookTimer.text = timeText
-    }
+    }//출처:chatgpt
 
 
 }

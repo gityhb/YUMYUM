@@ -39,10 +39,10 @@ class CommunityDetailActivity : AppCompatActivity() {
         val addCommentBtn: Button = findViewById(R.id.add_comment_btn)
         addCommentBtn.setOnClickListener {
             // 댓글 추가 버튼 눌렸을 때의 동작 구현
-            if(dbHelper.isUserLoggedIn()) {
+            if (dbHelper.isUserLoggedIn()) {
                 val userInfo = dbHelper.getUserInfo(db)
 
-                if(userInfo != null) { // 사용자 정보가 있는 경우
+                if (userInfo != null) { // 사용자 정보가 있는 경우
                     writer = "${userInfo?.nickname}"
                 } else {
                     writer = "익명"
@@ -78,4 +78,4 @@ class CommunityDetailActivity : AppCompatActivity() {
         // 어댑터에 데이터 변경 알림
         commentAdapter.notifyDataSetChanged()
     }
-    }
+}

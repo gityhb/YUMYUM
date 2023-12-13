@@ -22,13 +22,16 @@ class MainActivity : AppCompatActivity() {
     private val fragmentManager: FragmentManager = supportFragmentManager
     private val sidebarFragment: SidebarFragment = SidebarFragment()
 
-    private lateinit var viewPager : ViewPager2
+    private lateinit var viewPager: ViewPager2
     private lateinit var adapter: MainPagerAdapter
     private val handler = Handler()
     private lateinit var runnable: Runnable
     private fun replaceFragment(fragment: Fragment) {
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.sidebar_frame, fragment)  // R.id.fragment_container는 교체될 프래그먼트를 보여줄 레이아웃 ID로 변경
+        transaction.replace(
+            R.id.sidebar_frame,
+            fragment
+        )  // R.id.fragment_container는 교체될 프래그먼트를 보여줄 레이아웃 ID로 변경
         transaction.commit()
     }
 
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     //좋아요 이미지
-    private val likeYesViews = arrayOf (
+    private val likeYesViews = arrayOf(
         R.id.like_yes1,
         R.id.like_yes2,
         R.id.like_yes3,
@@ -81,47 +84,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*dbHelper = DBHelper(this)
-
-        val recipeList = dbHelper.generateRecipeList()
-
-        // 레시피 리스트 순회하면서, 데이터베이스에 추가
-        for(recipe in recipeList) {
-            dbHelper.addRecipe(recipe)
-        }*/
-
-        /*val navView: BottomNavigationView = binding.navView
-
-        val partImg: ImageView = findViewById(R.id.food1)
-        partImg.clipToOutline = true*/
-
-        /*binding.food1.clipToOutline = true
-        binding.food2.clipToOutline = true
-        binding.food3.clipToOutline = true
-        binding.food4.clipToOutline = true
-        binding.food5.clipToOutline = true
-        binding.food6.clipToOutline = true
-        binding.food7.clipToOutline = true*/
-
-        /*출처 : https://bada744.tistory.com/167*/
-
-
-
-        for(i in imageViews.indices) {
+        for (i in imageViews.indices) {
             val likeYes = findViewById<ImageView>(likeYesViews[i])
             val likeNo = findViewById<ImageView>(likeNoViews[i])
 
-            likeYes.setOnClickListener{ toggleVisibility(likeYes, likeNo) }
-            likeNo.setOnClickListener{ toggleVisibility(likeYes, likeNo) }
+            likeYes.setOnClickListener { toggleVisibility(likeYes, likeNo) }
+            likeNo.setOnClickListener { toggleVisibility(likeYes, likeNo) }
         }
-
-        /*val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)*/
 
         val community: Button = findViewById(R.id.btn_community)
         community.setOnClickListener {
@@ -143,8 +112,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, IngredientSearchActivity::class.java))
         }
 
-
-
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
 
         bottomNavigationView.menu.findItem(R.id.navigation_home)?.isChecked = true
@@ -154,9 +121,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_other -> {  //사이드바로 이동
                     replaceFragment(sidebarFragment)
                 }
+
                 R.id.navigation_home -> { //홈으로 이동
                     startActivity(Intent(this, MainActivity::class.java))
                 }
+
                 R.id.navigation_my -> { //마이페이지로 이동
                     startActivity(Intent(this, MyPageActivity::class.java))
                 }
@@ -164,16 +133,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-
         viewPager = binding.foodViewPager
         adapter = MainPagerAdapter()
         viewPager.adapter = adapter
 
-        /*viewPager.postDelayed({
-            val currentItem = viewPager.currentItem
-            val nextItem = if (currentItem == adapter.itemCount - 1) 0 else currentItem + 1
-            viewPager.setCurrentItem(nextItem, true)
-        }, 3000)*/
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -193,17 +156,17 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed(runnable, 3000)
 
         //좋아요 기능
-        if(binding.likeYes8.visibility == View.GONE) {
+        if (binding.likeYes8.visibility == View.GONE) {
             binding.fl4.visibility = View.GONE
 
         }
-        if(binding.likeYes9.visibility == View.GONE) {
+        if (binding.likeYes9.visibility == View.GONE) {
             binding.fl5.visibility = View.GONE
         }
-        if(binding.likeYes10.visibility == View.GONE) {
+        if (binding.likeYes10.visibility == View.GONE) {
             binding.fl6.visibility = View.GONE
         }
-        if(binding.likeYes11.visibility == View.GONE) {
+        if (binding.likeYes11.visibility == View.GONE) {
             binding.fl7.visibility = View.GONE
         }
     } //onCreate
@@ -213,90 +176,92 @@ class MainActivity : AppCompatActivity() {
         handler.removeCallbacks(runnable)
         super.onDestroy()
     }
-        private class MainPagerAdapter:RecyclerView.Adapter<MainPagerViewHolder>() {
-            private val imageResIds = intArrayOf(
-                R.drawable.viewp1,
-                R.drawable.viewp2,
-                R.drawable.viewp3,
-                R.drawable.viewp4,
-                R.drawable.viewp5,
-                R.drawable.viewp6,
-                R.drawable.viewp7
-            )
 
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainPagerViewHolder {
-                val inflater = LayoutInflater.from(parent.context)
-                val view = inflater.inflate(R.layout.viewpager_item, parent, false)
-                return MainPagerViewHolder(view)
-            }
+    private class MainPagerAdapter : RecyclerView.Adapter<MainPagerViewHolder>() {
+        private val imageResIds = intArrayOf(
+            R.drawable.viewp1,
+            R.drawable.viewp2,
+            R.drawable.viewp3,
+            R.drawable.viewp4,
+            R.drawable.viewp5,
+            R.drawable.viewp6,
+            R.drawable.viewp7
+        )
 
-            override fun onBindViewHolder(holder: MainPagerViewHolder, position: Int) {
-                holder.bind(imageResIds[position])
-            }
-
-            override fun getItemCount(): Int = imageResIds.size
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainPagerViewHolder {
+            val inflater = LayoutInflater.from(parent.context)
+            val view = inflater.inflate(R.layout.viewpager_item, parent, false)
+            return MainPagerViewHolder(view)
         }
-        private class MainPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            private val imageView: ImageView = itemView.findViewById(R.id.slide_img)
 
-            fun bind(imageResIds: Int) {
-                imageView.setImageResource(imageResIds)
-            }
+        override fun onBindViewHolder(holder: MainPagerViewHolder, position: Int) {
+            holder.bind(imageResIds[position])
         }
+
+        override fun getItemCount(): Int = imageResIds.size
+    }
+
+    private class MainPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val imageView: ImageView = itemView.findViewById(R.id.slide_img)
+
+        fun bind(imageResIds: Int) {
+            imageView.setImageResource(imageResIds)
+        }
+    }
     /*출처: chatGPT*/
 
     private fun toggleVisibility(likeYes: ImageView, likeNo: ImageView) {
-        if(likeYes.visibility == View.VISIBLE) {
+        if (likeYes.visibility == View.VISIBLE) {
             likeYes.visibility = View.GONE
             likeNo.visibility = View.VISIBLE
 
             //좋아요 찜한 레시피
-            if(binding.likeYes1.visibility == View.GONE) {
+            if (binding.likeYes1.visibility == View.GONE) {
                 binding.fl4.visibility = View.GONE
                 binding.likeNo8.visibility = View.VISIBLE
                 binding.likeYes8.visibility = View.GONE
                 binding.likeYes1.visibility = View.VISIBLE
             }
-            if(binding.likeYes2.visibility == View.GONE) {
+            if (binding.likeYes2.visibility == View.GONE) {
                 binding.fl5.visibility = View.GONE
                 binding.likeNo9.visibility = View.VISIBLE
                 binding.likeYes9.visibility = View.GONE
                 binding.likeYes2.visibility = View.VISIBLE
             }
 
-            if(binding.likeYes3.visibility == View.GONE) {
+            if (binding.likeYes3.visibility == View.GONE) {
                 binding.fl6.visibility = View.GONE
                 binding.likeNo10.visibility = View.VISIBLE
                 binding.likeYes10.visibility = View.GONE
                 binding.likeYes3.visibility = View.VISIBLE
             }
 
-            if(binding.likeYes4.visibility == View.GONE) {
+            if (binding.likeYes4.visibility == View.GONE) {
                 binding.fl7.visibility = View.GONE
                 binding.likeNo11.visibility = View.VISIBLE
                 binding.likeYes11.visibility = View.GONE
                 binding.likeYes4.visibility = View.VISIBLE
             }
 
-            if(binding.likeYes5.visibility == View.GONE)
+            if (binding.likeYes5.visibility == View.GONE)
                 binding.fl1.visibility = View.GONE
 
-            if(binding.likeYes6.visibility == View.GONE)
+            if (binding.likeYes6.visibility == View.GONE)
                 binding.fl2.visibility = View.GONE
 
-            if(binding.likeYes7.visibility == View.GONE)
+            if (binding.likeYes7.visibility == View.GONE)
                 binding.fl3.visibility = View.GONE
 
-            if(binding.likeYes8.visibility == View.GONE) {
+            if (binding.likeYes8.visibility == View.GONE) {
                 binding.fl4.visibility = View.GONE
             }
-            if(binding.likeYes9.visibility == View.GONE) {
+            if (binding.likeYes9.visibility == View.GONE) {
                 binding.fl5.visibility = View.GONE
             }
-            if(binding.likeYes10.visibility == View.GONE) {
+            if (binding.likeYes10.visibility == View.GONE) {
                 binding.fl6.visibility = View.GONE
             }
-            if(binding.likeYes11.visibility == View.GONE) {
+            if (binding.likeYes11.visibility == View.GONE) {
                 binding.fl7.visibility = View.GONE
             }
 
@@ -305,26 +270,18 @@ class MainActivity : AppCompatActivity() {
             likeNo.visibility = View.GONE
 
             //좋아요 찜한 레시피
-            if(binding.likeNo8.visibility == View.GONE) {
+            if (binding.likeNo8.visibility == View.GONE) {
                 binding.fl4.visibility = View.VISIBLE
             }
-            if(binding.likeNo9.visibility == View.GONE) {
+            if (binding.likeNo9.visibility == View.GONE) {
                 binding.fl5.visibility = View.VISIBLE
             }
-            if(binding.likeNo10.visibility == View.GONE) {
+            if (binding.likeNo10.visibility == View.GONE) {
                 binding.fl6.visibility = View.VISIBLE
             }
-            if(binding.likeNo11.visibility == View.GONE) {
+            if (binding.likeNo11.visibility == View.GONE) {
                 binding.fl7.visibility = View.VISIBLE
             }
         }
     }
-
-    /*출처: chatGPT*/
 }
-
-
-
-
-
-

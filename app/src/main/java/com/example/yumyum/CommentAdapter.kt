@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.yumyum.CommentItem
 import com.example.yumyum.R
 
-class CommentAdapter(val commentList: List<CommentItem>) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
+class CommentAdapter(val commentList: List<CommentItem>) :
+    RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_comment_adapter, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.activity_comment_adapter, parent, false)
         return ViewHolder(view)
     }
 

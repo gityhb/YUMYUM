@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.databinding.ActivityMyPageBinding
 import com.google.android.material.tabs.TabLayout
 
-
-
 class MyPageActivity : AppCompatActivity() {
     lateinit var binding: ActivityMyPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +33,6 @@ class MyPageActivity : AppCompatActivity() {
             }
             db.close()
         }
-
-        /*출처: chatGPT*/
 
         val tabLayout: TabLayout = findViewById(R.id.tabLayout)
 
@@ -100,5 +96,3 @@ class MyPageActivity : AppCompatActivity() {
 
     } // onCreate
 }
-
-/*출처: chatGPT와 수업자료*/

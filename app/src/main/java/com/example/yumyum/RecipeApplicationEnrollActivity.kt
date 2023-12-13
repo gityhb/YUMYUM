@@ -87,8 +87,6 @@ import com.example.yumyum.databinding.ActivityRecipeApplicationEnrollBinding
                 RECIPE_I12 + "INTEGER DEFAULT 0" + ")"
         const val SQL_DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME
         const val SQL_LOAD = "SELECT * FROM " + TABLE_NAME
-
-
     }
 } //DBContract*/
 
@@ -140,10 +138,6 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        val cookname = findViewById<EditText>(R.id.recipe_name2)
-        val cookingredinet = findViewById<EditText>(R.id.recipe_ingredient2)
-        val cooktime = findViewById<EditText>(R.id.recipe_time2)
-
         val applicationcancel: Button = findViewById(R.id.application_back_btn)
         val applicationfinish: Button = findViewById(R.id.application_enroll_btn)
 
@@ -162,7 +156,6 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
             if(it != null)
                 binding.imageInput.setImageBitmap(it)
         }
-
         binding.imageInput.setOnClickListener {
             cameraLauncher.launch(null)
         }
@@ -179,18 +172,4 @@ class RecipeApplicationEnrollActivity : AppCompatActivity() {
             galleryLauncher.launch("image/*")
         }
     } // onCreate
-
-
-
-
-
-    /*override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        binding = ActivityRecipeApplicationEnrollBinding.inflate(inflater, container, false)
-
-        val dataList = mutableListOf<MutableMap<String, String>>()  //key, value 필요, key는 NO
-
-    } //onCreateView*/
-
 } //Activity

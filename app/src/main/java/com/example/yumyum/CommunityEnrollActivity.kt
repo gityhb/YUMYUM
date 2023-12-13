@@ -35,7 +35,6 @@ class CommunityEnrollActivity : AppCompatActivity() {
             Listintent.putExtra("Title", title) // .putExtra() 메소드로 데이터 전달준비
             Listintent.putExtra("Content", content)
 
-
             startActivity(Listintent) // 인텐트 실행
         }
 

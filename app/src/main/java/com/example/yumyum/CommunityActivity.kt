@@ -62,18 +62,16 @@ class CommunityActivity : AppCompatActivity() {
 
         val add_btn: FloatingActionButton = findViewById(R.id.add)
 
-        add_btn.setOnClickListener{
+        add_btn.setOnClickListener {
             startActivity(Intent(this, CommunityEnrollActivity::class.java))  // 인텐트를 생성해줌,
         } //+ 누르면 글쓰기창로
-
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-
-        add_btn.setOnClickListener{
+        add_btn.setOnClickListener {
             startActivity(Intent(this, CommunityEnrollActivity::class.java))  // 인텐트를 생성해줌,
         } //+ 누르면 글쓰기창로
     }

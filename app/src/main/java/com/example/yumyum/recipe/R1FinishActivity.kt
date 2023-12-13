@@ -33,9 +33,6 @@ class R1FinishActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        val drawable = resources.getDrawable(R.drawable.food7, null)
-        /*출처: https://mainia.tistory.com/2016*/
-
         val name = intent.getStringExtra("Name")
         val img = intent.getIntExtra("Img", R.drawable.food3)
 

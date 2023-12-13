@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yumyum.R
-import com.example.yumyum.RecipeStartActivity
 import com.example.yumyum.databinding.ActivityRecipeContinueBinding
 
 class R1ContinueActivity : AppCompatActivity() {
@@ -57,13 +56,8 @@ class R1ContinueActivity : AppCompatActivity() {
 
         val backButton: ImageView = findViewById(R.id.back_btn)
         backButton.setOnClickListener {
-            startActivity(Intent(this, RecipeStartActivity::class.java))
+            startActivity(Intent(this, R1StartActivity::class.java))
         }
-
-        /*val nextButton: LinearLayout = findViewById(R.id.next_to_page_btn)
-        nextButton.setOnClickListener {
-            startActivity(Intent(this, RecipeFinishActivity::class.java))
-        }*/
 
         when(clickCount) {
             1 -> {

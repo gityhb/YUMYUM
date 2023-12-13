@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ApplicationAdapter(val applicationList: List<ApplicationItem>) : RecyclerView.Adapter<ApplicationAdapter.ViewHolder>() {
+class ApplicationAdapter(val applicationList: List<ApplicationItem>) :
+    RecyclerView.Adapter<ApplicationAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_application_adapter, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.activity_application_adapter, parent, false)
         return ViewHolder(view)
     }
 

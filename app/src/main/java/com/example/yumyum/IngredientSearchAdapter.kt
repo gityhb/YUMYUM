@@ -66,6 +66,5 @@ class IngredientSearchAdapter(val recipeList: ArrayList<RecipeItem>, private val
                 }
             }
         }
-
     }
 }

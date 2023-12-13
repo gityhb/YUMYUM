@@ -44,7 +44,7 @@ class RecipeSearchActivity : AppCompatActivity() {
         
         // 리스트가 변경됨을 어댑터에 알림
 
-        /* 레시피 검색부분, 출처는 gpt > 출처 수정예정 */
+        /* 레시피 검색부분, 출처 gpt*/
         val searchEditText: EditText = findViewById(R.id.recipe_search)
 
         searchEditText.addTextChangedListener(object : TextWatcher {
@@ -57,7 +57,6 @@ class RecipeSearchActivity : AppCompatActivity() {
                 val filteredList = recipeList.filter { recipeItem ->
                     containsKorean(recipeItem.recipe, s.toString())
                 }
-
                 recipeAdapter.updateList(filteredList)
             }
 

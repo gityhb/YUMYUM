@@ -42,9 +42,7 @@ class IngredientSearchActivity : AppCompatActivity() {
         recipeList.add(RecipeItem(6,"연어초밥", "연어회 200g, 밥 1공기, 간장 1T, 와사비 1/2T, 소금 1t, 설탕 2t, 식초 3t", "1시간", "볼, 도마 위생장갑, 조리용 나이프, 접시, 숟가락", "1.소금, 설탕, 식초를(1:2:3)에 맞춰 만든다.\n2.단촛물을 전자레인지에 넣고 10초간 돌려주고 잘 저어준다.\n3.그릇에 밥 한 공기를 넣고 단촛물 4t을 넣어 잘 섞어 준다.\n4.연어회가 덩어리라면 먹기 좋은 크기로 썰어준다.\n5.위생장갑을 끼고 밥을 뭉쳐준 뒤 와사비를 묻힌다.\n6.위에 연어회 슬라이스 올려준다.", R.drawable.food10, R.drawable.level_easy))
         recipeList.add(RecipeItem(7,"우니덮밥", "밥 1공기, 성게알 40-50g, 양파 1/4개, 어린잎 채소 작은 한줌, 김가루, 참기름 2t, 식초 1T,0 설탕 0.5T, 소금 한 꼬집", "1시간", "도마, 칼, 그릇, 작은 볼, 숟가락", "1.양파를 채 썰어 찬물에 담가둔다.\n2.설탕, 소금, 식초를 작은 볼에 넣고 녹여준다.\n3.따뜻한 밥에 단촛물을 넣고 섞어준다.\n4.양파와 채소, 우니 물기를 제거한다.\n5.그릇에 밥을 넣고 물기를 제거한 양파와 채소, 우니를 얹는다.\n6.쪽파와 김가루를 뿌린 뒤 참기름을 뿌려준다.", R.drawable.food1, R.drawable.level_easy))
 
-        // 리스트가 변경됨을 어댑터에 알림
-
-        /* 레시피 검색부분, 출처는 gpt > 출처 수정예정 */
+        /* 레시피 검색부분, 출처 gpt*/
         val searchEditText: EditText = findViewById(R.id.recipe_search)
 
         searchEditText.addTextChangedListener(object : TextWatcher {
@@ -57,11 +55,10 @@ class IngredientSearchActivity : AppCompatActivity() {
                 val filteredList = recipeList.filter { recipeItem ->
                     containsKorean(recipeItem.ingredient, s.toString())
                 }
-
                 recipeAdapter.updateList(filteredList)
             }
 
-            // 한글 검색 가능하게 하기> gpt
+            // 한글 검색 가능하게 하기> 출처 gpt
             fun decomposeHangul(s: Char): String {
                 if (s >= '가' && s <= '힣') {
                     val uniVal = s - '가'
@@ -84,8 +81,6 @@ class IngredientSearchActivity : AppCompatActivity() {
             val jongsung = arrayOf("", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ")
         })
 
-
-
         //신청페이지에서 받을때, 수정해야함
         val number = intent.getIntExtra("number", 0)
         var name = intent.getStringExtra("name")
@@ -95,8 +90,6 @@ class IngredientSearchActivity : AppCompatActivity() {
         var step = intent.getStringExtra("Step")
         var recipeimg = intent.getIntExtra("recipeimg",  R.drawable.food4)
         var levelimg = intent.getIntExtra("levelimg", R.drawable.img1)
-
-
 
         if (name != null && ingredient != null && time != null && utensil !=null && step !=null) {
             // 이름과 번호를 사용하여 새로운 ListItem 생성
@@ -113,8 +106,5 @@ class IngredientSearchActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-
-
-
     } // onCreate
 }
